@@ -1,0 +1,16 @@
+.footer {
+  width: 100vw;
+  background-color: #22223b;
+  color: #fff;
+  padding: 32px 0 16px 0;
+  margin: 0;
+  margin-left: -32px;
+}
+.footer_img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+}
+

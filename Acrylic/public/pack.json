@@ -1,0 +1,7 @@
+[
+    {"id" : 1, "title": "K-Pop Packages", "price" : "8K", "img" : "/pack1.jpeg"},
+    {"id" : 2, "title": "Merch Pop", "price" : "7K", "img" : "/pack2.jpeg"},
+    {"id" : 3, "title": "Cute Stuff", "price" : "5K", "img" : "/pack3.jpeg"},
+    {"id" : 4, "title": "Box Mistery", "price" : "12K", "img" : "/pack4.jpeg"},
+    {"id" : 5, "title": "Mini Gift", "price" : "10K", "img" : "/pack1.jpeg"}
+]

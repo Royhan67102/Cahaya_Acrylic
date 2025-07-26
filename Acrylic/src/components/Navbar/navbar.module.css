@@ -1,0 +1,109 @@
+.navbar {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar__brand_container {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    margin-left: 100px;
+}
+
+.navbar_logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0;
+}
+
+.navbar__brand {
+    font-size: 30px;
+    color: #222;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.navbar__list_container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 70px;
+}
+
+.navbar__list {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__item {
+    background-color: transparent;
+    font-size: 20px;
+    font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+    font-weight: 10; 
+}
+
+.navbar__item a {
+    text-decoration: none;
+    color: #222;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 8px 16px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.navbar__item a:hover,
+.navbar__item a:focus {
+    color: #fff;
+    background-color: #4a63b7;
+}
+
+.navbar__item a:active {
+    color: #fff;
+    background-color: #2c387e;
+}
+
+/* Cart button */
+.navbar__cart_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    margin-left: 0;
+    margin-right: 100px;
+}
+
+.navbar__cart_btn {
+    background: #4a63b7;
+    color: #222;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 35px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.navbar__cart_btn:hover {
+    background: #2c387e;
+    color: #fff;
+}

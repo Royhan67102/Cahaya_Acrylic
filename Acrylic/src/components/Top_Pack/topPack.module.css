@@ -1,0 +1,51 @@
+.package__container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    margin-top: 30px;
+}
+
+.package__item {
+    width: 20%; /* Lebih kecil, maksimal 4 card per row */
+    min-width: 180px;
+    max-width: 240px;
+    height: 180px;
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    border: none;
+    cursor: pointer;
+    transition: 
+        box-shadow 0.3s,
+        transform 0.3s,
+        background 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.package__item:hover,
+.package__item:focus {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    transform: translateY(-6px) scale(1.03);
+    background: #e0f7fa;
+}
+.pack_img_card {
+    width: 50%;
+}
+
+@media (max-width: 1200px) {
+    .package__item {
+        width: 45%; /* 2 card per row di tablet */
+    }
+}
+@media (max-width: 700px) {
+    .package__item {
+        width: 90%; /* 1 card per row di mobile */
+    }
+}

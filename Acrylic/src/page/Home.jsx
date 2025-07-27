@@ -9,8 +9,8 @@ function Home() {
     <div>
       <Navbar />
       <Hero /> 
-      <TopPack />
-      <TopItem /> 
+      <TopItem />
+      <TopPack /> 
       <Footer />
 
     </div>

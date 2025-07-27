@@ -3,5 +3,8 @@
     {"id" : 2, "title": "Merch Pop", "price" : "7K", "img" : "/pack2.jpeg"},
     {"id" : 3, "title": "Cute Stuff", "price" : "5K", "img" : "/pack3.jpeg"},
     {"id" : 4, "title": "Box Mistery", "price" : "12K", "img" : "/pack4.jpeg"},
-    {"id" : 5, "title": "Mini Gift", "price" : "10K", "img" : "/pack1.jpeg"}
+    {"id" : 5, "title": "Mini Gift", "price" : "10K", "img" : "/pack1.jpeg"}, 
+    {"id" : 6, "title": "Blind Box", "price" : "10K", "img" : "/pack1.jpeg"}, 
+    {"id" : 7, "title": "Freebiez", "price" : "10K", "img" : "/pack1.jpeg"}, 
+    {"id" : 8, "title": "Merch Cutes", "price" : "10K", "img" : "/pack1.jpeg"}
 ]

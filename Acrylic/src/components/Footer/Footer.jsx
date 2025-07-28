@@ -1,42 +1,35 @@
 import styles from "./footer.module.css";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 function Footer() {
   return (
     <footer className={styles.footer}>
-      <hr className={styles.horizontal}/>
+      <div className={styles.footerContent}>
+        <div className={styles.contactInfo}>
+          <div className={styles.contactItem}>
+            <FaMapMarkerAlt className={styles.icon} />
+            <p>Jl. Cahaya Acrylic No.1, Bandung</p>
+          </div>
+          <div className={styles.contactItem}>
+            <FaPhone className={styles.icon} />
+            <p>+62 812-3456-7890</p>
+          </div>
+          <div className={styles.contactItem}>
+            <FaEnvelope className={styles.icon} />
+            <p>cahaya@acrylic.com</p>
+          </div>
+        </div>
 
-      <div className={styles.footer_contain}>
-
-      <div className={styles.footer_logo}>
-        <img className={styles.footer_img} src="/logo_CA.jpg" alt="" />
+        <div className={styles.aboutCompany}>
+          <h3>Tentang Kami</h3>
+          <p>Cahaya Acrylic adalah tempat terbaik untuk pesanan custom berbahan dasar akrilik seperti keychain, plakat, dan lainnya.</p>
+          <div className={styles.socialIcons}>
+            <FaInstagram />
+            <FaTiktok />
+            <FaWhatsapp />
+          </div>
+        </div>
       </div>
-
-      <div className={styles.footer_sosmed}> 
-        <h3>Social Media</h3>
-        <p>ikon || instagram</p>
-        <p>ikon || Tiktok</p>
-        <p>ikon || WhatsApp</p>
-
-      </div>
-
-      <div className={styles.footer_location}>
-        <h3>Ikon || (Location)</h3>
-        <p>Alamat lengkap</p>
-
-      </div>
-
-      <div className={styles.footer_CA}>
-        <h2>Cahaya Acrylic</h2>
-
-      </div>
-
-      </div>
-      
-      <div className={styles.footerKanan}>
-        <p>footer</p>
-
-      </div>
-    
     </footer>
   );
 }

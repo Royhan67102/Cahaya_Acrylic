@@ -1,51 +1,142 @@
+.container {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.Package {
+  margin-top: 20px;
+}
+
+.sub_historyItem {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  padding: 8px 25px;
+  border-radius: 0 32px 32px 0;
+  background-color: #3056B3;
+  display: inline-block;
+}
+
+.wordItem {
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 16px;
+  display: block;
+}
+
 .package__container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; 
-    margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 32px;
+  margin-top: 30px;
+  align-items: stretch;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 16px;
+}
+
+.package__container::-webkit-scrollbar {
+  display: none;
 }
 
 .package__item {
-    width: 20%; /* Lebih kecil, maksimal 4 card per row */
-    min-width: 180px;
-    max-width: 240px;
-    height: 180px;
-    background-color: #fff;
-    margin: 10px 0;
-    padding: 16px;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    border: none;
-    cursor: pointer;
-    transition: 
-        box-shadow 0.3s,
-        transform 0.3s,
-        background 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+  position: relative;
+  width: 200px;
+  min-width: 200px;
+  height: 240px;
+  background-color: #fff;
+  padding: 36px 12px 12px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
 }
 
-.package__item:hover,
-.package__item:focus {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    transform: translateY(-6px) scale(1.03);
-    background: #e0f7fa;
+.package__item:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transform: translateY(-6px) scale(1.03);
+  background: #e0f7fa;
 }
+
 .pack_img_card {
-    width: 50%;
+  width: 70%;
+  object-fit: contain;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  pointer-events: none;
 }
 
-@media (max-width: 1200px) {
-    .package__item {
-        width: 45%; /* 2 card per row di tablet */
-    }
+.item_title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #22364a;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 12px;
 }
+
+.uang_group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.price_ikon {
+  width: 25px;
+  height: 25px;
+}
+
+.render_price {
+  font-size: 15px;
+  color: #22364a;
+  font-weight: 500;
+}
+
+.button_detail {
+  background: #3056B3;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 18px;
+  margin-top: auto;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button_detail:hover {
+  background: #22364a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .package__item {
+    width: 45%;
+  }
+}
+
 @media (max-width: 700px) {
-    .package__item {
-        width: 90%; /* 1 card per row di mobile */
-    }
+  .package__container {
+    gap: 12px;
+  }
+
+  .package__item {
+    width: 90%;
+    min-width: 160px;
+    height: 220px;
+  }
 }

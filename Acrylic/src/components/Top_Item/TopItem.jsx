@@ -1,9 +1,11 @@
 import styles from './topItem.module.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Detail from '../Detail/Detail';
 
 function TopItem() {
   const [items, setDatas] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,8 +30,15 @@ function TopItem() {
     };
     window.addEventListener('storage', handleStorage);
     return () => window.removeEventListener('storage', handleStorage);
-
   }, []);
+
+  const handleDetailClick = (item) => {
+    setSelectedItem(item);
+  };
+
+  const closePopup = () => {
+    setSelectedItem(null);
+  };
 
   return (
     <div className={styles.container}>
@@ -47,10 +56,16 @@ function TopItem() {
                 <img src="/price.png" alt="Rp" className={styles.price_ikon} />
                 <span className={styles.render_price}>{pack.price}</span>
               </div>
-              <button className={styles.button_detail}>Detail</button>
+              <button
+                className={styles.button_detail}
+                onClick={() => handleDetailClick(pack)}
+              >
+                Detail
+              </button>
             </div>
           ))}
         </div>
+        <Detail item={selectedItem} onClose={closePopup} />
       </section>
     </div>
   );

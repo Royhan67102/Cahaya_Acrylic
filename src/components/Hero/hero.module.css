@@ -113,11 +113,11 @@
 /* ===== Responsive for Mobile ===== */
 @media (max-width: 480px) {
   .hero_card {
-     flex-direction: column;
+    flex-direction: column;
     padding: 30px 16px;
     min-height: auto;
     width: 50%;
-    margin-left: -780px;
+    margin-left: 100px;
   }
 
   .img_C1 {

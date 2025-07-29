@@ -67,31 +67,34 @@ function TopPack() {
   return (
     <div className={styles.container}>
       <section className={styles.Package}>
-        <div className={styles.sub_historyItem}>
-          Top Pack Recommendation
-        </div>
+         <div className={styles.sub_historyItem}>
+              <h2 className={styles.list_historyItem}>Top Pack Recommendation</h2>
+          </div>
         <span className={styles.wordItem}>Check out your top picks!</span>
 
         <div className={styles.package__container} ref={sliderRef}>
           {packs.map((pack) => (
-            <div key={pack.id} className={styles.package__item}>
-            <img src={pack.img} alt={pack.title} className={styles.pack_img_card} />
-            <h3 className={styles.item_title}>{pack.title}</h3>
+              <div key={pack.id} className={styles.package__item}>
+                          <img src={pack.img} alt={pack.title} className={styles.pack_img_card} />
             
-            <div className={styles.uang_detail}>
-                         <div className={styles.uang_group}>
-                           <img src="/price.png" alt="Rp" className={styles.price_ikon} />
-                           <span className={styles.render_price}>{pack.price}</span>
-                         </div>
-                         <button
-                           className={styles.button_detail}
-                           onClick={() => handleDetailClick(pack)}
-                         >
-                           Detail
-                         </button>
-                       </div>
-                       </div>
-    ))}
+                          <div className={styles.wrap_title}>
+                          <h3 className={styles.item_title}>{pack.title}</h3>
+                        </div>
+            
+                        <div className={styles.uang_detail}>
+                          <div className={styles.uang_group}>
+                            <img src="/price.png" alt="Rp" className={styles.price_ikon} />
+                            <span className={styles.render_price}>{pack.price}</span>
+                          </div>
+                          <button
+                            className={styles.button_detail}
+                            onClick={() => handleDetailClick(pack)}
+                          >
+                            Detail
+                          </button>
+                        </div>
+                        </div>
+                      ))}
         </div>
 
         <Detail item={selectedPack} onClose={closePopup} />

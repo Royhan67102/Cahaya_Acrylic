@@ -44,15 +44,19 @@ function TopItem() {
     <div className={styles.container}>
       <section className={styles.Package}>
         <div className={styles.sub_historyItem}>
-          Custom Item History
+          <h2 className={styles.list_historyItem}>Custom Item History</h2>
         </div>
         <span className={styles.wordItem}>Yours is custom too now!</span>
+        
         <div className={styles.package__container}>
           {items.map((pack) => (
             <div key={pack.id} className={styles.package__item}>
               <img src={pack.img} alt={pack.title} className={styles.pack_img_card} />
+
+              <div className={styles.wrap_title}>
               <h3 className={styles.item_title}>{pack.title}</h3>
-            
+            </div>
+
             <div className={styles.uang_detail}>
               <div className={styles.uang_group}>
                 <img src="/price.png" alt="Rp" className={styles.price_ikon} />

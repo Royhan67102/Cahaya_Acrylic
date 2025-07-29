@@ -114,10 +114,11 @@
 @media (max-width: 480px) {
   .hero_card {
     flex-direction: column;
-    padding: 30px 16px;
+    /* padding: 30px 16px; */
+    padding: 0;
     min-height: auto;
     width: 20%;
-    margin-left: -810px;
+    margin-left: -800px;
   }
 
   .img_C1 {
@@ -133,8 +134,10 @@
   }
 
   .hero_content {
-    z-index: 2;
-    padding: 0 12px;
+    /* z-index: 2;
+    padding: 0 12px; */
+    z-index: 1;
+    padding: 0;
   }
 
   .word_LP {

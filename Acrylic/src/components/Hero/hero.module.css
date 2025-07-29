@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 60px; 
+  margin-top: 20px; 
+  margin-left: -11px;
 }
 
 .hero_card {
@@ -22,7 +23,7 @@
 .img_C1 {
   position: absolute;
   left: -5px;     
-  bottom: 240px;   
+  bottom: 220px;   
   width: 170px;
   height: auto;
 }

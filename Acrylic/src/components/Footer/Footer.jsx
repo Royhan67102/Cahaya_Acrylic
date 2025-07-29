@@ -5,6 +5,10 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
+        <div className={styles.logo_CA}>
+           <img className={styles.navbar_logo} src="/logo_CA.jpg" alt="Cahaya Acrylic" /><h3 className={styles.navbar__brand}>Cahaya Acrylic</h3>
+
+        </div>
         <div className={styles.contactInfo}>
           <div className={styles.contactItem}>
             <FaMapMarkerAlt className={styles.icon} />

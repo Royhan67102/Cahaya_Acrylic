@@ -16,13 +16,15 @@
   border-radius: 0 32px 32px 0;
   background-color: #3056B3;
   display: inline-block;
+  margin-left: -1000px;
 }
 
 .wordItem {
   font-size: 16px;
   color: #222;
-  margin-bottom: 16px;
+  margin-bottom: -20px;
   display: block;
+  margin-left: -1100px;
 }
 
 .package__container {
@@ -36,6 +38,7 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 16px;
+  padding-top: 25px;
 }
 
 .package__container::-webkit-scrollbar {
@@ -43,10 +46,10 @@
 }
 
 .package__item {
-  position: relative;
+    position: relative;
   width: 200px;
   min-width: 200px;
-  height: 240px;
+  height: 200px;
   background-color: #fff;
   padding: 36px 12px 12px 12px;
   border-radius: 20px;
@@ -56,9 +59,8 @@
   transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
-  overflow: visible;
+  background-color: #A9BCEA;
 }
 
 .package__item:hover {
@@ -71,11 +73,12 @@
   width: 70%;
   object-fit: contain;
   position: absolute;
-  top: -30px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
   pointer-events: none;
+  border-radius: 25px;
 }
 
 .item_title {
@@ -83,15 +86,26 @@
   font-weight: 700;
   color: #22364a;
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 12px;
+  left: 0;
+  bottom: 24px; 
+  padding: 8px 8px;
+  position: static;
+  margin-top: 120px;
 }
 
+.uang_detail {
+  display: flex;
+  justify-content: space-between;
+  gap: 65px;
+  position: absolute;
+  left: 0;
+  bottom: 2px; 
+  padding: 8px 16px;
+}
 .uang_group {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 12px;
+  gap: 2px;
 }
 
 .price_ikon {

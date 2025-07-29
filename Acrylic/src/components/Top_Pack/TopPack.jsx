@@ -77,17 +77,20 @@ function TopPack() {
             <div key={pack.id} className={styles.package__item}>
             <img src={pack.img} alt={pack.title} className={styles.pack_img_card} />
             <h3 className={styles.item_title}>{pack.title}</h3>
-            <div className={styles.uang_group}>
-                <img src="/price.png" alt="Rp" className={styles.price_ikon} />
-                <span className={styles.render_price}>{pack.price}</span>
-            </div>
-            <button
-                className={styles.button_detail}
-                onClick={() => handleDetailClick(pack)}
-            >
-                Detail
-            </button>
-            </div>
+            
+            <div className={styles.uang_detail}>
+                         <div className={styles.uang_group}>
+                           <img src="/price.png" alt="Rp" className={styles.price_ikon} />
+                           <span className={styles.render_price}>{pack.price}</span>
+                         </div>
+                         <button
+                           className={styles.button_detail}
+                           onClick={() => handleDetailClick(pack)}
+                         >
+                           Detail
+                         </button>
+                       </div>
+                       </div>
     ))}
         </div>
 

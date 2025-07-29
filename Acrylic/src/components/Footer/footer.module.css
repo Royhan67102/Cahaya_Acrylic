@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
-  background-color: #1a1a1a;
+  height: 200px;
+  background-color: #031540;
   color: #fff;
   padding: 40px 20px;
   margin: 0;
@@ -8,8 +9,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  display: flex;
+  margin-left: -50px;
 }
 
 .footerContent {
@@ -63,4 +64,26 @@
 
 .socialIcons svg:hover {
   color: #fca311;
+}
+
+.logo_CA {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.navbar_logo {
+  width: 30%;
+  object-fit: contain;
+}
+
+.navbar__brand {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+}
+.contactInfo {
+  margin-left: -200px;
 }

@@ -116,8 +116,8 @@
     flex-direction: column;
     padding: 30px 16px;
     min-height: auto;
-    width: 20%;
-    margin-left: -200px;
+    width: 23%;
+    margin-left: -100px;
   }
 
   .img_C1 {
@@ -127,9 +127,9 @@
   }
 
   .img_C2 {
-    width: 80px;
+    width: 70px;
     right: -20px;
-    top: -20px;
+    top: -10px;
   }
 
   .hero_content {

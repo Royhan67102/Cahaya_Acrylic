@@ -144,7 +144,7 @@
   }
 
   .navbar__list {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: 6px;
     margin-top: 10px;
@@ -167,6 +167,6 @@
   .navbar__cart_btn {
     font-size: 14px;
     padding: 6px 16px;
-    width: 100%;
+    width: 20%;
   }
 }

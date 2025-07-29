@@ -5,6 +5,7 @@
   align-items: center;
   margin-top: 20px;
   padding: 0 16px; /* untuk jaga-jaga overflow */
+  box-sizing: border-box;
 }
 
 .hero_card {
@@ -17,8 +18,6 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-  padding: 40px 20px;
 }
 
 .img_C1 {
@@ -84,18 +83,20 @@
     flex-direction: column;
     padding: 30px 16px;
     min-height: auto;
+    width: 38%;
+    margin-left: -780px;
   }
 
   .img_C1 {
-    width: 100px;
+    width: 90px;
     left: -10px;
     bottom: -10px;
   }
 
   .img_C2 {
-    width: 120px;
+    width: 80px;
     right: -20px;
-    top: 10px;
+    top: -20px;
   }
 
   .word_LP {
@@ -112,29 +113,42 @@
 /* ===== Responsive for Mobile ===== */
 @media (max-width: 480px) {
   .hero_card {
-    padding: 20px 12px;
-    border-radius: 16px;
+    flex-direction: column;
+    padding: 30px 16px;
+    min-height: auto;
+    width: 30%;
+    margin-left: -790px;
   }
 
   .img_C1 {
-    width: 80px;
-    left: -20px;
-    bottom: 0;
+    width: 90px;
+    left: -10px;
+    bottom: -10px;
   }
 
   .img_C2 {
-    width: 90px;
-    right: -10px;
-    top: 10px;
+    width: 80px;
+    right: -20px;
+    top: -20px;
+  }
+
+  .hero_content {
+    z-index: 2;
+    padding: 0 12px;
   }
 
   .word_LP {
-    font-size: 16px;
-    letter-spacing: 1px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    text-align: center;
+    word-wrap: break-word;
   }
 
   .buttonVA {
-    font-size: 14px;
-    padding: 6px 20px;
+    font-size: 13px;
+    padding: 6px 16px;
+    width: fit-content;
   }
 }

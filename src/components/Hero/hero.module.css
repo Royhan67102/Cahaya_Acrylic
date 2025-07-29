@@ -112,8 +112,12 @@
 /* ===== Responsive for Mobile ===== */
 @media (max-width: 480px) {
   .hero_card {
-    padding: 20px 12px;
-    border-radius: 16px;
+    flex-direction: column;
+    padding: 30px 16px;
+    min-height: auto;
+    width: 20%;
+    margin-left: -500px;
+    padding-left: -500px;
   }
 
   .img_C1 {

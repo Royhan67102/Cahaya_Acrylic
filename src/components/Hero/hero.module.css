@@ -120,6 +120,11 @@
     width:  100%;
     
   }
+  .hero_container {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 20px;
+  }
 
   .img_C1 {
     width: 60px;

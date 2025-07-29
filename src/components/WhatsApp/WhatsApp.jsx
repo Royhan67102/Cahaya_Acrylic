@@ -1,5 +1,5 @@
 import { FaWhatsapp } from 'react-icons/fa';
-import styles from './Whatsapp.module.css';
+import styles from './WhatsApp.module.css';
 
 function Whatsapp() {
   const phoneNumber = '628889516559'; 

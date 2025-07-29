@@ -1,5 +1,5 @@
 // src/component/Detail.jsx
-import styles from './detail.module.css';
+import styles from './Detail.module.css';
 
 function Detail({ item, onClose }) {
   if (!item) return null;

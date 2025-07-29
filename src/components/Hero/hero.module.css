@@ -80,11 +80,18 @@
 /* ===== Responsive for Tablet ===== */
 @media (max-width: 768px) {
   .hero_card {
-    flex-direction: column;
+    /* flex-direction: column;
     padding: 30px 16px;
     min-height: auto;
     width: 38%;
-    margin-left: -780px;
+    margin-left: -780px; */
+    flex-direction: column;
+    padding: 24px 16px;
+    min-height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
   }
 
   .img_C1 {

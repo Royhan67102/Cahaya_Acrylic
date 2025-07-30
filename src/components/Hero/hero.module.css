@@ -4,37 +4,41 @@
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  padding: 0 16px; /* untuk jaga-jaga overflow */
+  padding: 0 16px; /* Tambahkan padding horizontal agar ada ruang di sisi kiri-kanan */
+  box-sizing: border-box; /* Pastikan padding dihitung dalam lebar total */
 }
 
 .hero_card {
-  width: 100%;
-  max-width: 1200px;
-  min-height: 300px;
+  width: 100%; /* Lebar 100% dari parent container-nya */
+  max-width: 100%; /* Pastikan tidak melebihi 100% dari parent */
+  min-height: 220px;
   background-color: #031540;
-  border-radius: 25px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-  padding: 40px 20px;
+  overflow: hidden; /* Penting untuk menyembunyikan bagian gambar yang keluar */
+  padding: 18px; /* Padding yang lebih merata untuk konten di dalam card */
+  box-sizing: border-box; /* Pastikan padding dihitung dalam lebar total */
 }
 
 .img_C1 {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 140px;
+  width: 60px; /* Ukuran default untuk HP */
   height: auto;
+  z-index: 1; /* Pastikan di bawah konten utama */
 }
 
 .img_C2 {
   position: absolute;
-  top: 20px;
+  top: 10px;
   right: 0;
-  width: 160px;
+  width: 60px; /* Ukuran default untuk HP */
   height: auto;
+  z-index: 1; /* Pastikan di bawah konten utama */
 }
 
 .hero_content {
@@ -42,18 +46,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 2; /* Pastikan konten di atas gambar */
   text-align: center;
-  padding: 0 20px;
+  padding: 0 5px; /* Kurangi padding horizontal di dalam konten untuk ruang teks */
+  width: 100%; /* Pastikan konten mengambil lebar penuh di dalam card */
+  box-sizing: border-box; /* Penting agar padding tidak membuat meluap */
 }
 
 .word_LP {
   color: #fff;
   font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
-  font-size: 22px;
+  font-size: 15px; /* Ukuran font default untuk HP */
   font-weight: 400;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  word-wrap: break-word; /* Biarkan kata pecah jika terlalu panjang */
+  overflow-wrap: break-word; /* Alternatif untuk word-wrap */
+  white-space: normal; /* Pastikan teks membungkus dan tidak tetap di satu baris */
 }
 
 .word1 {
@@ -64,81 +73,135 @@
 .buttonVA {
   background: #5b78c7;
   color: #fff;
-  font-size: 18px;
+  font-size: 13px; /* Ukuran font default untuk HP */
   font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
   border: none;
   border-radius: 32px;
-  padding: 8px 32px;
+  padding: 5px 16px;
   cursor: pointer;
   transition: background 0.3s;
   font-weight: 500;
+  white-space: nowrap; /* Pastikan teks tombol tetap satu baris */
 }
 
 .buttonVA:hover {
   background: #3d56a6;
 }
 
-/* ===== Responsive for Tablet ===== */
-@media (max-width: 768px) {
+/* ---------------------------------------------------------------------- */
+/* Responsive Adjustments */
+/* ---------------------------------------------------------------------- */
+
+/* Small: default (<758px) - max-width: 757px */
+@media (max-width: 757px) {
+  .hero_container {
+    padding: 0 8px; /* Lebih kecil, tapi tetap ada ruang kiri-kanan */
+    box-sizing: border-box;
+  }
   .hero_card {
-    flex-direction: column;
-    padding: 30px 16px;
-    min-height: auto;
+    width: 100%;
+    max-width: 458px; /* Batasi lebar card agar tidak terlalu panjang */
+    margin-left: 0;      /* Card mulai dari kiri */
+    margin-right: auto;  /* Sisakan space di kanan */
+    min-height: 160px;
+    border-radius: 18px;
+    padding: 16px 8px; /* Padding cukup agar konten tidak kepotong */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
   }
-
   .img_C1 {
-    width: 100px;
-    left: -10px;
-    bottom: -10px;
+    width: 40px;
+    left: 0;
+    bottom: 0;
   }
-
   .img_C2 {
-    width: 120px;
-    right: -20px;
-    top: 10px;
+    width: 45px;
+    right: 0;
+    top: 8px;
   }
-
+  .hero_content {
+    padding: 0 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
   .word_LP {
-    font-size: 20px;
-    margin-bottom: 16px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
   }
-
   .buttonVA {
-    font-size: 16px;
-    padding: 6px 24px;
+    font-size: 12px;
+    padding: 4px 12px;
+    margin-top: 10px;
   }
 }
 
-/* ===== Responsive for Mobile ===== */
-@media (max-width: 480px) {
-  .hero_card {
-    flex-direction: column;
-    padding: 30px 16px;
-    min-height: auto;
-    width: 20%;
-    margin-left: -500px;
-    padding-left: -500px;
+/* Medium: >=768px dan <992px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero_container {
+    padding: 0 20px;
   }
-
+  .hero_card {
+    min-height: 260px;
+    border-radius: 20px;
+    padding: 25px;
+  }
   .img_C1 {
-    width: 80px;
-    left: -20px;
+    width: 90px;
+    left: -8px;
+    bottom: -8px;
+  }
+  .img_C2 {
+    width: 110px;
+    right: -15px;
+    top: 8px;
+  }
+  .hero_content {
+    padding: 0 10px;
+  }
+  .word_LP {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+  .buttonVA {
+    font-size: 15px;
+    padding: 6px 20px;
+  }
+}
+
+/* Large: >=992px */
+@media (min-width: 992px) {
+  .hero_container {
+    padding: 0 32px;
+  }
+  .hero_card {
+    max-width: 1200px; /* Maksimal lebar untuk desktop */
+    min-height: 300px;
+    border-radius: 25px;
+    padding: 40px;
+  }
+  .img_C1 {
+    width: 140px;
+    left: 0;
     bottom: 0;
   }
-
   .img_C2 {
-    width: 90px;
-    right: -10px;
-    top: 10px;
+    width: 160px;
+    right: 0;
+    top: 20px;
   }
-
+  .hero_content {
+    padding: 0 20px;
+  }
   .word_LP {
-    font-size: 16px;
-    letter-spacing: 1px;
+    font-size: 22px;
+    margin-bottom: 20px;
   }
-
   .buttonVA {
-    font-size: 14px;
-    padding: 6px 20px;
+    font-size: 18px;
+    padding: 8px 32px;
   }
 }

@@ -43,26 +43,51 @@ function TopPack() {
   };
 
   // AUTOPLAY SLIDER
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
+   useEffect(() => {
+  const slider = sliderRef.current;
+  if (!slider || packs.length === 0) return;
 
-    const scrollStep = () => {
-      if (!slider) return;
+  let animationFrame;
+  let scrollSpeed = 0.5; // bisa disesuaikan kecepatannya
 
-      const maxScroll = slider.scrollWidth - slider.clientWidth;
+  const autoScroll = () => {
+    // Kalau sudah sampai ujung kanan, balik ke kiri tanpa jeda
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
+      slider.scrollLeft = 0;
+    } else {
+      slider.scrollLeft += scrollSpeed;
+    }
+    animationFrame = requestAnimationFrame(autoScroll);
+  };
 
-      if (Math.ceil(slider.scrollLeft) >= maxScroll) {
-        slider.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        slider.scrollBy({ left: 240, behavior: 'smooth' });
-      }
-    };
+  const startScroll = () => {
+    stopScroll();
+    animationFrame = requestAnimationFrame(autoScroll);
+  };
 
-    const interval = setInterval(scrollStep, 3000);
+  const stopScroll = () => {
+    if (animationFrame) cancelAnimationFrame(animationFrame);
+  };
 
-    return () => clearInterval(interval);
-  }, [packs]);
+  startScroll();
+
+  // Pause saat interaksi pengguna
+  slider.addEventListener('mouseenter', stopScroll);
+  slider.addEventListener('mouseleave', startScroll);
+  slider.addEventListener('touchstart', stopScroll);
+  slider.addEventListener('touchend', startScroll);
+
+  window.addEventListener('resize', startScroll);
+
+  return () => {
+    stopScroll();
+    slider.removeEventListener('mouseenter', stopScroll);
+    slider.removeEventListener('mouseleave', startScroll);
+    slider.removeEventListener('touchstart', stopScroll);
+    slider.removeEventListener('touchend', startScroll);
+    window.removeEventListener('resize', startScroll);
+  };
+}, [packs]);
 
   return (
     <div className={styles.container}>

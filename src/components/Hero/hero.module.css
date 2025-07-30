@@ -100,7 +100,7 @@
   }
   .hero_card {
     width: 100%;
-    max-width: 458px; /* Batasi lebar card agar tidak terlalu panjang */
+    max-width: 410px; /* Batasi lebar card agar tidak terlalu panjang */
     margin-left: 0;      /* Card mulai dari kiri */
     margin-right: auto;  /* Sisakan space di kanan */
     min-height: 160px;
@@ -148,6 +148,8 @@
     min-height: 260px;
     border-radius: 20px;
     padding: 25px;
+    max-width: 720px;
+    margin-left: -470px;
   }
   .img_C1 {
     width: 90px;

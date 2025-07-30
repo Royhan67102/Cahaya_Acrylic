@@ -116,6 +116,8 @@
 @media (max-width: 480px) {
   .popup {
     border-radius: 8px;
+    width: 30%;
+    max-width: 300px;
   }
 
   .closeButton {

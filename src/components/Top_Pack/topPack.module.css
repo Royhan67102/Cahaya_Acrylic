@@ -141,10 +141,21 @@
   background: #22364a;
 }
 
+/* small */
+@media (max-width: 757px) {
+  .container {
+    max-width: 42%;
+    padding: 16px 8px;
+    box-sizing: border-box;
+  }
+}
+
 /* Medium: >=768px */
 @media (min-width: 768px) {
   .container {
-    padding: 20px 16px;
+    max-width: 100%;
+    padding: 16px 8px;
+    box-sizing: border-box;
   }
   .list_historyItem {
     font-size: 22px;

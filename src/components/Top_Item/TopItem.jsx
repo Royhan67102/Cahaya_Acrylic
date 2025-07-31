@@ -7,7 +7,6 @@ function TopItem() {
   const [items, setDatas] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const sliderRef = useRef(null);
-  const intervalRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,55 +43,65 @@ function TopItem() {
 
   // === AUTO SLIDER ===
   useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider || items.length === 0) return;
+  const slider = sliderRef.current;
+  if (!slider || items.length === 0) return;
 
-    const startScroll = () => {
-      stopScroll();
-      intervalRef.current = setInterval(() => {
-        const item = slider.querySelector(`.${styles.package__item}`);
-        if (!item) return;
+  let animationFrame;
+  let scrollSpeed = 0.5;
+  let isPaused = false;
 
-        const gap = parseInt(getComputedStyle(slider).gap || '10', 10);
-        const itemWidth = item.offsetWidth + gap;
+  const canScroll = () => slider.scrollWidth > slider.clientWidth + 1;
 
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-        if (Math.ceil(slider.scrollLeft + 1) >= maxScroll) {
-          slider.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          slider.scrollBy({ left: itemWidth, behavior: 'smooth' });
-        }
-      }, 3000);
-    };
+  const autoScroll = () => {
+    if (isPaused || !canScroll()) return;
 
-    const stopScroll = () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
 
-    startScroll();
+    if (slider.scrollLeft + scrollSpeed >= maxScrollLeft) {
+      // Tunggu sebentar sebelum reset (opsional, bisa langsung juga)
+      slider.scrollLeft = 0;
+    } else {
+      slider.scrollLeft += scrollSpeed;
+    }
 
-    // Interaksi pengguna menghentikan scroll sementara
-    slider.addEventListener('mouseenter', stopScroll);
-    slider.addEventListener('mouseleave', startScroll);
-    slider.addEventListener('touchstart', stopScroll);
-    slider.addEventListener('touchend', startScroll);
+    animationFrame = requestAnimationFrame(autoScroll);
+  };
 
-    const handleResize = () => {
-      stopScroll();
-      startScroll();
-    };
+  const startScroll = () => {
+    stopScroll();
+    if (canScroll()) {
+      isPaused = false;
+      animationFrame = requestAnimationFrame(autoScroll);
+    }
+  };
 
-    window.addEventListener('resize', handleResize);
+  const stopScroll = () => {
+    isPaused = true;
+    if (animationFrame) {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    }
+  };
 
-    return () => {
-      stopScroll();
-      slider.removeEventListener('mouseenter', stopScroll);
-      slider.removeEventListener('mouseleave', startScroll);
-      slider.removeEventListener('touchstart', stopScroll);
-      slider.removeEventListener('touchend', startScroll);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [items]);
+  // Jalankan saat dimount dan setiap resize
+  startScroll();
+
+  // Interaksi user stop scroll
+  slider.addEventListener('mouseenter', stopScroll);
+  slider.addEventListener('mouseleave', startScroll);
+  slider.addEventListener('touchstart', stopScroll);
+  slider.addEventListener('touchend', startScroll);
+  window.addEventListener('resize', startScroll);
+
+  return () => {
+    stopScroll();
+    slider.removeEventListener('mouseenter', stopScroll);
+    slider.removeEventListener('mouseleave', startScroll);
+    slider.removeEventListener('touchstart', stopScroll);
+    slider.removeEventListener('touchend', startScroll);
+    window.removeEventListener('resize', startScroll);
+  };
+}, [items]);
 
   return (
     <div className={styles.container}>

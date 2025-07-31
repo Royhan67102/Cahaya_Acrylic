@@ -144,11 +144,49 @@
 /* small */
 @media (max-width: 757px) {
   .container {
-    max-width: 42%;
-    padding: 16px 8px;
+    max-width: 100%;
+    padding: 16px 12px;
     box-sizing: border-box;
   }
+
+  .list_historyItem {
+    font-size: 18px;
+    padding: 6px 16px;
+  }
+
+  .package__container {
+    gap: 12px;
+    padding: 16px 0 12px 0;
+  }
+
+  .package__item {
+    width: 140px;
+    min-width: 140px;
+    padding: 60px 10px 12px 10px;
+    border-radius: 14px;
+  }
+
+  .item_title {
+    font-size: 14px;
+    margin-top: 40px;
+  }
+
+  .button_detail {
+    font-size: 12px;
+    padding: 5px 9px;
+    border-radius: 10px;
+  }
+
+  .render_price {
+    font-size: 13px;
+  }
+
+  .price_ikon {
+    width: 16px;
+    height: 16px;
+  }
 }
+
 
 /* Medium: >=768px */
 @media (min-width: 768px) {

@@ -43,40 +43,55 @@ function TopPack() {
   };
 
   // AUTOPLAY SLIDER
-   useEffect(() => {
+ useEffect(() => {
   const slider = sliderRef.current;
   if (!slider || packs.length === 0) return;
 
   let animationFrame;
-  let scrollSpeed = 0.5; // bisa disesuaikan kecepatannya
+  let scrollSpeed = 0.5;
+  let isPaused = false;
+
+  const canScroll = () => slider.scrollWidth > slider.clientWidth + 1;
 
   const autoScroll = () => {
-    // Kalau sudah sampai ujung kanan, balik ke kiri tanpa jeda
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
+    if (isPaused || !canScroll()) return;
+
+    const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+    if (slider.scrollLeft + scrollSpeed >= maxScrollLeft) {
+      // Tunggu sebentar sebelum reset (opsional, bisa langsung juga)
       slider.scrollLeft = 0;
     } else {
       slider.scrollLeft += scrollSpeed;
     }
+
     animationFrame = requestAnimationFrame(autoScroll);
   };
 
   const startScroll = () => {
     stopScroll();
-    animationFrame = requestAnimationFrame(autoScroll);
+    if (canScroll()) {
+      isPaused = false;
+      animationFrame = requestAnimationFrame(autoScroll);
+    }
   };
 
   const stopScroll = () => {
-    if (animationFrame) cancelAnimationFrame(animationFrame);
+    isPaused = true;
+    if (animationFrame) {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    }
   };
 
+  // Jalankan saat dimount dan setiap resize
   startScroll();
 
-  // Pause saat interaksi pengguna
+  // Interaksi user stop scroll
   slider.addEventListener('mouseenter', stopScroll);
   slider.addEventListener('mouseleave', startScroll);
   slider.addEventListener('touchstart', stopScroll);
   slider.addEventListener('touchend', startScroll);
-
   window.addEventListener('resize', startScroll);
 
   return () => {
@@ -88,6 +103,9 @@ function TopPack() {
     window.removeEventListener('resize', startScroll);
   };
 }, [packs]);
+
+
+
 
   return (
     <div className={styles.container}>

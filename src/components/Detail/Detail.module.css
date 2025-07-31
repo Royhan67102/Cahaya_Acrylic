@@ -15,7 +15,7 @@
 
 .popup {
   background: white;
-  border-radius: 12px;
+  border-radius: 12px;    
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   max-width: 800px;
   width: 100%;
@@ -113,11 +113,11 @@
 }
 
 /* Mobile: tighter spacing */
-@media (max-width: 480px) {
+@media (max-width: 758px) {
   .popup {
     border-radius: 8px;
-    width: 30%;
-    max-width: 300px;
+    width: 90%; /* sebelumnya 30%, terlalu kecil */
+    max-width: 95%;
   }
 
   .closeButton {
@@ -127,23 +127,39 @@
   }
 
   .content {
-    padding: 16px;
+    padding: 12px;
     gap: 12px;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .wantItButton {
-    padding: 8px 16px;
-    font-size: 14px;
+  .imageWrapper img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .infoWrapper {
+    align-items: center;
+    text-align: center;
   }
 
   .price {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .desc {
-    font-size: 14px;
+    font-size: 13.5px;
+  }
+
+  .wantItButton {
+    padding: 8px 12px;
+    font-size: 13.5px;
+    width: 100%;
   }
 }
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }

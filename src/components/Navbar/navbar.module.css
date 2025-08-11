@@ -6,12 +6,13 @@
   flex-wrap: nowrap;
   padding: 10px 24px;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #d2defd;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 10;
   overflow-x: hidden;
+  border-radius: 0 0 32px 32px;
 }
 
 .navbar__brand_container {
@@ -22,8 +23,8 @@
 }
 
 .navbar_logo {
-  width: 36px;
-  height: 36px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
 }
 
@@ -132,17 +133,25 @@
 /* Mobile (≤757px) */
 @media (max-width: 757px) {
   .navbar {
-    padding: 6px 12px;
+    padding: 1px 3px;
+    border-radius: 0 0 10px 10px;
   }
   .navbar_logo {
-    width: 28px;
-    height: 28px;
+    width: 40px;
+    height: 40px;
+    margin-left: -13px;
   }
   .navbar__brand {
-    font-size: 10px;
+    font-size: 12px;
+    margin-left: -9px;
+    margin-right: -9px;
+  }
+  .navbar__brand_container {
+    gap: 2px;
   }
   .navbar__list_container {
-    margin: 0 8px;
+    margin: 0;
+    margin-right: -10px;
   }
   .navbar__list {
     gap: 3px;

@@ -20,6 +20,10 @@
   width: 100%;
   align-items: flex-start;
 }
+.contactItem p {
+  font-size: 14px;
+  text-align: justify;
+}
 
 /* Medium (tablet) >=768px */
 @media (min-width: 768px) {
@@ -125,6 +129,7 @@
   gap: 10px;
   margin-bottom: -7px;
 }
+
 
 .icon {
   font-size: 16px;

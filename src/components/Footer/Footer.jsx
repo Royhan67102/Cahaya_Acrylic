@@ -12,7 +12,11 @@ function Footer() {
         <div className={styles.contactInfo}>
           <div className={styles.contactItem}>
             <FaMapMarkerAlt className={styles.icon} />
-            <p>Jl. Cahaya Acrylic No.1, Bandung</p>
+            <p>Jl. Pancasan No.19, Kota Bogor, Jawa Barat (Kantor Utama)</p>
+          </div>
+          <div className={styles.contactItem}>
+            <FaMapMarkerAlt className={styles.icon} />
+            <p>Jl. Ruko Modern Land, Kota Tangerang, Banten (Cabang Tangerang)</p>
           </div>
           <div className={styles.contactItem}>
             <FaPhone className={styles.icon} />

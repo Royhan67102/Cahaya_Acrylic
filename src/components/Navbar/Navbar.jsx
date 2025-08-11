@@ -11,7 +11,7 @@ function Navbar() {
         <div className={styles.navbar__list_container}>
             <ul className={styles.navbar__list}>
                 <li className={styles.navbar__item}><Link to="/">HOME</Link></li>
-                <li className={styles.navbar__item}><Link to="/">PRODUCT</Link></li>
+                <li className={styles.navbar__item}><Link to="/product">PRODUCT</Link></li>
                 <li className={styles.navbar__item}><Link to="/">FEEDBACK</Link></li>
             </ul>
         </div>

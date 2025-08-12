@@ -21,6 +21,10 @@
   gap: 12px;
   flex-shrink: 0;
 }
+.navbar__brand_container img {
+  width : 100px;
+  height: 100px;
+}
 
 .navbar_logo {
   width: 90px;

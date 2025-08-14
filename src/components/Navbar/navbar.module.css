@@ -14,7 +14,7 @@
   overflow: hidden;
   border-radius: 32px;
   border: #222 solid 1px;
-  height: 90px;
+  height: 80px;
   margin-top: -25px;
   margin-bottom: 40px;
 }
@@ -25,12 +25,8 @@
   flex-shrink: 0;
 }
 .navbar__brand_container img {
-  width : 100px;
-  height: 100px;
-}
-
-.navbar__brand_container h3 {
-  margin-left: -20px;
+  width : 60px;
+  height: 60px;
 }
 
 .navbar_logo {
@@ -157,8 +153,8 @@
   }
 
   .navbar__brand_container img {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
 
   }
   .navbar__brand {

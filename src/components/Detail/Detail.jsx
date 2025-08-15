@@ -1,4 +1,3 @@
-// src/component/Detail.jsx
 import styles from './Detail.module.css';
 
 function Detail({ item, onClose }) {

@@ -4,6 +4,7 @@ import Hero from '../components/Hero/Hero';
 import TopPack from '../components/Top_Pack/TopPack';
 import TopItem from '../components/Top_Item/TopItem';
 import WhatsApp from '../components/WhatsApp/WhatsApp';
+import Voucher from '../components/Voucher/Voucher';
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Navbar />
       <Hero /> 
       <TopItem />
+      <Voucher />
       <TopPack /> 
       <WhatsApp />
       <Footer />

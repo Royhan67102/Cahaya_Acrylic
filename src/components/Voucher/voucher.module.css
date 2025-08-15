@@ -7,16 +7,14 @@
 .voucher_card {
     width: 350px;
     height: 180px;
-    background-image: url('/ticket.png'); /* Ganti sesuai path gambar kamu */
+    background-image: url('/ticket.png'); 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain; /* biar seperti tiket aslinya, tidak terpotong */
-    border-radius: 10px;
-    padding: 20px;
+    background-size: contain; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* biar teks di atas, button di bawah */
+    justify-content: space-between; 
 }
 
 .title_voucher1 {
@@ -51,4 +49,133 @@
 .voucher_card:hover {
     transform: scale(1.05);
     transition: 0.3s;
+}
+
+
+/* RESPONSIVE */
+
+/* MOBILE */
+@media (max-width: 410px) {
+    .voucher {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .voucher_card {
+        max-width: 70%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .title_voucher1 {
+        font-size: 15px;
+        margin-top: 30px;
+        margin-right: 10px;
+    }
+
+    .p_voucher1 {
+        font-size: 13px;
+        margin-top: -2px;
+        margin-right: 5px;
+    }
+
+    .button_detail {
+        padding: 3px 15px;
+        font-size: 10px;
+    }
+}
+
+/* MOBILE2 */
+@media (min-width: 410px) and (max-width: 767px) {
+    .voucher {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .voucher_card {
+        max-width: 70%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .title_voucher1 {
+        font-size: 15px;
+        margin-top: 30px;
+        margin-right: 40px;
+    }
+
+    .p_voucher1 {
+        font-size: 13px;
+        margin-top: -2px;
+        margin-right: 40px;
+    }
+
+    .button_detail {
+        padding: 3px 15px;
+        font-size: 10px;
+        margin-right: 50px;
+    }
+}
+
+/* TABLET */
+@media (min-width: 767px) and (max-width: 991px) {
+    .voucher {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .voucher_card {
+        width: 80%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .title_voucher1 {
+        font-size: 15px;
+        margin-right: 25px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+
+    }
+
+    .p_voucher1 {
+        font-size: 11px;
+        margin-right: 23px;
+        margin-top: -10px;
+    }
+
+    .button_detail {
+        padding: 3px 18px;
+        font-size: 11px;
+        margin-bottom: -15px;
+        margin-right: 20px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 992px) {
+    .voucher {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .voucher_card {
+        width: 350px;
+        height: 180px;
+        padding: 20px;
+    }
+
+    .title_voucher1 {
+        font-size: 1.5rem;
+        margin-top: 50px;
+    }
+
+    .p_voucher1 {
+        font-size: 1rem;
+    }
+
+    .button_detail {
+        padding: 3px 20px;
+        font-size: 12px;
+    }
 }

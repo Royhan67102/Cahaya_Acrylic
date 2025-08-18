@@ -10,6 +10,7 @@
   justify-content: center;
   z-index: 999;
   padding: 16px;
+  backdrop-filter: blur(5px);
   overflow-y: auto; /* scroll jika konten melebihi tinggi */
 }
 

@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  gap: 20px;
+  padding: 1rem 2rem;
+  align-items: flex-start;
+}
+
+/* Sidebar di kiri */
+.layout > :first-child {
+  width: 220px;       /* sidebar tetap */
+  flex-shrink: 0;
+}
+
+/* Products di kanan */
+.layout > :last-child {
+  flex: 1;            /* ambil sisa lebar */
+}

@@ -12,7 +12,7 @@ function Navbar() {
             <ul className={styles.navbar__list}>
                 <li className={styles.navbar__item}><Link to="/">HOME</Link></li>
                 <li className={styles.navbar__item}><Link to="/product">PRODUCT</Link></li>
-                <li className={styles.navbar__item}><Link to="feedback/">FEEDBACK</Link></li>
+                <li className={styles.navbar__item}><Link to="/feedback/">FEEDBACK</Link></li>
             </ul>
         </div>
         <div className={styles.navbar__cart_container}>

@@ -80,3 +80,44 @@
   height: 22px;
   object-fit: contain;
 }
+
+/* HP (max-width: 767px) */
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .title {
+    font-size: 14px;
+  }
+  .item {
+    font-size: 13px;
+    padding: 8px;
+  }
+  .item img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Tablet (768px – 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar {
+    width: 200px;
+    margin: 20px;
+    padding: 18px;
+  }
+  .logo {
+    font-size: 19px;
+  }
+  .title {
+    font-size: 14.5px;
+  }
+}
+

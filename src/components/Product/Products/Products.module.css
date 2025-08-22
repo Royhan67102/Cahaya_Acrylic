@@ -96,16 +96,49 @@
 }
 
 
-@media (min-width: 768px) {
-  .product {
-    flex-basis: 50%;
-    padding: 0 1rem;
+/* Extra Small (HP <576px) */
+@media (max-width: 575px) {
+  .container {
+    width: 100%;
+    margin: 10px 0;
+    padding: 0.5rem;
+  }
+  .grid {
+    grid-template-columns: 1fr; /* 1 produk per baris */
+    gap: 12px;
+  }
+  .card {
+    padding: 0.75rem;
+    border-radius: 12px;
+  }
+  .image {
+    height: 140px;
+  }
+  .title {
+    font-size: 0.9rem;
+  }
+  .price {
+    font-size: 0.9rem;
+  }
+  .buyBtn, .detailBtn {
+    font-size: 0.8rem;
+    padding: 5px 8px;
   }
 }
 
-@media (min-width: 992px) {
-  .product {
-    flex-basis: 25%;
+/* Small (≥576px & <768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    width: 100%;
+    margin: 15px;
     padding: 1rem;
   }
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 produk per baris */
+    gap: 16px;
+  }
+  .image {
+    height: 150px;
+  }
 }
+

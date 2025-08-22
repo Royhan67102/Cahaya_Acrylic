@@ -15,3 +15,54 @@
 .layout > :last-child {
   flex: 1;            /* ambil sisa lebar */
 }
+
+/* mobile */
+@media (max-width: 757px) {
+  .layout {
+    flex-direction: column;
+    padding: 1rem 0  ;
+  }
+
+  .layout > :first-child {
+    width: 100%;      /* sidebar penuh */
+    margin-bottom: 20px; /* beri jarak bawah */
+  }
+
+  .layout > :last-child {
+    width: 100%;      /* products penuh */
+  }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .layout {
+    flex-direction: row;
+    padding: 1rem 0;
+  }
+
+  .layout > :first-child {
+    width: 220px;     /* sidebar tetap */
+    margin-bottom: 0; /* tidak perlu jarak bawah */
+  }
+
+  .layout > :last-child {
+    width: calc(100% - 220px); /* products ambil sisa lebar */
+  }
+}
+
+/* desktop */
+@media (min-width: 992px) {
+  .layout {
+    flex-direction: row;
+    padding: 1rem 0;
+  }
+
+  .layout > :first-child {
+    width: 220px;     /* sidebar tetap */
+    margin-bottom: 0; /* tidak perlu jarak bawah */
+  }
+
+  .layout > :last-child {
+    width: calc(100% - 220px); /* products ambil sisa lebar */
+  }
+}

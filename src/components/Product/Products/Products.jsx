@@ -1,9 +1,11 @@
 import styles from './Products.module.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Detail from '../../Home/Detail/Detail';
 
 function Products() {
   const [items, setItems] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +32,14 @@ function Products() {
     return () => window.removeEventListener('storage', handleStorage);
   }, []);
 
+  const handleDetailClick = (item) => {
+    setSelectedItem(item);
+  };
+
+  const closePopup = () => {
+    setSelectedItem(null);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.grid}>
@@ -50,11 +60,21 @@ function Products() {
 
             <div className={styles.actions}>
               <button className={styles.buyBtn}>Beli Sekarang</button>
-              <button className={styles.detailBtn}>Detail</button>
+              <button 
+                className={styles.button_detail} 
+                onClick={() => handleDetailClick(item)}
+              >
+                Detail
+              </button>
             </div>
           </div>
         ))}
       </div>
+
+      {/* tampilkan Detail kalau ada item yang dipilih */}
+      {selectedItem && (
+        <Detail item={selectedItem} onClose={closePopup} />
+      )}
     </div>
   );
 }

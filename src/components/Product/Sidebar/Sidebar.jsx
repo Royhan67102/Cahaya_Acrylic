@@ -34,9 +34,10 @@ function Sidebar() {
   return (
     <aside className={styles.sidebar}>
       <h2 className={styles.logo}>Cahaya Acrylic</h2>
+      <h3 className={styles.title}>Kategori Produk</h3>
 
       <div className={styles.section}>
-        <h3 className={styles.title}>Kategori Produk</h3>
+        
         <ul className={styles.menu}>
           {items.map((item, idx) => (
             <li key={idx} className={styles.item}>

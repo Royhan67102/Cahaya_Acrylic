@@ -39,14 +39,12 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  overflow-y: auto;     /* kalau kebanyakan kategori → scroll */
-  max-height: 420px;    /* tinggi scroll area */
-  scrollbar-width: thin;   /* firefox */
+  overflow-y: auto;
+  max-height: 420px;
+  scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
 }
 
-/* custom scrollbar */
 .menu::-webkit-scrollbar {
   width: 6px;
 }
@@ -81,60 +79,38 @@
   object-fit: contain;
 }
 
-/* HP (max-width: 767px) */
-@media (max-width: 767px) {
-  .sidebar {
-    width: 100%;
-    max-width: 100%;
-    margin: 10px 0;
-    border-radius: 10px;
-    padding: 16px;
-  }
-  .logo {
-    font-size: 18px;
-  }
-  .title {
-    font-size: 14px;
-  }
-  .item {
-    font-size: 13px;
-    padding: 8px;
-  }
-  .item img {
-    width: 20px;
-    height: 20px;
-  }
-}
-
 /* ===================== RESPONSIVE ===================== */
 
 /* Mobile (≤757px) */
 @media (max-width: 757px) {
   .sidebar {
-    width: 20%;         
-    max-width: 160px;   
-    margin: 6px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-left: -8px;
-    align-items: center;  
-  }
-  .logo {
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-  .title {
-    font-size: 12px;
-    margin-bottom: 6px;
-  }
-  .item {
-    font-size: 11px;
+    width: 32%;         /* makin ramping */
+    max-width: 110px;   /* batas maksimal */
+    margin: 4px;
     padding: 6px;
-    gap: 6px;
+    border-radius: 8px;
+    margin-left: -6px;
   }
+
+  .logo {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .title {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .item {
+    font-size: 9px;
+    padding: 3px;
+    gap: 3px;
+  }
+
   .item img {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -157,8 +133,8 @@
     padding: 8px;
   }
   .item img {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -170,5 +146,3 @@
     padding: 20px;
   }
 }
-
-

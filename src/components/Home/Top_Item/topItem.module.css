@@ -87,6 +87,7 @@
   transform: translateX(-50%);
   z-index: 2;
   pointer-events: none;
+  border-radius: 25px;
 }
 
 .item_title {
@@ -157,7 +158,7 @@
 
   .package__container {
     gap: 12px;
-    padding: 16px 0 12px 0;
+    padding: 20px 0 12px 0;
   }
 
   .package__item {
@@ -186,6 +187,10 @@
     width: 16px;
     height: 16px;
   }
+  .pack_img_card {
+    border-radius: 10px;
+  }
+
 }
 
 @media (min-width: 768px) {

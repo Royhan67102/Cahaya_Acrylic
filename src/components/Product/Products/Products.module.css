@@ -1,13 +1,14 @@
 .container {
   padding: 1rem;
-  width: 50%;
-  margin: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
 }
 
 .card {
@@ -17,6 +18,9 @@
   padding: 1rem;
   text-align: center;
   transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover {
@@ -24,7 +28,8 @@
 }
 
 .image {
-  width: 95%;
+  width: 100%;
+  height: 160px;
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 10px;
@@ -34,6 +39,7 @@
   font-size: 1rem;
   font-weight: 600;
   margin: 0.5rem 0;
+  line-height: 1.3;
 }
 
 .priceRow {
@@ -63,6 +69,7 @@
   display: flex;
   justify-content: space-between;
   gap: 8px;
+  margin-top: auto;
 }
 
 .buyBtn {
@@ -74,95 +81,90 @@
   color: white;
   font-size: 0.85rem;
   cursor: pointer;
+  transition: background 0.3s;
 }
-
-.detailBtn {
-  flex: 1;
-  padding: 6px 10px;
-  background: #f1f1f1;
-  border: none;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
 .buyBtn:hover {
   background: #2563eb;
 }
 
-.detailBtn:hover {
-  background: #e2e2e2;
+.button_detail {
+  background: #3056B3;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.button_detail:hover {
+  background: #22364a;
 }
 
 /* ===================== RESPONSIVE ===================== */
 
-/* Mobile (≤757px) */
-@media (max-width: 757px) {
-  .container {
-    width: 100%;
-    margin: 2px auto;
-    padding: 2px;
-  }
-
+/* Mobile kecil (≤359px) → hanya 1 card */
+@media (max-width: 359px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
-
   .card {
-    padding: 0.3rem;
-    border-radius: 6px;
-    height: 250px;
+    padding: 0.5rem;
+    border-radius: 8px;
   }
-
   .image {
-    width: 80%;      /* lebih kecil */
-    border-radius: 4px;
+    height: 120px;
   }
-
   .title {
-    font-size: 0.6rem;
-    margin: 2px 0;
+    font-size: 0.75rem;
   }
-
   .price {
-    font-size: 0.65rem;
-    margin-bottom: 2px;
+    font-size: 0.7rem;
   }
-
   .rating {
-    font-size: 0.55rem;
-    margin-bottom: 4px;
+    font-size: 0.65rem;
   }
-
-  /* Tombol */
-  .actions {
-    gap: 3px;
-    margin-top: 2px;
-  }
-
-  .buyBtn, .detailBtn {
-    flex: 1;
-    min-width: 48px;
-    padding: 2px 4px;
-    font-size: 0.55rem;
-    border-radius: 4px;
+  .buyBtn, .button_detail {
+    font-size: 0.65rem;
+    padding: 4px 6px;
   }
 }
 
-/* Tablet (768px - 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  .container {
-    width: 100%;
-    margin: 12px;
-    padding: 10px;
-  }
+/* Mobile sedang (360px – 590px) → 2 card lebih kecil */
+@media (min-width: 360px) and (max-width: 590px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 8px;
   }
   .card {
-    padding: 0.8rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  .image {
+    height: 110px;
+  }
+  .title {
+    font-size: 0.8rem;
+  }
+  .price {
+    font-size: 0.75rem;
+  }
+  .rating {
+    font-size: 0.7rem;
+  }
+  .buyBtn, .button_detail {
+    font-size: 0.7rem;
+    padding: 4px 6px;
+  }
+}
+
+/* Tablet (591px – 991px) → 3 card */
+@media (min-width: 591px) and (max-width: 991px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
   }
   .image {
     height: 140px;
@@ -171,23 +173,21 @@
     font-size: 0.9rem;
   }
   .price {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
-  .buyBtn, .detailBtn {
-    font-size: 0.8rem;
+  .buyBtn, .button_detail {
+    font-size: 0.75rem;
     padding: 5px 8px;
   }
 }
 
 /* Desktop (≥992px) */
 @media (min-width: 992px) {
-  .container {
-    width: 50%;
-    margin: 20px;
-    padding: 1rem;
-  }
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
+  }
+  .image {
+    height: 180px;
   }
 }

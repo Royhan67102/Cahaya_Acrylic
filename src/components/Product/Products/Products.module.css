@@ -101,38 +101,38 @@
 @media (max-width: 757px) {
   .container {
     width: 100%;
-    margin: 4px auto;
-    padding: 4px;
+    margin: 2px auto;
+    padding: 2px;
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 produk per baris */
-    gap: 6px;
+    grid-template-columns: repeat(2, 1fr); /* tetap 2 produk per baris */
+    gap: 4px;  /* lebih rapat */
   }
 
   .card {
-    padding: 0.4rem;
-    border-radius: 8px;
-  }
-
-  .image {
-    height: 80px;          /* lebih kecil */
+    padding: 0.3rem;
     border-radius: 6px;
   }
 
+  .image {
+    height: 65px;          /* perkecil gambar */
+    border-radius: 4px;
+  }
+
   .title {
-    font-size: 0.7rem;     /* lebih kecil */
-    margin: 4px 0;
+    font-size: 0.6rem;     /* lebih kecil */
+    margin: 2px 0;
   }
 
   .price {
-    font-size: 0.75rem;    /* lebih kecil */
+    font-size: 0.65rem;
     margin-bottom: 2px;
   }
 
   .rating {
-    font-size: 0.65rem;    /* lebih kecil */
-    margin-bottom: 6px;
+    font-size: 0.55rem;
+    margin-bottom: 4px;
   }
 
   /* Tombol */
@@ -140,16 +140,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;             /* jarak antar tombol */
-    margin-top: 4px;
+    gap: 3px;
+    margin-top: 2px;
   }
 
   .buyBtn, .detailBtn {
     flex: 1;
-    min-width: 60px;       /* lebih kecil */
-    padding: 3px 5px;      /* padding kecil */
-    font-size: 0.6rem;     /* font lebih kecil */
-    border-radius: 6px;
+    min-width: 50px;       /* kecil */
+    padding: 2px 4px;      /* padding lebih kecil */
+    font-size: 0.55rem;    /* kecil */
+    border-radius: 5px;
     cursor: pointer;
   }
 
@@ -173,6 +173,7 @@
     background: #e2e2e2;
   }
 }
+
 
 
 /* Tablet (768px - 991px) */

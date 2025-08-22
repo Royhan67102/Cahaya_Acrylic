@@ -88,6 +88,19 @@
   background: #3d56a6;
 }
 
+.hero_swiper {
+  width: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white; /* tombol panah */
+}
+
+.swiper-pagination-bullet {
+  background: white; /* titik pagination */
+}
+
 /* ---------------------------------------------------------------------- */
 /* Responsive Adjustments */
 /* ---------------------------------------------------------------------- */

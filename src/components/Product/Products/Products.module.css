@@ -95,21 +95,99 @@
   background: #e2e2e2;
 }
 
+/* ===================== RESPONSIVE ===================== */
 
-/* Extra Small (HP <576px) */
-@media (max-width: 575px) {
+/* Product Responsive Mobile (≤757px) */
+@media (max-width: 757px) {
   .container {
     width: 100%;
-    margin: 10px 0;
-    padding: 0.5rem;
+    margin: 4px auto;
+    padding: 4px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 produk per baris */
+    gap: 6px;
+  }
+
+  .card {
+    padding: 0.4rem;
+    border-radius: 8px;
+  }
+
+  .image {
+    height: 80px;          /* lebih kecil */
+    border-radius: 6px;
+  }
+
+  .title {
+    font-size: 0.7rem;     /* lebih kecil */
+    margin: 4px 0;
+  }
+
+  .price {
+    font-size: 0.75rem;    /* lebih kecil */
+    margin-bottom: 2px;
+  }
+
+  .rating {
+    font-size: 0.65rem;    /* lebih kecil */
+    margin-bottom: 6px;
+  }
+
+  /* Tombol */
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;             /* jarak antar tombol */
+    margin-top: 4px;
+  }
+
+  .buyBtn, .detailBtn {
+    flex: 1;
+    min-width: 60px;       /* lebih kecil */
+    padding: 3px 5px;      /* padding kecil */
+    font-size: 0.6rem;     /* font lebih kecil */
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .buyBtn {
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+  }
+
+  .buyBtn:hover {
+    background: #2563eb;
+  }
+
+  .detailBtn {
+    background: #f1f1f1;
+    border: none;
+    color: #333;
+  }
+
+  .detailBtn:hover {
+    background: #e2e2e2;
+  }
+}
+
+
+/* Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 100%;
+    margin: 12px;
+    padding: 10px;
   }
   .grid {
-    grid-template-columns: 1fr; /* 1 produk per baris */
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr); /* 2 produk per baris */
+    gap: 14px;
   }
   .card {
-    padding: 0.75rem;
-    border-radius: 12px;
+    padding: 0.8rem;
   }
   .image {
     height: 140px;
@@ -118,7 +196,7 @@
     font-size: 0.9rem;
   }
   .price {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   .buyBtn, .detailBtn {
     font-size: 0.8rem;
@@ -126,19 +204,16 @@
   }
 }
 
-/* Small (≥576px & <768px) */
-@media (min-width: 576px) and (max-width: 767px) {
+/* Desktop (≥992px) */
+@media (min-width: 992px) {
   .container {
-    width: 100%;
-    margin: 15px;
+    width: 50%;
+    margin: 20px;
     padding: 1rem;
   }
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 produk per baris */
-    gap: 16px;
-  }
-  .image {
-    height: 150px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
   }
 }
 

@@ -1,30 +1,75 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import styles from "./review.module.css";
 
-function Review() {
-  const [reviewText, setReviewText] = useState("");
-  const [photo, setPhoto] = useState(null);
+const Review = () => {
   const [reviews, setReviews] = useState([]);
+  const [formData, setFormData] = useState({
+    nama: "",
+    kota: "",
+    deskripsi: "",
+    foto: null,
+  });
 
-  const handleAddReview = () => {
-    if (!reviewText.trim()) {
-      alert("Silakan isi review terlebih dahulu!");
+  // ambil data review dari backend
+  useEffect(() => {
+    fetchReviews();
+  }, []);
+
+  const fetchReviews = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/testi");
+      setReviews(res.data);
+    } catch (err) {
+      console.error("Error fetching reviews:", err);
+    }
+  };
+
+  // handle perubahan input text
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // handle upload foto
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, foto: e.target.files[0] });
+  };
+
+  // submit ke backend
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.nama || !formData.kota || !formData.deskripsi) {
+      alert("Lengkapi semua field sebelum submit!");
       return;
     }
 
-    const newReview = {
-      id: Date.now(),
-      text: reviewText,
-      photo: photo ? URL.createObjectURL(photo) : null, // kalau ada foto
-    };
+    const data = new FormData();
+    data.append("nama", formData.nama);
+    data.append("kota", formData.kota);
+    data.append("deskripsi", formData.deskripsi);
+    if (formData.foto) {
+      data.append("foto", formData.foto);
+    }
 
-    setReviews([newReview, ...reviews]); // tambahkan review baru ke daftar
-    setReviewText(""); // reset input
-    setPhoto(null); // reset photo
+    try {
+      await axios.post("http://localhost:5000/testi", data, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      // refresh list review
+      await fetchReviews();
+
+      // reset form
+      setFormData({ nama: "", kota: "", deskripsi: "", foto: null });
+    } catch (err) {
+      console.error("Error submitting review:", err);
+    }
   };
 
   return (
     <div className={styles.container}>
+      {/* Judul */}
       <section className={styles.Package}>
         <div className={styles.sub_historyItem}>
           <h2 className={styles.list_historyItem}>Give A Review</h2>
@@ -33,53 +78,81 @@ function Review() {
           Your experience will mean a lot to us!
         </span>
 
-        <div className={styles.feedback_card}>
-          <h3>Apakah Kamu Puas Dengan Cahaya Acrylic?</h3>
+        {/* Form Review */}
+        <form onSubmit={handleSubmit} className={styles.feedback_card}>
+          <h3>Apakah Kamu Puas Dengan Produk Kami?</h3>
 
           <div className={styles.input_feedback}>
+            <input
+              type="text"
+              name="nama"
+              value={formData.nama}
+              onChange={handleChange}
+              placeholder="Nama kamu"
+              className={styles.inputText}
+              style={{ width: "100%", marginBottom: "10px", padding: "8px" }}
+            />
+            <input
+              type="text"
+              name="kota"
+              value={formData.kota}
+              onChange={handleChange}
+              placeholder="Kota asal"
+              className={styles.inputText}
+              style={{ width: "100%", marginBottom: "10px", padding: "8px" }}
+            />
             <textarea
-              value={reviewText}
-              onChange={(e) => setReviewText(e.target.value)}
+              name="deskripsi"
+              value={formData.deskripsi}
+              onChange={handleChange}
               placeholder="Tulis review kamu di sini..."
               rows={4}
             />
           </div>
 
+          {/* Upload Foto */}
           <div className={styles.upload}>
             <label className={styles.upload_label}>
               <input
                 type="file"
                 accept="image/*"
-                onChange={(e) => setPhoto(e.target.files[0])}
+                onChange={handleFileChange}
               />
               Add Photo
             </label>
-            {photo && <p>Foto terpilih: {photo.name}</p>}
+            {formData.foto && <p>Foto terpilih: {formData.foto.name}</p>}
           </div>
-        </div>
+
+          <button type="submit" className={styles.shareBtn}>
+            Share Your Experience!
+          </button>
+        </form>
       </section>
 
-      <button onClick={handleAddReview} className={styles.shareBtn}>
-        Share Your Experience!
-      </button>
-
-      {/* List Review yang sudah ditambahkan */}
+      {/* List Review */}
       <div className={styles.review_list}>
-        {reviews.map((rev) => (
-          <div className={styles.review_card} key={rev.id}>
-            <p>{rev.text}</p>
-            {rev.photo && (
-              <img
-                src={rev.photo}
-                alt="review"
-                className={styles.review_photo}
-              />
-            )}
-          </div>
-        ))}
+        {reviews.length > 0 ? (
+          reviews.map((rev, index) => (
+            <div className={styles.review_card} key={index}>
+              <p>
+                <strong>{rev.nama}</strong> ({rev.kota})
+              </p>
+              <p>{rev.deskripsi}</p>
+              {rev.foto && (
+                <img
+                  src={`http://localhost:5000/uploads/${rev.foto}`}
+                  alt={rev.nama}
+                  className={styles.review_photo}
+                />
+              )}
+            </div>
+          ))
+        ) : (
+          <p>Belum ada review.</p>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Review;

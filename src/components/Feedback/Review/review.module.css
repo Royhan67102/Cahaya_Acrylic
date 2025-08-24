@@ -2,26 +2,27 @@
   width: 100%;
   padding: 16px 8px;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .Package {
   margin-top: 16px;
   text-align: left;
 }
+
 .sub_historyItem {
   display: inline-block;
 }
+
 .list_historyItem {
-  margin-left: 0;
-  text-align: left;
   font-size: 20px;
   font-weight: 600;
   color: #fff;
-  margin-bottom: 8px;
   padding: 8px 18px;
   border-radius: 0 32px;
   background-color: #3056B3;
 }
+
 .wordItem {
   font-size: 15px;
   color: #222;
@@ -29,71 +30,175 @@
   display: block;
 }
 
+/* Card Form */
 .feedback_card {
   background: #f9f9f9;
-  padding: 16px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 16px;
 }
 
-.input_feedback textarea {
+.formTitle {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Rating */
+.stars {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.star {
+  font-size: 28px;
+  color: #ccc;
+  cursor: pointer;
+}
+.starActive {
+  font-size: 28px;
+  color: #ffc107;
+  cursor: pointer;
+}
+
+/* Input */
+.input_feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputText,
+.textarea {
   width: 100%;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ccc;
+}
+.textarea {
   resize: none;
 }
 
-.upload {
-  margin-top: 10px;
+/* Buttons */
+.actionGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
 }
 
 .upload_label {
-  display: inline-block;
-  padding: 8px 14px;
   background: #4d88ff;
   color: white;
+  padding: 8px 14px;
   border-radius: 6px;
   cursor: pointer;
 }
-
 .upload_label input {
-  display: none; /* sembunyikan input file */
+  display: none;
 }
 
 .shareBtn {
-  padding: 10px 20px;
-  background: #0a2e66;
+  background: #3056B3;
   color: white;
   border: none;
-  border-radius: 8px;
+  padding: 8px 18px;
+  border-radius: 6px;
   cursor: pointer;
 }
-
 .shareBtn:hover {
   background: #4d88ff;
 }
 
+.previewText {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #444;
+}
+
+/* Review List */
 .review_list {
   margin-top: 30px;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .review_card {
-  background: white;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: left;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 250px;         /* semua card sama lebar */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.review_card p {
+.review_imageWrapper {
+  width: 100%;
+  height: 150px;        /* fix tinggi gambar */
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.review_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* gambar tetap proporsional, dipotong */
+}
+
+.image_placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ddd 25%, #bbb 100%);
+}
+
+.review_content {
+  padding: 12px;
+  flex-grow: 1;         /* isi tetap fleksibel */
+}
+
+.review_name {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #222;
+}
+
+.review_text {
+  font-size: 13px;
+  color: #555;
   margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.review_rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid #eee;
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 14px;
+}
+
+.rating_number {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* .rating {
+  color: #ffc107;
+  font-size: 14px;
+  margin-bottom: 6px;
 }
 
 .review_photo {
-  max-width: 200px;
+  max-width: 100%;
   border-radius: 8px;
-}
+  margin-top: 8px;
+} */

@@ -16,8 +16,14 @@ function Navbar() {
             </ul>
         </div>
         <div className={styles.navbar__cart_container}>
-          <button className={styles.navbar__cart_btn}>Cart</button>
-        </div>
+        <button
+          className={styles.navbar__cart_btn}
+          onClick={() => window.open("https://cahayaacrylic.com/", "_blank")}
+        >
+        About Us
+        </button>
+</div>
+
     </nav>
 
   );

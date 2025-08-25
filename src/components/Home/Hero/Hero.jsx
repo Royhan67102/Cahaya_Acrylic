@@ -51,7 +51,7 @@ function Hero() {
   return (
     <div className={styles.hero_container}>
       <Swiper
-        modules={[Autoplay, Pagination, Navigation]}
+        modules={[Autoplay, Pagination]}
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -59,7 +59,7 @@ function Hero() {
           disableOnInteraction: false,
         }}
         pagination={{ clickable: true }}
-        navigation={true}
+        // navigation={true}
         className={styles.hero_swiper}
       >
         {slides.map((slide) => (

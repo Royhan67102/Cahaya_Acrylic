@@ -1,5 +1,5 @@
 import styles from "./footer.module.css";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaInstagram, FaTiktok, FaWhatsapp, FaFacebook } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -24,7 +24,7 @@ function Footer() {
           </div>
           <div className={styles.contactItem}>
             <FaEnvelope className={styles.icon} />
-            <p>cahaya@acrylic.com</p>
+            <p>admincahaya@acrylic.com</p>
           </div>
         </div>
 
@@ -32,10 +32,39 @@ function Footer() {
           <h3>Tentang Kami</h3>
           <p>Cahaya Acrylic adalah tempat terbaik untuk pesanan custom berbahan dasar akrilik seperti keychain, plakat, dan lainnya.</p>
           <div className={styles.socialIcons}>
+            <a
+            href="https://www.instagram.com/cahaya.acrylic?igsh=MWh6a2RtbHMwaTY3ag=="
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             <FaInstagram />
+            </a>
+
+            <a
+            href="https://www.tiktok.com/@cahayaacrylic?_t=ZS-8zATG3DVRJ3&_r=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             <FaTiktok />
+            </a>
+
+            <a
+            href="https://wa.me/628118840838"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             <FaWhatsapp />
-          </div>
+            </a>
+
+            <a
+            href="https://www.facebook.com/share/1AuwykwgDB/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            <FaFacebook />
+            </a>
+        </div>
+
         </div>
       </div>
     </footer>

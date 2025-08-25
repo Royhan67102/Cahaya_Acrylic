@@ -2,7 +2,6 @@
   width: 100%;
   padding: 16px 8px;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
 
 .Package {
@@ -114,25 +113,7 @@
   color: #444;
 }
 
-/* Review List */
-.review_list {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
 
-.review_card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  width: 250px;         /* semua card sama lebar */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 .review_imageWrapper {
   width: 100%;
@@ -178,6 +159,7 @@
   align-items: center;
   padding: 8px 12px;
   border-top: 1px solid #eee;
+  scrollbar-width: none;
 }
 
 .stars {
@@ -202,3 +184,51 @@
   border-radius: 8px;
   margin-top: 8px;
 } */
+
+
+.swiper {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.review_list {
+  display: flex;
+  flex-wrap: nowrap;        /* baris tunggal */
+  gap: 20px;                /* jarak antar card */
+  overflow-x: auto;         /* bisa digulir ke samping */
+  scroll-behavior: smooth;  /* gulir halus */
+  padding: 20px 0;
+  background-color: transparent;
+
+  /* Hilangkan scrollbar di semua browser */
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.review_list::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+.review_list::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+.review_list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.review_card {
+  flex: 0 0 calc(20% - 16px); /* maksimal 5 card per row */
+  max-width: 300px;           /* biar tidak terlalu besar */
+  min-width: 220px;           /* biar tetap responsif di layar kecil */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.review_card:hover {
+  transform: translateY(-5px); /* animasi hover */
+}

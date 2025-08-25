@@ -24,7 +24,21 @@
   font-size: 14px;
   text-align: justify;
 }
+.maps_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
 
+.maps {
+  width: 100%;
+  max-width: 350px;  /* biar ga terlalu lebar */
+  height: 180px;     /* lebih pendek */
+  border: none;
+  border-radius: 12px;
+}
 /* Medium (tablet) >=768px */
 @media (min-width: 768px) {
   .footer {
@@ -59,6 +73,10 @@
   .socialIcons svg {
     font-size: 20px;
   }
+  .maps {
+    max-width: 500px;
+    height: 220px;
+  }
 }
 
 /* Large (desktop/laptop/tv) >=992px */
@@ -90,6 +108,10 @@
   }
   .socialIcons svg {
     font-size: 24px;
+  }
+   .maps {
+     max-width: 650px;
+    height: 260px;
   }
 }
 

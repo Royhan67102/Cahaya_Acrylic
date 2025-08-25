@@ -100,6 +100,25 @@
 .swiper-pagination-bullet {
   background: white; /* titik pagination */
 }
+.container_home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.maps_container {
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.maps {
+  width: 100%;
+  max-width: 600px;  /* biar ga terlalu lebar */
+  height: 180px;     /* lebih pendek */
+  border: none;
+  border-radius: 12px;
+}
 
 /* ---------------------------------------------------------------------- */
 /* Responsive Adjustments */

@@ -1,0 +1,9 @@
+[
+    { "id": 1, "name": "Lembaran", "description": "lembaran " },
+    { "id": 2, "name": "Custom Item", "description": "" },
+    { "id": 3, "name": "Plakat", "description": "" },
+    { "id": 4, "name": "Huruf Timbul", "description": "" },
+    { "id": 5, "name": "Tent Holder", "description": "" },
+    { "id": 6, "name": "Frame", "description": "" },
+    { "id": 7, "name": "Gantungan Kunci", "description": "" }
+]

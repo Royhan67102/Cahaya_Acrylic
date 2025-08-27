@@ -1,0 +1,175 @@
+.sidebar {
+  width: 240px;
+  background-color: #A9BCEA;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  max-height: 520px; 
+  margin: 30px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  color: #001b50;
+  text-align: center;
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #001b50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  max-height: 420px;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.menu::-webkit-scrollbar {
+  width: 6px;
+}
+.menu::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 6px;
+}
+.menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+.item:hover {
+  background: #f8f9fa;
+  transform: translateX(2px);
+}
+
+.item img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Mobile (≤757px) */
+/* Mobile (≤757px) */
+@media (max-width: 757px) {
+  .sidebar {
+    width: 100%;             /* lebar penuh */
+    max-width: none;         
+    margin: 0;               
+    padding: 6px 4px;        
+    border-radius: 0;        
+    display: flex;
+    flex-direction: row;      /* ubah jadi horizontal */
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;         /* bisa di-scroll ke samping */
+    overflow-y: hidden;
+  }
+
+  .logo {
+    font-size: 12px;
+    margin: 0 8px;
+    white-space: nowrap;
+  }
+
+  .title {
+    display: none; /* sembunyikan judul agar lebih ringkas di hp */
+  }
+
+  .section {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;      /* menu horizontal */
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;    /* sembunyikan scrollbar di firefox */
+  }
+
+  .menu::-webkit-scrollbar {
+    display: none;            /* sembunyikan scrollbar di chrome */
+  }
+
+  .item {
+    font-size: 10px;
+    padding: 6px 8px;
+    gap: 4px;
+    white-space: nowrap;      /* biar gak turun ke bawah */
+  }
+
+  .item img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+
+/* Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar {
+    width: 180px;
+    margin: 16px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+  .logo {
+    font-size: 16px;
+  }
+  .title {
+    font-size: 13px;
+  }
+  .item {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .item img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Desktop (≥992px) */
+@media (min-width: 992px) {
+  .sidebar {
+    width: 240px;
+    margin: 30px;
+    padding: 20px;
+  }
+}

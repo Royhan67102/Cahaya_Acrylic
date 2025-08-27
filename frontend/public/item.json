@@ -1,0 +1,17 @@
+[
+    { "id": 1, "title": "KeyChains Cute", "price": "3K", "img" : "/KEY_C_02.png", "kategori":"Gantungan Kunci" },
+    { "id": 2, "title": "Plakat Acrylic", "price": "80k", "img" : "/PLKT_02.png", "kategori":"Plakat" },
+    { "id": 3, "title": "Acrylic LED", "price": "20k", "img" : "/CA5.png", "kategori":"Custom Item"},
+    { "id": 4, "title": "Huruf Timbul", "price": "5K", "img" : "/HRF_T_01.jpg", "kategori":"Huruf Timbul" },
+    { "id": 5, "title": "Lembaran Akrilik", "price": "3K", "img" : "/LMB_L_01.jpg", "kategori":"Lembaran" },
+    { "id": 6, "title": "Tent Holder", "price": "5K", "img" : "/TNT_3_01.jpg", "kategori":"Tent Holder"},
+    { "id": 7, "title": "Frame Custom", "price": "5K", "img" : "/FRM_2_01.jpg", "kategori":"Frame"},
+    
+    { "id": 8, "title": "Standing QRIS", "price": "30k", "img" : "/CA6.png", "kategori":"Custom Item" },
+    { "id": 9, "title": "Papan Bunga", "price": "5K", "img" : "/KRG_B.jpg", "kategori":"Custom Item"},
+    { "id": 10, "title": "Papan Tanda", "price": "5K", "img" : "/SGN_B.jpg", "kategori":"Custom Item" },
+    { "id": 11, "title": "Kotak Hantaran", "price": "5K", "img" : "/BOX_H_02.jpg", "kategori":"Custom Item" },
+    { "id": 12, "title": "KeyChains Music", "price": "5k", "img" : "/KEY_C_03.png","kategori":"Gantungan Kunci" },
+    { "id": 13, "title": "Custom Item", "price": "5K", "img" : "/CST_I_01.jpg", "kategori":"Custom Item" }
+   
+]

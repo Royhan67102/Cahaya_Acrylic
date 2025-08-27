@@ -1,0 +1,234 @@
+.container {
+  width: 100%;
+  padding: 16px 8px;
+  box-sizing: border-box;
+}
+
+.Package {
+  margin-top: 16px;
+  text-align: left;
+}
+
+.sub_historyItem {
+  display: inline-block;
+}
+
+.list_historyItem {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 0 32px;
+  background-color: #3056B3;
+}
+
+.wordItem {
+  font-size: 15px;
+  color: #222;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Card Form */
+.feedback_card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+
+.formTitle {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Rating */
+.stars {
+  text-align: center;
+  margin-bottom: 12px;
+}
+.star {
+  font-size: 28px;
+  color: #ccc;
+  cursor: pointer;
+}
+.starActive {
+  font-size: 28px;
+  color: #ffc107;
+  cursor: pointer;
+}
+
+/* Input */
+.input_feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputText,
+.textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.textarea {
+  resize: none;
+}
+
+/* Buttons */
+.actionGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.upload_label {
+  background: #4d88ff;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.upload_label input {
+  display: none;
+}
+
+.shareBtn {
+  background: #3056B3;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.shareBtn:hover {
+  background: #4d88ff;
+}
+
+.previewText {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #444;
+}
+
+
+
+.review_imageWrapper {
+  width: 100%;
+  height: 150px;        /* fix tinggi gambar */
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.review_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* gambar tetap proporsional, dipotong */
+}
+
+.image_placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ddd 25%, #bbb 100%);
+}
+
+.review_content {
+  padding: 12px;
+  flex-grow: 1;         /* isi tetap fleksibel */
+}
+
+.review_name {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #222;
+}
+
+.review_text {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.review_rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid #eee;
+  scrollbar-width: none;
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 14px;
+}
+
+.rating_number {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* .rating {
+  color: #ffc107;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.review_photo {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 8px;
+} */
+
+
+.swiper {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.review_list {
+  display: flex;
+  flex-wrap: nowrap;        /* baris tunggal */
+  gap: 20px;                /* jarak antar card */
+  overflow-x: auto;         /* bisa digulir ke samping */
+  scroll-behavior: smooth;  /* gulir halus */
+  padding: 20px 0;
+  background-color: transparent;
+
+  /* Hilangkan scrollbar di semua browser */
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.review_list::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+.review_list::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+.review_list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.review_card {
+  flex: 0 0 calc(20% - 16px); /* maksimal 5 card per row */
+  max-width: 300px;           /* biar tidak terlalu besar */
+  min-width: 220px;           /* biar tetap responsif di layar kecil */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.review_card:hover {
+  transform: translateY(-5px); /* animasi hover */
+}

@@ -1,7 +1,15 @@
 import styles from './Detail.module.css';
+import Whatsapp from '../../Home/WhatsApp/WhatsApp';
 
 function Detail({ item, onClose }) {
   if (!item) return null;
+
+  // Fungsi redirect ke WhatsApp
+  const handleWantIt = () => {
+    const phone = '6281234567890'; // ganti dengan nomor WhatsApp tujuan
+    const message = `Halo, saya tertarik dengan produk ${item.title}.`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+  };
 
   return (
     <div className={styles.overlay}>
@@ -15,8 +23,7 @@ function Detail({ item, onClose }) {
             <h2>{item.title}</h2>
             <p className={styles.price}>Rp {item.price}</p>
             <p className={styles.desc}>{item.desc || 'Deskripsi produk belum tersedia.'}</p>
-
-            <button className={styles.wantItButton}>Want It</button>
+            <button className={styles.wantItButton} onClick={handleWantIt}>Want It</button>
           </div>
         </div>
       </div>

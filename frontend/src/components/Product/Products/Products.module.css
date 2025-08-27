@@ -68,14 +68,15 @@
 
 .actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  gap: 8px;
   margin-top: auto;
 }
 
 .buyBtn {
   flex: 1;
   padding: 6px 10px;
-  background: #3b82f6;
+  background-color: #031540;
   border: none;
   border-radius: 12px;
   color: white;

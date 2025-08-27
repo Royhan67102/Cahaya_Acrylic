@@ -89,13 +89,14 @@
     max-width: none;         
     margin: 0;               
     padding: 6px 4px;        
-    border-radius: 0;        
+    border-radius: 25px;        
     display: flex;
     flex-direction: row;      /* ubah jadi horizontal */
     align-items: center;
     justify-content: flex-start;
     overflow-x: auto;         /* bisa di-scroll ke samping */
     overflow-y: hidden;
+    margin-bottom: 10px;
   }
 
   .logo {

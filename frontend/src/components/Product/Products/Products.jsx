@@ -3,11 +3,18 @@ import Sidebar from "../Sidebar/Sidebar";
 import axios from "axios";
 import Detail from "../../Home/Detail/Detail";
 import styles from "./Products.module.css";
+import Whatsapp from '../../Home/WhatsApp/WhatsApp';
 
 function Products() {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleBuyNow = (item) => {
+  const phone = '6281234567890'; // ganti dengan nomor WhatsApp tujuan
+  const message = `Halo, saya ingin membeli produk ${item.title}.`;
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+};
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -64,13 +71,19 @@ function Products() {
               ⭐⭐⭐⭐⭐ <span>5.00</span>
             </div>
 
-            <div className={styles.actions}>
-              <button
-                className={styles.button_detail}
-                onClick={() => handleDetailClick(product)}
-              >
-                Detail
-              </button>
+           <div className={styles.actions}>
+        <button
+          className={styles.buyBtn}
+          onClick={() => handleBuyNow(product)}
+        >
+          Beli Sekarang
+        </button>
+        <button
+          className={styles.button_detail}
+          onClick={() => handleDetailClick(product)}
+        >
+          Detail
+        </button>
             </div>
           </div>
         ))}

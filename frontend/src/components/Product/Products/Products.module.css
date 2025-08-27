@@ -3,6 +3,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: flex-start;
 }
 
 .grid {
@@ -182,11 +183,28 @@
 
 /* Desktop (≥992px) */
 @media (min-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
   .grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) );
   }
   .image {
     height: 180px;
+  }
+  .sidebar_factory {
+  min-width: 240px;
+  max-width: 260px;
+  background: #A9BCEA;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem 1rem;
+  height: fit-content;
+  position: sticky;
+  top: 32px;
+  border: #222 solid;
   }
 }

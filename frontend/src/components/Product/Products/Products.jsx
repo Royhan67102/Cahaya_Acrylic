@@ -21,7 +21,6 @@ function Products() {
     fetchProducts();
   }, []);
 
-  // Filter produk sesuai kategori yang dipilih
   const filteredProducts = selectedCategory
     ? products.filter((p) => p.kategori === selectedCategory)
     : products;
@@ -39,12 +38,10 @@ function Products() {
   return (
     <div className={styles.container}>
       {/* Sidebar dengan callback kategori */}
-      <Sidebar onCategoryClick={(kategori) => setSelectedCategory(kategori)} />
+      <Sidebar onCategoryClick={(kategori) => setSelectedCategory(kategori)} className={styles.sidebar_factory}/>
 
       {selectedCategory && (
-        <h2 className={styles.title}>
-          Kategori: {selectedCategory}
-        </h2>
+        <>  </>
       )}
 
       <div className={styles.grid}>

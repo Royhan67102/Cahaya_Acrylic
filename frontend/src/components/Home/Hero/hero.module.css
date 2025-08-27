@@ -119,7 +119,6 @@
   height: 200px;     /* lebih pendek */
   border: none;
   border-radius: 12px;
-  background-color: aqua;
 }
 .card01 {
   display: flex;

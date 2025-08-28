@@ -20,7 +20,7 @@ const Review = () => {
 
   const fetchReviews = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/testi");
+      const res = await axios.get("http://31.97.222.155:5000/testi");
       setReviews(res.data);
     } catch (err) {
       console.error("Error fetching reviews:", err);
@@ -54,7 +54,7 @@ const Review = () => {
     if (formData.foto) data.append("foto", formData.foto);
 
     try {
-      await axios.post("http://localhost:5000/testi", data, {
+      await axios.post("http://31.97.222.155:5000/testi", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       await fetchReviews();
@@ -139,7 +139,7 @@ const Review = () => {
                 <div className={styles.review_imageWrapper}>
                   {rev.foto ? (
                     <img
-                      src={`http://localhost:5000/uploads/${rev.foto}`}
+                      src={`http://31.97.222.155:5000/uploads/${rev.foto}`}
                       alt={rev.nama}
                       className={styles.review_image}
                     />

@@ -1,17 +1,17 @@
 [
-    { "id": 1, "title": "KeyChains Cute", "price": "3K", "img" : "/KEY_C_02.png", "kategori":"Gantungan Kunci" },
-    { "id": 2, "title": "Plakat Acrylic", "price": "80k", "img" : "/PLKT_02.png", "kategori":"Plakat" },
-    { "id": 3, "title": "Acrylic LED", "price": "20k", "img" : "/CA5.png", "kategori":"Custom Item"},
-    { "id": 4, "title": "Huruf Timbul", "price": "5K", "img" : "/HRF_T_01.jpg", "kategori":"Huruf Timbul" },
-    { "id": 5, "title": "Lembaran Akrilik", "price": "3K", "img" : "/LMB_L_01.jpg", "kategori":"Lembaran" },
-    { "id": 6, "title": "Tent Holder", "price": "5K", "img" : "/TNT_3_01.jpg", "kategori":"Tent Holder"},
-    { "id": 7, "title": "Frame Custom", "price": "5K", "img" : "/FRM_2_01.jpg", "kategori":"Frame"},
+    { "id": 1, "title": "Key Chain", "price": "5K", "img" : "/KEY_C_02.png", "kategori":"Gantungan Kunci", "desc" : "Mulai dari 5K, Ukuran 5x5 cm Custom" },
+    { "id": 2, "title": "Plakat Acrylic", "price": "80k", "img" : "/PLKT_02.png", "kategori":"Plakat", "desc" : "Mulai dari 80K, Ketebalan 3 mm, Ukuran 18x16 cm Custom" },
+    { "id": 3, "title": "Acrylic LED", "price": "100k", "img" : "/CA5.png", "kategori":"Custom Item", "desc" : "Mulai dari 100K, Ukuran A5 Custom"},
+    { "id": 4, "title": "Huruf Timbul", "price": "5K", "img" : "/HRF_T_01.jpg", "kategori":"Huruf Timbul", "desc" : "Mulai dari 5K/cm" },
+    { "id": 5, "title": "Lembaran Akrilik", "price": "25", "img" : "/LMB_L_01.jpg", "kategori":"Lembaran", "desc" : "Mulai dari 25 rupiah/cm, Ukuran 2 mm Custom" },
+    { "id": 6, "title": "Tent Holder", "price": "10K", "img" : "/TNT_3_01.jpg", "kategori":"Tent Holder", "desc" : "Mulai dari 10K, Ukuran A7 Custom"},
+    { "id": 7, "title": "Signed", "price": "100K", "img" : "/FRM_2_01.jpg", "kategori":"Signed", "desc" : "Mulai dari 100K, Ukuran A4, Ketebalan 3 mm Custom"},
     
-    { "id": 8, "title": "Standing QRIS", "price": "30k", "img" : "/CA6.png", "kategori":"Custom Item" },
-    { "id": 9, "title": "Papan Bunga", "price": "5K", "img" : "/KRG_B.jpg", "kategori":"Custom Item"},
-    { "id": 10, "title": "Papan Tanda", "price": "5K", "img" : "/SGN_B.jpg", "kategori":"Custom Item" },
-    { "id": 11, "title": "Kotak Hantaran", "price": "5K", "img" : "/BOX_H_02.jpg", "kategori":"Custom Item" },
-    { "id": 12, "title": "KeyChains Music", "price": "5k", "img" : "/KEY_C_03.png","kategori":"Gantungan Kunci" },
-    { "id": 13, "title": "Custom Item", "price": "5K", "img" : "/CST_I_01.jpg", "kategori":"Custom Item" }
+    { "id": 8, "title": "Tent Holder", "price": "10k", "img" : "/CA6.png", "kategori":"Tent Holder", "desc" : "Mulai dari 10K, Custom" },
+    { "id": 9, "title": "Papan Bunga", "price": "300K", "img" : "/KRG_B.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 300K, Ketebalan 2 mm, Ukuran 10x30cm"},
+    { "id": 10, "title": "Signed (Papan Tanda) ", "price": "30K", "img" : "/SGN_B.jpg", "kategori":"Signed", "desc" : "Mulai dari 30k, Ketebalan 2 mm, Ukuran 10x30 cm" },
+    { "id": 11, "title": "Kotak Hantaran", "price": "80K", "img" : "/BOX_H_02.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 80K, Ukuran 15x20x20 cm" },
+    { "id": 12, "title": "Key Chain", "price": "5k", "img" : "/KEY_C_03.png","kategori":"Gantungan Kunci", "desc" : "Mulai dari 5K, Ukuran 5x5 cm Custom" },
+    { "id": 13, "title": "Custom Item", "price": "250K", "img" : "/CST_I_01.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 250K/ pcs, Custom" }
    
 ]

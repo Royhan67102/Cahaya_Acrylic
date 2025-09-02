@@ -11,7 +11,7 @@ function Products() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleBuyNow = (item) => {
-  const phone = '6281234567890'; // ganti dengan nomor WhatsApp tujuan
+  const phone = '081113801838'; 
   const message = `Halo, saya ingin membeli produk ${item.title}.`;
   window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
 };

@@ -4,9 +4,9 @@ import Whatsapp from '../../Home/WhatsApp/WhatsApp';
 function Detail({ item, onClose }) {
   if (!item) return null;
 
-  // Fungsi redirect ke WhatsApp
+
   const handleWantIt = () => {
-    const phone = '6281234567890'; // ganti dengan nomor WhatsApp tujuan
+    const phone = '081113801838'; 
     const message = `Halo, saya tertarik dengan produk ${item.title}.`;
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
   };

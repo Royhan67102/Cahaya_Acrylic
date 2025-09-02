@@ -13,6 +13,6 @@
     { "id": 11, "title": "Kotak Hantaran", "price": "80K", "img" : "/BOX_H_02.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 80K, Ukuran 15x20x20 cm" },
     { "id": 12, "title": "Key Chain", "price": "5k", "img" : "/KEY_C_03.png","kategori":"Gantungan Kunci", "desc" : "Mulai dari 5K, Ukuran 5x5 cm Custom" },
     { "id": 13, "title": "Custom Item", "price": "250K", "img" : "/CST_I_01.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 250K/ pcs, Custom" },
-    { "id": 14, "title": "Custom Akrilik", "price": "25", "img" : "/LMB_L_01.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 25 rupiah/cm, Ukuran 2 mm Custom" }
+    { "id": 14, "title": "Custom Akrilik", "price": "25", "img" : "/CST_I_02.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 25 rupiah/cm, Ukuran 2 mm Custom" }
    
 ]

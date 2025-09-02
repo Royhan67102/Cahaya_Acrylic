@@ -19,10 +19,8 @@ function DetailV({ isOpen, onClose, voucher }) {
         </div>
 
         <div className={styles.popupContent}>
-          <p><strong>Nilai Voucher:</strong> {voucher?.value}</p>
-          <p>{voucher?.description}</p>
-
-          <h4>Syarat & Ketentuan:</h4>
+          <p><strong>Voucher:</strong> {voucher?.value}</p>
+          <p>{voucher?.detail1}</p>
           <ul>
             {voucher?.terms?.map((term, i) => (
               <li key={i}>{term}</li>

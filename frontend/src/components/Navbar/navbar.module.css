@@ -247,3 +247,9 @@
     padding: 8px 20px;
   }
 }
+
+@media (max-width: 370px) {
+  .navbar__item a {
+  font-size: 8px; 
+}
+}

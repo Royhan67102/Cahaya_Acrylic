@@ -39,12 +39,14 @@ function Sidebar({ onCategoryClick }) {
 
       <div className={styles.section}>
         <ul className={styles.menu}>
-          {items.slice(0, 5).map((item, idx) => (
+          {items.slice(0, 7).map((item, idx) => (
             <li
               key={idx}
               className={styles.item}
               onClick={() => onCategoryClick(item.kategori)} 
             >
+               <img src={item.img} alt={item.kategori} className={styles.thumbnail} 
+        />
               <span>{item.kategori}</span>
             </li>
           ))}

@@ -43,7 +43,7 @@ function Sidebar({ onCategoryClick }) {
             <li
               key={idx}
               className={styles.item}
-              onClick={() => onCategoryClick(item.kategori)} // ✅ kirim kategori ke parent
+              onClick={() => onCategoryClick(item.kategori)} 
             >
               <span>{item.kategori}</span>
             </li>

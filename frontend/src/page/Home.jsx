@@ -20,7 +20,10 @@ function Home() {
           name="keywords"
           content="cahaya acrylic, jual akrilik, akrilik bening, akrilik custom, harga akrilik murah"
         />
-        <meta property="og:title" content="Cahaya Acrylic | Jual Akrilik Murah & Custom" />
+        <meta
+          property="og:title"
+          content="Cahaya Acrylic | Jual Akrilik Murah & Custom"
+        />
         <meta
           property="og:description"
           content="Tempat jual akrilik terpercaya: bening, warna, dan custom dengan harga terbaik. Hanya di Cahaya Acrylic."

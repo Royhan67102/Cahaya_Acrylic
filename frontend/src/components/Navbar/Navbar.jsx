@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className={styles.navbar}>
         <div className={styles.navbar__brand_container}>
-          <img className={styles.navbar_logo} src="/logo_CA.jpg" alt="Cahaya Acrylic" /><h3 className={styles.navbar__brand}>Cahaya Acrylic</h3>
+          <img className={styles.navbar_logo} src="/logo_CA.jpg" alt="Custom Acrylic" /><h3 className={styles.navbar__brand}>Custom Acrylic</h3>
           
         </div>
         <div className={styles.navbar__list_container}>

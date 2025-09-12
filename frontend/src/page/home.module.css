@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 40px;
+  gap: 100px;
   max-width: 1200px;
   margin: 80px auto;
   padding: 0 20px;
@@ -54,6 +54,9 @@
   width: 100%;
   max-height: 420px;
   object-fit: contain;
+}
+.image {
+  margin-right: -170px;
 }
 
 /* Responsive */

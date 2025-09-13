@@ -8,6 +8,7 @@ import Voucher from "../components/Home/Voucher/Voucher";
 import WhatsApp from "../components/Home/WhatsApp/WhatsApp";
 import styles from "./home.module.css";
 import { Link } from "react-router-dom";
+import Service from "../components/Home/Service/Service";
 
 function Home() {
   return (
@@ -54,7 +55,7 @@ function Home() {
           <img src="/home.jpg" alt="Custom Acrylic" />
         </div>
       </section>
-
+      <Service />
       <TopItem />
       <Voucher />
       {/* <TopPack /> */}

@@ -1,301 +1,318 @@
 .hero_container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  padding: 0 16px; 
-  box-sizing: border-box; 
+  background: #23403a;
+  border-radius: 0 0 32px 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding-bottom: 54px;
 }
 
 .hero_card {
-  width: 100%; 
-  max-width: 100%; 
-  min-height: 220px;
-  background-color: #031540;
-  border-radius: 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden; 
-  padding: 18px; 
-  box-sizing: border-box; 
+  gap: 32px;
+  padding: 48px 32px 0 32px;
+  min-height: 520px;
 }
 
-.img_C1 {
+.text {
+  color: #fff;
+  padding-left: 16px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.stars {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+}
+.starIcon {
+  margin-right: 2px;
+}
+.starText {
+  font-weight: bold;
+  font-size: 1em;
+  margin-left: 8px;
+}
+.reviewCount {
+  color: #bbb;
+  font-size: 0.95em;
+  margin-left: 8px;
+}
+
+.text h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+.text p {
+  font-size: 1.15rem;
+  margin-bottom: 22px;
+  color: #e0e0e0;
+}
+
+.btn_group {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.appstoreBtn {
+  display: flex;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  border-radius: 16px;
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 1.08em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border: none;
+  transition: background 0.2s;
+}
+.appstoreBtn:hover {
+  background: #444;
+}
+.appstoreBtn img {
+  width: 24px;
+  margin-right: 8px;
+}
+.demoBtn {
+  background: #ffe066;
+  color: #23403a;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 1.08em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  transition: background 0.2s;
+}
+.demoBtn:hover {
+  background: #ffd700;
+}
+
+.statistic {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+}
+.statistic_item {}
+.stat_number {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.stat_label {
+  color: #bbb;
+  font-size: 0.98em;
+}
+
+.image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imageCircle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  z-index: 1;
+}
+.image img {
+  width: 320px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 24px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.starDecor1 {
+  position: absolute;
+  left: 20%;
+  top: 18%;
+  z-index: 3;
+  color: #ffe066;
+  font-size: 2.2em;
+  pointer-events: none;
+}
+.starDecor2 {
+  position: absolute;
+  right: 18%;
+  top: 32%;
+  z-index: 3;
+  color: #ffe066;
+  font-size: 1.5em;
+  pointer-events: none;
+}
+
+.bottomShape {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 60px; 
-  height: auto;
-  z-index: 1; 
+  width: 100%;
+  height: 54px;
+  background: #fff;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.07);
+  z-index: 10;
 }
 
-.img_C2 {
+.chevron {
   position: absolute;
-  top: 10px;
-  right: 0;
-  width: 60px; 
-  height: auto;
-  z-index: 1;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  z-index: 20;
 }
 
-.hero_content {
+/* Swiper & Map */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.mapSlide {
+  width: 100%;
+  height: 500px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map_card {
+  background: #23403a;
+  min-height: 520px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 2;
-  text-align: center;
-  padding: 0 5px;
-  width: 100%;
+  border-radius: 0 0 32px 32px;
+  position: relative;
+  padding: 48px 32px 32px 32px; /* ubah padding bottom dari 0 ke 32px agar maps tidak terlalu mepet bawah */
   box-sizing: border-box;
 }
 
-.word_LP {
+.map_text {
   color: #fff;
-  font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
-  font-size: 15px; 
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-  word-wrap: break-word; 
-  overflow-wrap: break-word; 
-  white-space: normal;
+  text-align: center;
+  margin-bottom: 32px;
+  max-width: 700px;
 }
 
-.word1 {
+.map_text h2 {
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 0px;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  letter-spacing: -1px;
 }
 
-.buttonVA {
-  background: #5b78c7;
-  color: #fff;
-  font-size: 13px;
-  font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
-  border: none;
-  border-radius: 32px;
-  padding: 5px 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-  font-weight: 500;
-  white-space: nowrap;
+.map_text p {
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  margin-bottom: 0;
 }
 
-.buttonVA:hover {
-  background: #3d56a6;
-}
-
-.hero_swiper {
+.map_wrapper {
   width: 100%;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  color: white;
-}
-
-.swiper-pagination-bullet {
-  background: white;
-}
-.container_home {
+  max-width: 640px;
+  height: 340px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.maps_container {
-  justify-content: center;
-  align-items: center;
-  max-width: 2000px;
-  
+  margin: 0 auto;
 }
 
-.maps {
-  width: 100%;
-  max-width: 1000px;
-  height: 200px;
-  border: none;
-  border-radius: 12px;
-}
-.card01 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.maps_container {
-  flex: 1; 
-  width: 1000px;
-}
-
-.map_content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 12px;
-  color: #fff;
-  font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
-}
-
-.maps_container span {
-  font-size: 20px;
-  font-weight: 500;
-  color: #ffffff;
-}
-
-.map_content button {
-  align-self: flex-start; 
+/* Responsive */
+@media (max-width: 900px) {
+  .hero_card {
+    grid-template-columns: 1fr;
+    padding: 32px 8px 0 8px;
+    min-height: 420px;
+  }
+  .image img {
+    width: 220px;
+    height: 260px;
+  }
+  .imageCircle {
+    width: 220px;
+    height: 220px;
+  }
+  .statistic {
+    gap: 16px;
+    font-size: 0.95em;
+  }
+  .text h1 {
+    font-size: 1.6rem;
+  }
+  .map_card {
+    min-height: 320px;
+    padding: 32px 8px 24px 8px; /* tambah padding bottom agar maps tidak terlalu mepet bawah */
+  }
+  .map_wrapper {
+    max-width: 98vw;
+    height: 180px;
+  }
+  .map_text h2 {
+    font-size: 1.3rem;
+  }
+  .map_text p {
+    font-size: 1rem;
+  }
 }
 
-
-/* ---------------------------------------------------------------------- */
-/* Responsive Adjustments */
-/* ---------------------------------------------------------------------- */
-
-/* Small: default (<758px) - max-width: 757px */
-@media (max-width: 757px) {
-  .hero_container {
-    padding: 0 8px; 
-    box-sizing: border-box;
+@media (max-width: 600px) {
+  .mapSlide {
+    height: 320px;
   }
   .hero_card {
-    width: 100%;
-    max-width: 700px; 
-    margin-left: 0;     
-    margin-right: auto;  
-    min-height: 160px;
-    border-radius: 18px;
-    padding: 16px 8px;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
+    padding: 16px 2px 0 2px;
   }
-  .img_C1 {
-    width: 40px;
-    left: 0;
-    bottom: 0;
-  }
-  .img_C2 {
-    width: 45px;
-    right: 0;
-    top: 8px;
-  }
-  .hero_content {
-    padding: 0 4px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .word_LP {
-    font-size: 13px;
-    margin-bottom: 10px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-  }
-  .buttonVA {
-    font-size: 12px;
-    padding: 4px 12px;
-    margin-top: 10px;
-  }
-  .maps {
-  width: 30%;
-  max-width: 1000px;  
-  height: 120px;     
-  border: none;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-.maps_container {
-  margin-top: -10px;
-  max-width: 1000px;
-}
-}
-
-/* Medium: >=768px dan <992px */
-@media (min-width: 768px) and (max-width: 991px) {
-  .hero_container {
-    padding: 0 20px;
-  }
-  .hero_card {
-    min-height: 260px;
-    border-radius: 20px;
-    padding: 25px;
-    max-width: 900px;
-  }
-  .img_C1 {
-    width: 90px;
-    left: -8px;
-    bottom: -8px;
-  }
-  .img_C2 {
-    width: 110px;
-    right: -15px;
-    top: 8px;
-  }
-  .hero_content {
-    padding: 0 10px;
-  }
-  .word_LP {
-    font-size: 18px;
-    margin-bottom: 14px;
-  }
-  .buttonVA {
-    font-size: 15px;
-    padding: 6px 20px;
-  }
-  .maps {
-  width: 60%;
-  max-width: 1000px; 
-  height: 170px;
-  border: none;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-.maps_container {
-  max-width: 1000px;
-}
-}
-
-/* Large: >=992px */
-@media (min-width: 992px) {
-  .hero_container {
-    padding: 0 32px;
-  }
-  .hero_card {
-    max-width: 1200px;
-    min-height: 300px;
-    border-radius: 25px;
-    padding: 40px;
-  }
-  .img_C1 {
+  .image img {
     width: 140px;
-    left: 0;
-    bottom: 0;
+    height: 160px;
   }
-  .img_C2 {
-    width: 160px;
-    right: 0;
-    top: 20px;
+  .imageCircle {
+    width: 140px;
+    height: 140px;
   }
-  .hero_content {
-    padding: 0 20px;
+  .statistic {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
   }
-  .word_LP {
-    font-size: 22px;
-    margin-bottom: 20px;
+  .map_card {
+    padding: 16px 2px 12px 2px; /* tambah padding bottom agar maps tidak terlalu mepet bawah */
   }
-  .buttonVA {
-    font-size: 18px;
-    padding: 8px 32px;
+  .map_wrapper {
+    height: 120px;
   }
-  .maps {
-    margin-top: -5px;
-}
+  .map_text h2 {
+    font-size: 1rem;
+  }
+  .map_text {
+    margin-bottom: 16px;
+  }
 }

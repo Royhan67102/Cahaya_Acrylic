@@ -1,102 +1,350 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --bg-dark: #d61d1d;
+  --text-light: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  --primary-glow-blue: #00e0ff; /* Biru neon */
+  --primary-glow-purple: #7f00ff; /* Ungu neon */
+  --card-bg-transparent: rgba(25, 25, 35, 0.7); /* Background kartu glassmorphism */
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Ganti dengan font modern seperti Inter/Poppins */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ background-color:#d2deff ;
+  color: var(--text-light);
+  overflow-x: hidden; /* Mencegah scroll horizontal dari elemen glow */
+  
+}
+
+/* --- Service Container Utama --- */
 .service_container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 40px;
-}
-
-/* KEUNGGULAN */
-.card {
-  flex: 1;
-  background: #1e9c92;
-  color: white;
-  padding: 24px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.card h1 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  font-weight: 700;
-  text-align: center;
-}
-
-.card > div {
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  gap: 16px 20px;
-  align-items: center;
-}
-
-.card img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.card h2 {
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 0;
-}
-
-/* LAYANAN */
-.layanan {
-  flex: 2;
-  display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 80px; /* Jarak antar section */
+  padding: 60px 20px;
+  position: relative;
 }
 
-.layanan h1 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin: 0;
+/* --- Hero Section (judul atas dengan grafis spiral) --- */
+.hero_section {
   text-align: center;
+  position: relative;
+  width: 100%;
+  padding-bottom: 50px; /* Ruang untuk grafis */
+  overflow: hidden;
+}
+
+.hero_graphic {
+  position: absolute;
+  top: -50px; /* Sesuaikan posisi agar grafis di atas judul */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--primary-glow-purple) 0deg,
+    var(--primary-glow-blue) 90deg,
+    transparent 180deg
+  );
+  border-radius: 50%;
+  filter: blur(80px); /* Blur untuk efek glow */
+  opacity: 0.7;
+  animation: rotateGlow 15s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotateGlow {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+.hero_title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding: 50px;
+  z-index: 1; /* Agar judul di atas grafis */
+  text-shadow: 0 0 15px var(--primary-glow-blue), 0 0 25px var(--primary-glow-purple); /* Glow pada teks */
+}
+
+.hero_subtitle {
+  font-size: 1.25rem;
+  color: rgb(255, 255, 255);
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Section Title Umum --- */
+.section_title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.sub_historyItem {
+  display: inline-block;
+}
+
+.list_historyItem {
+  margin-left: 0;
+  text-align: left;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  border-radius: 0 32px;
+  background-color: #3056B3;
+  padding: 10px 48px 10px 28px;
+display: inline-block;
+}
+/* --- Bagian Keunggulan --- */
+.advantages_section {
+    width: 100%;
+    max-width: 1200px;
+    text-align: left;
+}
+
+.advantages_wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif */
+    gap: 2rem;
+    justify-content: center;
+}
+
+.advantage_item {
+    background-color: #031540;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage_item::before { /* Efek glow */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, var(--primary-glow-blue), var(--primary-glow-purple));
+    filter: blur(25px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.advantage_item:hover::before {
+    opacity: 0.4;
+}
+
+.advantage_item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.advantage_icon {
+    font-size: 3rem;
+    color: var(--primary-glow-blue);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 10px var(--primary-glow-blue);
+}
+.wordItem {
+  font-size: 15px;
+  color: #222;
+  margin-top: 4px;
+  display: block;
+}
+
+
+/* --- Bagian Layanan --- */
+.services_section {
+    width: 100%;
+    max-width: 1200px;
+    text-align: left;
 }
 
 .layanan_wrapper {
   display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Agar bisa wrap di layar kecil */
 }
 
 .layanan_card {
   flex: 1;
-  background: #f5f5f5;
+  min-width: 280px; /* Minimum lebar kartu */
+  max-width: 350px;
+  background-color: #031540;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 16px;
+  padding: 20px 20px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateZ(0); /* Fix for Safari blur rendering */
+}
+
+/* Efek glow pada border kartu layanan */
+.layanan_card::before {
+    content: '';
+    position: absolute;
+    inset: -2px; /* Meluas sedikit dari kartu */
+    background: linear-gradient(45deg, var(--primary-glow-blue), var(--primary-glow-purple));
+    filter: blur(25px); /* Semakin besar blur, semakin menyebar */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 18px; /* Sedikit lebih besar dari border-radius kartu */
+    z-index: -1; /* Di belakang kartu */
+}
+
+.layanan_card:hover::before,
+.layanan_card.active::before {
+    opacity: 0.7; /* Glow menyala saat hover/aktif */
 }
 
 .layanan_card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
 }
 
-.layanan_card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 12px;
-  filter: blur(5px) brightness(0.7); /* default blur */
-  transition: filter 0.4s ease;
+.card_icon {
+    font-size: 4rem; /* Ikon lebih besar */
+    margin-bottom: 20px;
+    color: var(--primary-glow-blue);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 15px var(--primary-glow-blue);
 }
 
-/* Saat card aktif → gambar jelas */
-.layanan_card.active img {
-  filter: none;
+.card_icon.purple_icon {
+    color: var(--primary-glow-purple);
+    text-shadow: 0 0 15px var(--primary-glow-purple);
 }
 
 .layanan_card h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-light);
+    position: relative;
+    z-index: 1;
+}
+
+.layanan_card p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.learnMoreButton {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    background: linear-gradient(45deg, #1a73e8, #00d2ff); /* Gradient biru default */
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.learnMoreButton.purple_button {
+    background: linear-gradient(45deg, #8a2be2, #a000ff); /* Gradient ungu */
+    box-shadow: 0 0 15px rgba(127, 0, 255, 0.3);
+}
+
+.learnMoreButton:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 224, 255, 0.5);
+}
+
+.learnMoreButton.purple_button:hover {
+    box-shadow: 0 0 25px rgba(127, 0, 255, 0.5);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 1024px) {
+    .hero_title {
+        font-size: 3rem;
+    }
+    .hero_subtitle {
+        font-size: 1.1rem;
+    }
+    .section_title {
+        font-size: 2rem;
+    }
+    .advantages_wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .service_container {
+        padding: 40px 15px;
+        gap: 60px;
+    }
+    .hero_title {
+        font-size: 2.5rem;
+    }
+    .hero_graphic {
+        width: 300px;
+        height: 300px;
+        filter: blur(60px);
+    }
+    .section_title {
+        font-size: 1.8rem;
+    }
+    .advantages_wrapper, .layanan_wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .layanan_card {
+        min-width: unset;
+        width: 100%;
+        max-width: 400px; /* Batasi lebar agar tidak terlalu besar di mobile */
+        margin: 0 auto;
+    }
+    .advantage_item {
+        padding: 20px;
+    }
+    .advantage_icon {
+        font-size: 2.5rem;
+    }
+    .advantage_item h3 {
+        font-size: 1.1rem;
+    }
+    .card_icon {
+        font-size: 3rem;
+    }
+    .layanan_card h2 {
+        font-size: 1.5rem;
+    }
+    .layanan_card p {
+        font-size: 0.9rem;
+    }
 }

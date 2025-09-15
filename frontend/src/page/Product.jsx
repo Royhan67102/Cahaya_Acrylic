@@ -4,6 +4,7 @@ import Hero from '../components/Home/Hero/Hero';
 import Footer from '../components/Footer/Footer';
 import Products from '../components/Product/Products/Products';
 import styles from './product02.module.css'; 
+import Swipe from "../components/Home/Swipe/Swipe";
 
 function Product() {
     return (
@@ -28,7 +29,8 @@ function Product() {
             </Helmet>
 
             <Navbar />
-            <Hero />
+            {/* <Hero /> */}
+            <Swipe />
             <div className={styles.layout}>
                 <Products />
             </div>

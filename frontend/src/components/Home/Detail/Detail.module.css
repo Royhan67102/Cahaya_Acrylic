@@ -56,6 +56,10 @@
   flex-direction: column;
   justify-content: center;
 }
+.infoWrapper h2 {
+ 
+  color: #22364a;
+}
 
 .price {
   font-size: 20px;

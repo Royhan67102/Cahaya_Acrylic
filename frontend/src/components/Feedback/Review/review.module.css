@@ -1,7 +1,10 @@
 .container {
   width: 100%;
-  padding: 16px 8px;
+  padding: 40px 20px;
   box-sizing: border-box;
+  background-color: #ffe066; /* kuning */
+  color: #22364a;
+  font-family: 'Poppins', sans-serif;
 }
 
 .Package {
@@ -14,12 +17,24 @@
 }
 
 .list_historyItem {
-  font-size: 20px;
-  font-weight: 600;
+  background: #3056B3;
   color: #fff;
-  padding: 8px 18px;
-  border-radius: 0 32px;
-  background-color: #3056B3;
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding: 18px 48px 18px 32px;
+  border-radius: 0 48px 48px 48px;
+  display: inline-block;
+  min-width: 340px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 12px;
+}
+
+.wrap_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 60px;
 }
 
 .wordItem {
@@ -94,6 +109,7 @@
 }
 .upload_label input {
   display: none;
+
 }
 
 .shareBtn {
@@ -232,4 +248,281 @@
 
 .review_card:hover {
   transform: translateY(-5px); /* animasi hover */
+}/* --- Global Variables & Theme --- */
+:root {
+  --bg-dark: #d2deff;
+  --text-light: #f0f0f0;
+  --text-secondary: #a0a0c0;
+  /* --primary-glow-blue: #00e0ff; */
+  --primary-glow-purple: #7f00ff;
+  --accent-gold: #ffc107;
+  --card-bg: rgba(35, 35, 55, 0.5); /* Glassmorphism background */
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Main Container & Layout --- */
+.container {
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background-color: var(--bg-dark); /* Ganti background utama */
+  color: var(--text-light);
+  font-family: 'Poppins', sans-serif; /* Font modern */
+}
+
+.Package {
+  margin-top: 40px; /* Jarak antar section */
+  text-align: left;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Section Headers --- */
+.sub_historyItem {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.list_historyItem {
+  background: #3056B3;          /* Biru */
+  color: #fff;                  /* Tulisan putih */
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 0 30px 0 30px;  /* Rounded style */
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wordItem {
+  font-size: 1rem;
+  color: #222;                  /* Teks gelap agar kontras */
+  margin-top: 6px;
+  display: block;
+  text-align: left;             /* bisa diganti center kalau mau */
+}
+
+
+/* --- Review Slider (Auto-scrolling list) --- */
+.review_list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+}
+.review_list::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Individual Review Card --- */
+.review_card {
+  flex: 0 0 300px; /* Lebar kartu tetap */
+  background-color:#031540 ;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.3);
+}
+
+.review_imageWrapper {
+  width: 100%;
+  height: 180px;
+  background: #1a1a2e;
+  overflow: hidden;
+}
+
+.review_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image_placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2a2a3a 25%, #1a1a2e 100%);
+}
+
+.review_content {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.review_name {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.review_text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.review_rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-top: 1px solid var(--border-color);
+  background: rgba(0,0,0,0.2);
+}
+
+.review_rating .stars {
+  color: var(--accent-gold);
+  font-size: 1rem;
+  text-shadow: 0 0 5px var(--accent-gold);
+}
+
+.rating_number {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* --- Review Submission Form --- */
+.feedback_card {
+  background-color: #A9BCEA;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 16px;
+}
+
+.formTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+/* Form Rating Stars */
+.stars {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.star, .starActive {
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block; /* Agar transform bekerja */
+}
+
+.star {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.star:hover {
+  transform: scale(1.2);
+  color: var(--accent-gold);
+}
+
+.starActive {
+  color: var(--accent-gold);
+  text-shadow: 0 0 10px var(--accent-gold);
+  transform: scale(1.1);
+}
+
+/* Form Inputs */
+.input_feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputText, .textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  color: #031540 ;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.inputText:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--primary-glow-blue);
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Form Buttons */
+.actionGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.upload_label, .shareBtn {
+  padding: 10px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Upload button (secondary) */
+.upload_label {
+  background: transparent;
+  color: #031540;
+  border: 2px solid #031540;
+}
+.upload_label input {
+  display: none;
+  
+}
+.upload_label:hover {
+  background: #031540;
+  color: var(--bg-dark);
+  box-shadow: 0 0 15px #031540;
+}
+
+
+/* Share button (primary) */
+.shareBtn {
+  background: linear-gradient(45deg, var(--primary-glow-purple), var(--primary-glow-blue));
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+}
+.shareBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(127, 0, 255, 0.6);
+}
+
+.previewText {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  width: 100%; /* Agar tidak mengganggu layout flex */
 }

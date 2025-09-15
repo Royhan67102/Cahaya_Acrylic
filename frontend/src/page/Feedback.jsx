@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Hero from '../components/Home/Hero/Hero';
 import Footer from '../components/Footer/Footer';
 import Review from '../components/Feedback/Review/Review';
+import Swipe from '../components/Home/Swipe/Swipe';
 
 function Feedback() {
     return (
@@ -33,7 +34,8 @@ function Feedback() {
         </Helmet>
 
             <Navbar />
-            <Hero />
+            <Swipe />
+            {/* <Hero /> */}
             <Review />
             <Footer />
         </div>

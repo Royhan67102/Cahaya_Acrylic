@@ -63,6 +63,18 @@
   font-size: 16px;
 }
 
+.popupContent p {
+   color: #22364a;
+}
+
+.popupContent strong {
+   color: #22364a;
+}
+
+.popupTitle {
+   color: #22364a;
+}
+
 .popupContent ul {
   padding-left: 20px;
 }

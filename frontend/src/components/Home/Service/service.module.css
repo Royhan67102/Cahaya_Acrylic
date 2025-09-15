@@ -118,8 +118,8 @@ display: inline-block;
 
 .advantages_wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif */
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsif */
+    gap: 1rem;
     justify-content: center;
 }
 

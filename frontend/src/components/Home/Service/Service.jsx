@@ -1,15 +1,16 @@
 import { useState } from "react";
 import styles from "./service.module.css";
 // Import ikon yang sesuai dari react-icons
-import { FaCut, FaDrawPolygon, FaThLarge, FaShippingFast, FaHandshake, FaStar, FaTag } from "react-icons/fa";
+import { FaCut, FaDrawPolygon, FaThLarge, FaShippingFast, FaHandshake, FaStar, FaTag, FaShieldAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 // Data untuk Keunggulan (menggunakan ikon)
 const advantagesData = [
-    { icon: <FaShippingFast />, title: "Pengerjaan Cepat" },
-    { icon: <FaHandshake />, title: "Pengiriman Cepat" }, // Mengganti dengan ikon lebih sesuai
-    { icon: <FaTag />, title: "Harga Terjangkau" }, // Menggunakan ikon FaTag
-    { icon: <FaStar />, title: "Kualitas Terbaik" }, // Menggunakan ikon FaStar
+    { icon: <FaShieldAlt />, title: "100% Aman" },
+    { icon: <FaTag />, title: "Harga Terjangkau" },
+    { icon: <FaStar />, title: "Kualitas Terbaik" },
+    { icon: <FaHandshake />, title: "Pengerjaan Cepat" }, 
+    { icon: <FaShippingFast />, title: "Pengiriman Cepat" },
 ];
 
 // Data untuk Layanan (sesuai mockup)

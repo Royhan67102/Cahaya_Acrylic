@@ -16,11 +16,14 @@
     flex-direction: column;
     justify-content: space-between; 
 }
+.voucher_card h2 {
+    font-size: 20px;
+}
 
 .title_voucher1 {
     margin: 0;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 30px;
     text-align: right;
     margin-top: 50px;
     margin-right: 20px;
@@ -29,7 +32,7 @@
 .p_voucher1 {
     margin: 5px 0 0;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 30px;
     text-align: right;
     margin-right: 20px;
 }

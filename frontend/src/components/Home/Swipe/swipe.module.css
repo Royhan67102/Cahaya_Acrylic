@@ -1,0 +1,168 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; 
+  margin-top: -20px;
+}
+.cardImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* biar tetap proporsional */
+  max-width: 100%;
+  border-radius: 20px;
+  opacity: 0.7; /* transparansi */
+  /* filter: blur(3px); blur keseluruhan */
+  mask-image: linear-gradient(to right, transparent 0%, black 30%); /* efek menyatu kiri */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+}
+
+/* Semua section ditumpuk */
+.section {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Section aktif tampil */
+.section.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+/* Hero content */
+.heroContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  padding: 40px;
+  margin: 0 auto;
+  height: 100%;
+  background-color: #031540;
+  border-radius: 25px;
+}
+
+.left {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.heroImage img {
+  max-width: 100%;
+  height: auto;
+}
+
+.rating {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.starText {
+  margin-left: 8px;
+  color: #555;
+}
+
+.title, 
+.desc {
+  color: #fff; /* kontras dengan bg biru tua */
+  position: relative;
+  z-index: 2;
+}
+
+
+.ctaRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.appBtn,
+.demoBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.appBtn {
+  background: #007aff;
+  color: white;
+}
+
+.demoBtn {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.statsRow {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Map */
+.section iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+}
+
+/* Icon tangan */
+.swipeIcon {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  cursor: pointer;
+  animation: bounce 1.5s infinite;
+  z-index: 10;
+  opacity: 0.8;
+  color: #ffffff;
+}
+
+.button {
+  background-color: #4a63b7;
+  padding: clamp(8px, 2vw, 12px) clamp(20px, 4vw, 28px); /* responsif */
+  border-radius: 30px;
+  border: none;
+  transition: 0.3s;
+}
+
+.button a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.85rem, 2vw, 1rem); /* responsif */
+  display: inline-block;
+  text-align: center;
+}
+.button:hover {
+  background-color: #2f52c5;
+}
+/* Animasi naik-turun */
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -12px); }
+}

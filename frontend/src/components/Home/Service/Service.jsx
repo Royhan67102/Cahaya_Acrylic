@@ -1,6 +1,13 @@
+import { useState } from "react";
 import styles from "./service.module.css";
 
 function Service() {
+    const [activeCard, setActiveCard] = useState(null);
+
+    const toggleCard = (index) => {
+        setActiveCard(activeCard === index ? null : index);
+    };
+
     return (
         <div className={styles.service_container}>
 
@@ -26,20 +33,20 @@ function Service() {
             <div className={styles.layanan}>
                 <h1>Layanan Kami</h1>
                 <div className={styles.layanan_wrapper}>
-                    <div className={styles.layanan_card}>
-                        <img src="/CST_I_01.jpg" alt="" />
-                        <h2>Acrylic Custom</h2>
-                    </div>
-
-                    <div className={styles.layanan_card}>
-                        <img src="/KEY_C_01.png" alt="" />
-                        <h2>Cutting Acrylic</h2>
-                    </div>
-
-                    <div className={styles.layanan_card}>
-                        <img src="/LMB_L_01.jpg" alt="" />
-                        <h2>Lembaran Acrylic</h2>
-                    </div>
+                    {[
+                        { src: "/CST_I_01.jpg", title: "Acrylic Custom" },
+                        { src: "/KEY_C_01.png", title: "Cutting Acrylic" },
+                        { src: "/LMB_L_01.jpg", title: "Lembaran Acrylic" }
+                    ].map((item, i) => (
+                        <div
+                            key={i}
+                            className={`${styles.layanan_card} ${activeCard === i ? styles.active : ""}`}
+                            onClick={() => toggleCard(i)}
+                        >
+                            <img src={item.src} alt={item.title} />
+                            <h2>{item.title}</h2>
+                        </div>
+                    ))}
                 </div>
             </div>
 

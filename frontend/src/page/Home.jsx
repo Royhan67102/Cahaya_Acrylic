@@ -6,9 +6,10 @@ import TopItem from "../components/Home/Top_Item/TopItem";
 import Voucher from "../components/Home/Voucher/Voucher";
 // import TopPack from "../components/Home/Top_Pack/TopPack";
 import WhatsApp from "../components/Home/WhatsApp/WhatsApp";
-import styles from "./home.module.css";
+// import styles from "./home.module.css";
 import { Link } from "react-router-dom";
 import Service from "../components/Home/Service/Service";
+import Swipe from "../components/Home/Swipe/Swipe";
 
 function Home() {
   return (
@@ -36,10 +37,11 @@ function Home() {
       </Helmet>
 
       <Navbar />
-      <Hero />
+      <Swipe />
+      {/* <Hero /> */}
 
       {/* Section Keyword */}
-      <section className={styles.keyword}>
+      {/* <section className={styles.keyword}>
         <div className={styles.text}> 
           <h1>
             Custom Acrylic | Kustom Akrilik & Akrilik Custom Sesukamu
@@ -54,8 +56,9 @@ function Home() {
         <div className={styles.image}>
           <img src="/home.jpg" alt="Custom Acrylic" />
         </div>
-      </section>
+      </section> */}
       <Service />
+      
       <TopItem />
       <Voucher />
       {/* <TopPack /> */}

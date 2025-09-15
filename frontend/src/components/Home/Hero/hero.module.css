@@ -1,318 +1,362 @@
-.hero_container {
-  background: #23403a;
-  border-radius: 0 0 32px 32px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-  padding-bottom: 54px;
+.hero {
+  .hero {
+  height: 50vh;        /* 50% dari tinggi layar (viewport) */
+  overflow: hidden;    /* konten di luar 50% layar disembunyikan */
+  position: relative;  /* biar rapi */
 }
 
-.hero_card {
+}
+
+.keyword {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 32px;
-  padding: 48px 32px 0 32px;
-  min-height: 520px;
-}
-
-.text {
-  color: #fff;
-  padding-left: 16px;
-}
-
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-.stars {
-  color: #FFD700;
-  font-weight: bold;
-  font-size: 1.1em;
-  display: flex;
-  align-items: center;
-}
-.starIcon {
-  margin-right: 2px;
-}
-.starText {
-  font-weight: bold;
-  font-size: 1em;
-  margin-left: 8px;
-}
-.reviewCount {
-  color: #bbb;
-  font-size: 0.95em;
-  margin-left: 8px;
+  gap: 100px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  background-color: #A9BCEA;
+  border-radius: 15px;
+  margin-top: -25px;
+  width: 100%;
 }
 
 .text h1 {
-  font-size: 2.6rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* responsive, min 1.5rem, max 2.5rem */
   font-weight: 700;
-  margin-bottom: 18px;
-  line-height: 1.2;
-  letter-spacing: -1px;
+  margin-bottom: 20px;
+  line-height: 1.3;
 }
+
 .text p {
-  font-size: 1.15rem;
-  margin-bottom: 22px;
-  color: #e0e0e0;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* responsive, min 0.9rem, max 1.2rem */
+  margin-bottom: 25px;
+  color: #444;
 }
 
-.btn_group {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 18px;
-}
-.appstoreBtn {
-  display: flex;
-  align-items: center;
-  background: #222;
+.cta {
+  padding: 12px 28px;
+  background-color: #4a63b7;
   color: #fff;
-  border-radius: 16px;
-  padding: 10px 22px;
-  font-weight: 600;
-  font-size: 1.08em;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  font-weight: 500;
   border: none;
-  transition: background 0.2s;
-}
-.appstoreBtn:hover {
-  background: #444;
-}
-.appstoreBtn img {
-  width: 24px;
-  margin-right: 8px;
-}
-.demoBtn {
-  background: #ffe066;
-  color: #23403a;
-  border: none;
-  border-radius: 16px;
-  padding: 10px 22px;
-  font-weight: 600;
-  font-size: 1.08em;
+  border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  transition: background 0.2s;
-}
-.demoBtn:hover {
-  background: #ffd700;
+  transition: 0.3s;
 }
 
-.statistic {
-  display: flex;
-  gap: 32px;
-  margin-top: 24px;
-}
-.statistic_item {}
-.stat_number {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-.stat_label {
-  color: #bbb;
-  font-size: 0.98em;
+.cta:hover {
+  background-color: #2f52c5;
 }
 
-.image {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.imageCircle {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  z-index: 1;
-}
-.image img {
-  width: 320px;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 24px;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-}
-.starDecor1 {
-  position: absolute;
-  left: 20%;
-  top: 18%;
-  z-index: 3;
-  color: #ffe066;
-  font-size: 2.2em;
-  pointer-events: none;
-}
-.starDecor2 {
-  position: absolute;
-  right: 18%;
-  top: 32%;
-  z-index: 3;
-  color: #ffe066;
-  font-size: 1.5em;
-  pointer-events: none;
+.button {
+  background-color: #4a63b7;
+  padding: clamp(8px, 2vw, 12px) clamp(20px, 4vw, 28px); /* responsif */
+  border-radius: 30px;
+  border: none;
+  transition: 0.3s;
 }
 
-.bottomShape {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 54px;
-  background: #fff;
-  border-radius: 0 0 32px 32px;
-  box-shadow: 0 -2px 16px rgba(0,0,0,0.07);
-  z-index: 10;
-}
-
-.chevron {
-  position: absolute;
-  left: 50%;
-  bottom: 12px;
-  transform: translateX(-50%);
-  z-index: 20;
-}
-
-/* Swiper & Map */
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-.mapSlide {
-  width: 100%;
-  height: 500px;
-  padding: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.map_card {
-  background: #23403a;
-  min-height: 520px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0 0 32px 32px;
-  position: relative;
-  padding: 48px 32px 32px 32px; /* ubah padding bottom dari 0 ke 32px agar maps tidak terlalu mepet bawah */
-  box-sizing: border-box;
-}
-
-.map_text {
+.button a {
   color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.85rem, 2vw, 1rem); /* responsif */
+  display: inline-block;
   text-align: center;
-  margin-bottom: 32px;
-  max-width: 700px;
+}
+.button:hover {
+  background-color: #2f52c5;
 }
 
-.map_text h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  line-height: 1.2;
-  letter-spacing: -1px;
-}
-
-.map_text p {
-  font-size: 1.15rem;
-  color: #e0e0e0;
-  margin-bottom: 0;
-}
-
-.map_wrapper {
+.image img {
   width: 100%;
-  max-width: 640px;
-  height: 340px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+  max-height: 420px;
+  object-fit: contain;
+}
+.image {
+  margin-right: -170px;
+  padding: 10px;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .hero_card {
-    grid-template-columns: 1fr;
-    padding: 32px 8px 0 8px;
-    min-height: 420px;
+.maps_container {
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.maps {
+  width: 100%;
+  max-width: 1000px;  /* biar ga terlalu lebar */
+  height: 180px;     /* lebih pendek */
+  border: none;
+  border-radius: 12px;
+}
+/* Medium (tablet) >=768px */
+@media (min-width: 768px) {
+  .footer {
+    padding: 40px 20px;
   }
-  .image img {
-    width: 220px;
-    height: 260px;
+  .footerContent {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 900px;
+    width: 100%;
   }
-  .imageCircle {
-    width: 220px;
+  .navbar_logo {
+    width: 50px;
+  }
+  .navbar__brand {
+    font-size: 20px;
+  }
+  .aboutCompany h3 {
+    font-size: 18px;
+  }
+  .aboutCompany p {
+    font-size: 14px;
+  }
+  .contactItem {
+    margin-bottom: 15px;
+  }
+  .icon {
+    font-size: 18px;
+  }
+  .socialIcons svg {
+    font-size: 20px;
+  }
+  .maps {
+    max-width: 500px;
     height: 220px;
   }
-  .statistic {
-    gap: 16px;
-    font-size: 0.95em;
+}
+
+/* Large (desktop/laptop/tv) >=992px */
+@media (min-width: 992px) {
+  .footer {
+    padding: 48px 32px;
   }
-  .text h1 {
-    font-size: 1.6rem;
+  .footerContent {
+    max-width: 1200px;
+    gap: 48px;
   }
-  .map_card {
-    min-height: 320px;
-    padding: 32px 8px 24px 8px; /* tambah padding bottom agar maps tidak terlalu mepet bawah */
+  .navbar_logo {
+    width: 60px;
   }
-  .map_wrapper {
-    max-width: 98vw;
-    height: 180px;
+  .navbar__brand {
+    font-size: 24px;
   }
-  .map_text h2 {
-    font-size: 1.3rem;
+  .aboutCompany h3 {
+    font-size: 22px;
   }
-  .map_text p {
-    font-size: 1rem;
+  .aboutCompany p {
+    font-size: 16px;
+  }
+  .contactItem {
+    margin-bottom: 18px;
+  }
+  .icon {
+    font-size: 22px;
+  }
+  .socialIcons svg {
+    font-size: 24px;
+  }
+   .maps {
+     max-width: 650px;
+    height: 260px;
   }
 }
 
-@media (max-width: 600px) {
-  .mapSlide {
-    height: 320px;
+.logo_CA {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.navbar_logo {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+.navbar__brand {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.contactInfo {
+  flex: 1;
+  min-width: 200px;
+}
+
+.aboutCompany {
+  flex: 1;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: -7px;
+}
+
+
+.icon {
+  font-size: 16px;
+  color: #fca311;
+}
+
+.aboutCompany h3 {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.aboutCompany p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.socialIcons svg {
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.socialIcons svg:hover {
+  color: #fca311;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 32px 20px;
   }
-  .hero_card {
-    padding: 16px 2px 0 2px;
-  }
-  .image img {
-    width: 140px;
-    height: 160px;
-  }
-  .imageCircle {
-    width: 140px;
-    height: 140px;
-  }
-  .statistic {
+
+  .footerContent {
     flex-direction: column;
-    gap: 8px;
-    margin-top: 12px;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 100%;
   }
-  .map_card {
-    padding: 16px 2px 12px 2px; /* tambah padding bottom agar maps tidak terlalu mepet bawah */
+
+  .logo_CA {
+    gap: 12px;
+    margin-bottom: 18px;
   }
-  .map_wrapper {
-    height: 120px;
+
+  .navbar_logo {
+    width: 40px;
   }
-  .map_text h2 {
-    font-size: 1rem;
+
+  .navbar__brand {
+    font-size: 18px;
   }
-  .map_text {
-    margin-bottom: 16px;
+
+  .contactInfo {
+    margin-bottom: 24px;
+  }
+
+  .contactItem {
+    margin-bottom: 12px;
+    gap: 10px;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+
+  .contactItem p {
+    font-size: 14px;
+  }
+
+  .aboutCompany h3 {
+    font-size: 16px;
+  }
+
+  .aboutCompany p {
+    font-size: 13px;
+  }
+
+  .socialIcons {
+    justify-content: flex-start;
+    margin-top: 16px;
+    gap: 16px;
+  }
+
+  .socialIcons svg {
+    font-size: 18px;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 420px) {
+  .keyword {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  .text h1 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+  }
+
+  .text p {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+  }
+
+  .image img {
+    width: 100%;
+    max-height: 300px;
+  }
+   .button {
+    width: 100%;              /* biar full width di layar kecil */
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .button a {
+    font-size: 0.9rem;
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .keyword {
+    grid-template-columns: 1fr; /* stack biar lebih rapi */
+    gap: 30px;
+    text-align: center;
+  }
+
+  .image img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .image {
+    margin-right: 0;
+  }
+  .button {
+    padding: clamp(6px, 1.5vw, 10px) clamp(16px, 3vw, 22px);
+    border-radius: 25px;
+  }
+
+  .button a {
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
   }
 }

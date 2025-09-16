@@ -9,7 +9,7 @@ function Feedback() {
     return (
         <div>
         <Helmet>
-            <title>Feedback Pelanggan | Cahaya Acrylic</title>
+            <title>Plakat Akrilik | Gantungan Kunci | Custom Acrylic | Cahaya Acrylic</title>
         <   meta
                 name="description"
                 content="Lihat ulasan dan pengalaman pelanggan yang sudah menggunakan produk akrilik dari Cahaya Acrylic. Kepuasan Anda adalah prioritas kami."

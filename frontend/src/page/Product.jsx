@@ -10,7 +10,7 @@ function Product() {
     return (
         <div>
             <Helmet>
-                <title>Produk Akrilik | Cahaya Acrylic</title>
+                <title>Custom Akrilik | Cahaya Acrylic</title>
                 <meta
                     name="description"
                     content="Temukan berbagai produk akrilik berkualitas dari Cahaya Acrylic. Mulai dari akrilik bening, akrilik warna, hingga custom sesuai kebutuhan Anda."

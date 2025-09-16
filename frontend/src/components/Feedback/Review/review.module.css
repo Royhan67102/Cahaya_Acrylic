@@ -526,3 +526,100 @@
   color: var(--text-secondary);
   width: 100%; /* Agar tidak mengganggu layout flex */
 }
+
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Mobile devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .list_historyItem {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+  
+  .wordItem {
+    font-size: 0.9rem;
+  }
+
+  /* Mengubah arah layout untuk review cards di mobile */
+  .review_list {
+    flex-wrap: nowrap; /* Pastikan tetap satu baris */
+    overflow-x: scroll; /* Mengaktifkan scroll horizontal */
+    padding: 10px 0;
+  }
+  
+  .review_card {
+    flex: 0 0 85%; /* Setiap card 85% dari lebar viewport */
+    min-width: 250px;
+  }
+
+  .feedback_card {
+    padding: 20px;
+  }
+
+  .formTitle {
+    font-size: 1rem;
+  }
+
+  .actionGroup {
+    flex-direction: column; /* Mengubah tombol menjadi vertikal */
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .upload_label, .shareBtn {
+    width: 100%; /* Tombol memenuhi lebar container */
+    text-align: center;
+  }
+}
+
+/* Tablet devices (601px to 991px) */
+@media (min-width: 601px) and (max-width: 991px) {
+  .container {
+    padding: 30px 15px;
+  }
+  
+  .list_historyItem {
+    font-size: 1.4rem;
+    padding: 12px 25px;
+  }
+
+  .review_card {
+    flex: 0 0 45%; /* Dua card per baris */
+    min-width: 280px;
+  }
+
+  .feedback_card {
+    padding: 25px;
+  }
+
+  .formTitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop devices (992px and up) */
+@media (min-width: 992px) {
+  .Package {
+    max-width: 1200px;
+  }
+  
+  .list_historyItem {
+    font-size: 1.6rem;
+    padding: 15px 30px;
+  }
+  
+  .review_card {
+    flex: 0 0 calc(33.333% - 14px); /* Tiga card per baris */
+    min-width: 300px;
+  }
+
+  .feedback_card {
+    max-width: 700px;
+    margin: 16px auto;
+  }
+}

@@ -1,10 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from '../components/Navbar/Navbar';
-import Hero from '../components/Home/Hero/Hero';
+import Swipe from "../components/Home/Swipe/Swipe";
 import Footer from '../components/Footer/Footer';
 import Review from '../components/Feedback/Review/Review';
-import Swipe from '../components/Home/Swipe/Swipe';
-
 function Feedback() {
     return (
         <div>

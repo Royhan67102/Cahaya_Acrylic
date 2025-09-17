@@ -1,19 +1,20 @@
+/* ===================== SWIPE / HERO SECTION ===================== */
 .container {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden; 
+  overflow: hidden;
   margin-top: -20px;
 }
+
+/* Background gambar */
 .cardImg {
   width: 100%;
   height: auto;
-  object-fit: cover; /* biar tetap proporsional */
-  max-width: 100%;
+  object-fit: cover;
   border-radius: 20px;
-  opacity: 0.7; /* transparansi */
-  /* filter: blur(3px); blur keseluruhan */
-  mask-image: linear-gradient(to right, transparent 0%, black 30%); /* efek menyatu kiri */
+  opacity: 0.7;
+  mask-image: linear-gradient(to right, transparent 0%, black 30%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
 }
 
@@ -25,27 +26,32 @@
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transform: translateY(100%);
+  transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.6s ease;
+  /* Tambahan untuk menengahkan konten (peta) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-/* Section aktif tampil */
 .section.active {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
   z-index: 1;
 }
 
-/* Hero content */
+
+/* Konten utama */
 .heroContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  width: 100%;
+  max-width: 1000px;
+  width: 90%;
   gap: 40px;
-  padding: 40px;
-  margin: 0 auto;
-  height: 100%;
+  padding: 30px;
+  margin: 80px auto 0;
+  height: auto;
   background-color: #031540;
   border-radius: 25px;
 }
@@ -64,36 +70,44 @@
   align-items: center;
 }
 
-
 .heroImage img {
   max-width: 100%;
   height: auto;
+  border-radius: 16px;
 }
 
+/* Teks */
+.title,
+.desc {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+.title {
+  /* font-size: 24px; */
+  font-weight: 700;
+}
+.desc {
+  /* font-size: 16px; */
+  margin-top: 10px;
+}
+
+/* Rating */
 .rating {
   margin-bottom: 10px;
   font-size: 14px;
 }
-
 .starText {
   margin-left: 8px;
-  color: #555;
+  color: #ccc;
 }
 
-.title, 
-.desc {
-  color: #fff; /* kontras dengan bg biru tua */
-  position: relative;
-  z-index: 2;
-}
-
-
+/* CTA */
 .ctaRow {
   display: flex;
   gap: 16px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
-
 .appBtn,
 .demoBtn {
   display: inline-block;
@@ -102,17 +116,16 @@
   text-decoration: none;
   font-weight: bold;
 }
-
 .appBtn {
   background: #007aff;
   color: white;
 }
-
 .demoBtn {
   background: #f1f1f1;
   color: #333;
 }
 
+/* Statistik */
 .statsRow {
   display: flex;
   gap: 40px;
@@ -121,14 +134,23 @@
 }
 
 /* Map */
-.section iframe {
+.mapWrapper {
+    width: 90%;
+    max-width: 1000px;
+    height: 60vh; /* Ubah ketinggian peta agar tidak penuh */
+    background-color: #031540;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.mapIframe {
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px; /* Sesuaikan border-radius */
 }
 
-/* Icon tangan */
+/* Icon swipe */
 .swipeIcon {
   position: absolute;
   bottom: 20px;
@@ -142,27 +164,122 @@
   color: #ffffff;
 }
 
+/* Button umum */
 .button {
   background-color: #4a63b7;
-  padding: clamp(8px, 2vw, 12px) clamp(20px, 4vw, 28px); /* responsif */
+  padding: clamp(8px, 2vw, 12px) clamp(20px, 4vw, 28px);
   border-radius: 30px;
   border: none;
   transition: 0.3s;
 }
-
 .button a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  font-size: clamp(0.85rem, 2vw, 1rem); /* responsif */
+  font-size: clamp(0.85rem, 2vw, 1rem);
   display: inline-block;
   text-align: center;
 }
 .button:hover {
   background-color: #2f52c5;
 }
-/* Animasi naik-turun */
+
+/* Animasi swipe */
 @keyframes bounce {
   0%, 100% { transform: translate(-50%, 0); }
   50% { transform: translate(-50%, -12px); }
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .heroContent {
+    flex-direction: row;
+    gap: 20px;
+    padding: 25px;
+    margin: 60px auto 0;
+  }
+  .title { font-size: 20px; }
+  .desc { font-size: 14px; }
+  .statsRow { gap: 20px; font-size: 12px; }
+  .cardImg { max-width: 80%; }
+}
+
+/* Mobile (≤767px) */
+@media (max-width: 767px) {
+  .container {
+    height: 100vh;
+    margin-top: 0;
+    overflow-y: hidden;
+  }
+
+  .section {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 0.6s ease;
+  }
+
+  .section:first-of-type {
+    transform: translateY(0);
+    z-index: 2;
+  }
+
+  .section.active {
+    transform: translateY(0);
+    z-index: 3;
+  }
+
+  .heroContent {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    margin: 30px auto 0;
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .left {
+    flex: 1 1 55%;
+  }
+  .right {
+    flex: 1 1 45%;
+  }
+
+  .title {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+  .desc {
+    font-size: clamp(0.75rem, 3vw, 0.9rem);
+  }
+
+  .ctaRow {
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+  .button {
+    padding: 8px 16px;
+    border-radius: 20px;
+  }
+  .button a {
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+  }
+
+  .swipeIcon {
+    font-size: 28px;
+    bottom: 10px;
+  }
+  .mapWrapper {
+    height: 50vh; /* Sesuaikan tinggi peta di HP */
+    border-radius: 15px;
+  }
+  .mapIframe {
+    border-radius: 10px;
+  }
 }

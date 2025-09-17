@@ -14,10 +14,9 @@ body {
   font-family: 'Inter', sans-serif; /* Ganti dengan font modern seperti Inter/Poppins */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- background-color:#d2deff ;
+  background-color:#d2deff ;
   color: var(--text-light);
   overflow-x: hidden; /* Mencegah scroll horizontal dari elemen glow */
-  
 }
 
 /* --- Service Container Utama --- */
@@ -288,63 +287,122 @@ display: inline-block;
 }
 
 /* --- Responsiveness --- */
+@media (max-width: 1280px) {
+  .hero_title {
+    font-size: 3.2rem;
+  }
+  .hero_subtitle {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 1024px) {
-    .hero_title {
-        font-size: 3rem;
-    }
-    .hero_subtitle {
-        font-size: 1.1rem;
-    }
-    .section_title {
-        font-size: 2rem;
-    }
-    .advantages_wrapper {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
+  .hero_title {
+    font-size: 2.8rem;
+  }
+  .hero_subtitle {
+    font-size: 1rem;
+  }
+  .section_title {
+    font-size: 2rem;
+  }
+  .advantages_wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+  }
+  .layanan_wrapper {
+    gap: 1.5rem;
+  }
+  .layanan_card {
+    max-width: 320px;
+    padding: 18px;
+  }
 }
 
 @media (max-width: 768px) {
-    .service_container {
-        padding: 40px 15px;
-        gap: 60px;
-    }
-    .hero_title {
-        font-size: 2.5rem;
-    }
-    .hero_graphic {
-        width: 300px;
-        height: 300px;
-        filter: blur(60px);
-    }
-    .section_title {
-        font-size: 1.8rem;
-    }
-    .advantages_wrapper, .layanan_wrapper {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .layanan_card {
-        min-width: unset;
-        width: 100%;
-        max-width: 400px; /* Batasi lebar agar tidak terlalu besar di mobile */
-        margin: 0 auto;
-    }
-    .advantage_item {
-        padding: 20px;
-    }
-    .advantage_icon {
-        font-size: 2.5rem;
-    }
-    .advantage_item h3 {
-        font-size: 1.1rem;
-    }
-    .card_icon {
-        font-size: 3rem;
-    }
-    .layanan_card h2 {
-        font-size: 1.5rem;
-    }
-    .layanan_card p {
-        font-size: 0.9rem;
-    }
+  .service_container {
+    padding: 40px 15px;
+    gap: 50px;
+  }
+  .hero_title {
+    font-size: 2.2rem;
+    padding: 30px 10px;
+  }
+  .hero_subtitle {
+    font-size: 0.95rem;
+    padding: 0 15px;
+  }
+  .hero_graphic {
+    width: 250px;
+    height: 250px;
+    filter: blur(50px);
+    top: -30px;
+  }
+  .section_title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+  .advantages_wrapper {
+    grid-template-columns: 1fr; /* Paling baik untuk 1 kolom di mobile */
+    gap: 1.2rem;
+  }
+  .advantage_item {
+    padding: 18px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .advantage_icon {
+    font-size: 2.3rem;
+  }
+  .advantage_item h3 {
+    font-size: 1rem;
+  }
+  .layanan_wrapper {
+    display: grid; /* Gunakan grid untuk kontrol yang lebih baik */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .layanan_card {
+    width: 100%;
+    /* Atur aspect-ratio atau min-height untuk tinggi yang konsisten */
+    min-height: 280px;
+    max-width: none;
+    padding: 20px;
+    box-sizing: border-box; /* Pastikan padding disertakan dalam perhitungan lebar */
+  }
+  .card_icon {
+    font-size: 2.8rem;
+  }
+  .layanan_card h2 {
+    font-size: 1.3rem;
+  }
+  .layanan_card p {
+    font-size: 0.9rem;
+  }
+  .learnMoreButton {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero_title {
+    font-size: 1.8rem;
+  }
+  .hero_subtitle {
+    font-size: 0.85rem;
+  }
+  .section_title {
+    font-size: 1.4rem;
+  }
+  .layanan_card h2 {
+    font-size: 1.2rem;
+  }
+  .layanan_card p {
+    font-size: 0.85rem;
+  }
+  .learnMoreButton {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
 }

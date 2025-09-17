@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from '../components/Navbar/Navbar';
-import Hero from '../components/Home/Hero/Hero';
 import Footer from '../components/Footer/Footer';
 import Products from '../components/Product/Products/Products';
 import styles from './product02.module.css'; 

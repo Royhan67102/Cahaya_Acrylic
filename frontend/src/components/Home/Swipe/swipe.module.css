@@ -2,9 +2,9 @@
 .container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 500px; /* Set a fixed height */
   overflow: hidden;
-  margin-top: -20px;
+  border-radius: 25px; 
 }
 
 /* Background gambar */
@@ -32,6 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 25px; /* Apply border-radius to the section */
 }
 .section.active {
   opacity: 1;
@@ -40,20 +41,20 @@
   z-index: 1;
 }
 
-
 /* Konten utama */
 .heroContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
+  max-width: 100%;
   width: 90%;
   gap: 40px;
   padding: 30px;
-  margin: 80px auto 0;
+  margin: auto;
   height: auto;
   background-color: #031540;
   border-radius: 25px;
+  box-sizing: border-box; /* Include padding in width/height calculation */
 }
 
 .left {
@@ -84,22 +85,12 @@
   z-index: 2;
 }
 .title {
-  /* font-size: 24px; */
   font-weight: 700;
+  font-size: clamp(1rem, 4vw, 1.5rem); /* Responsive font size */
 }
 .desc {
-  /* font-size: 16px; */
+  font-size: clamp(0.75rem, 3vw, 1rem); /* Responsive font size */
   margin-top: 10px;
-}
-
-/* Rating */
-.rating {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-.starText {
-  margin-left: 8px;
-  color: #ccc;
 }
 
 /* CTA */
@@ -107,61 +98,6 @@
   display: flex;
   gap: 16px;
   margin: 20px 0;
-}
-.appBtn,
-.demoBtn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.appBtn {
-  background: #007aff;
-  color: white;
-}
-.demoBtn {
-  background: #f1f1f1;
-  color: #333;
-}
-
-/* Statistik */
-.statsRow {
-  display: flex;
-  gap: 40px;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-/* Map */
-.mapWrapper {
-    width: 90%;
-    max-width: 1000px;
-    height: 60vh; /* Ubah ketinggian peta agar tidak penuh */
-    background-color: #031540;
-    border-radius: 25px;
-    padding: 20px;
-}
-
-.mapIframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 15px; /* Sesuaikan border-radius */
-}
-
-/* Icon swipe */
-.swipeIcon {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 40px;
-  cursor: pointer;
-  animation: bounce 1.5s infinite;
-  z-index: 10;
-  opacity: 0.8;
-  color: #ffffff;
 }
 
 /* Button umum */
@@ -184,102 +120,73 @@
   background-color: #2f52c5;
 }
 
+/* Map */
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 25px; /* Match the container's border-radius */
+}
+
 /* Animasi swipe */
 @keyframes bounce {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, -12px); }
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -12px);
+  }
 }
 
 /* ===================== RESPONSIVE ===================== */
 
-/* Tablet (768px - 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
+/* Untuk semua perangkat (tablet dan mobile) */
+@media (max-width: 991px) {
   .heroContent {
-    flex-direction: row;
+    flex-direction: column; /* Mengubah tata letak menjadi vertikal */
+    align-items: center; /* Menengahkan konten secara horizontal */
+    text-align: center; /* Menengahkan teks di dalam .left */
     gap: 20px;
     padding: 25px;
-    margin: 60px auto 0;
-  }
-  .title { font-size: 20px; }
-  .desc { font-size: 14px; }
-  .statsRow { gap: 20px; font-size: 12px; }
-  .cardImg { max-width: 80%; }
-}
-
-/* Mobile (≤767px) */
-@media (max-width: 767px) {
-  .container {
-    height: 100vh;
-    margin-top: 0;
-    overflow-y: hidden;
-  }
-
-  .section {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateY(100%);
-    transition: transform 0.6s ease;
-  }
-
-  .section:first-of-type {
-    transform: translateY(0);
-    z-index: 2;
-  }
-
-  .section.active {
-    transform: translateY(0);
-    z-index: 3;
-  }
-
-  .heroContent {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 15px;
-    padding: 15px;
-    margin: 30px auto 0;
     height: auto;
-    border-radius: 15px;
   }
 
+  /* Mengatur urutan elemen */
   .left {
-    flex: 1 1 55%;
-  }
-  .right {
-    flex: 1 1 45%;
+    order: 2; /* Menempatkan .left (teks & tombol) di urutan kedua */
+    flex: 1 1 100%;
   }
 
-  .title {
-    font-size: clamp(1rem, 4vw, 1.2rem);
-  }
-  .desc {
-    font-size: clamp(0.75rem, 3vw, 0.9rem);
+  .right {
+    order: 1; /* Menempatkan .right (gambar) di urutan pertama */
+    flex: 1 1 100%;
   }
 
   .ctaRow {
-    gap: 10px;
-    justify-content: flex-start;
+    justify-content: center; /* Menengahkan tombol "Our Product" */
   }
 
-  .button {
-    padding: 8px 16px;
-    border-radius: 20px;
-  }
-  .button a {
-    font-size: clamp(0.7rem, 2vw, 0.9rem);
+  /* Perbaikan kecil untuk font dan gambar di mobile */
+  .title {
+    font-size: clamp(1rem, 4vw, 1.5rem);
   }
 
-  .swipeIcon {
-    font-size: 28px;
-    bottom: 10px;
+  .desc {
+    font-size: clamp(0.75rem, 3vw, 1rem);
   }
-  .mapWrapper {
-    height: 50vh; /* Sesuaikan tinggi peta di HP */
-    border-radius: 15px;
+
+  .cardImg {
+    max-width: 100%;
+    mask-image: none;
+    mask-image: linear-gradient(to right, transparent 0%, black 30%);
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 30%);
   }
-  .mapIframe {
-    border-radius: 10px;
+}
+
+/* Penyesuaian untuk layar yang sangat kecil */
+@media (max-width: 767px) {
+  .heroContent {
+    padding: 15px;
+    gap: 15px;
   }
 }

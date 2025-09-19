@@ -78,7 +78,7 @@ function Products() {
                                     className={styles.buyBtn}
                                     onClick={() => handleBuyNow(product)}
                                 >
-                                    Beli Sekarang
+                                    Buy
                                 </button>
                                 <button
                                     className={styles.button_detail}

@@ -80,7 +80,7 @@
   color: white;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
+  border-radius: 40px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

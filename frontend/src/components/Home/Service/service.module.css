@@ -156,6 +156,7 @@ display: inline-block;
     margin-top: 15px;
     position: relative;
     z-index: 1;
+    color: #fff;
 }
 
 .advantage_icon {

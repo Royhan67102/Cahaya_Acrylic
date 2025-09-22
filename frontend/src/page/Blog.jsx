@@ -3,6 +3,7 @@ import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import styles from "./blog.module.css";
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import { Helmet } from "react-helmet-async";
 
 // ---------- Base URL untuk canonical SEO ----------
 const BASE_URL = "https://cahaya-acrylic.com";
@@ -118,6 +119,27 @@ function BlogList() {
 
   return (
     <div className={styles.blogContainer}>
+       <Helmet>
+        <title>Custom Acrylic Bogor | Akrilik Custom, Cutting Acrylic</title>
+        <meta
+          name="description"
+          content="Cahaya Acrylic menjual berbagai jenis akrilik: akrilik bening, warna, dan custom dengan harga terbaik untuk kebutuhan rumah, kantor, dan dekorasi."
+        />
+        <meta
+          name="keywords"
+          content="cahaya acrylic, jual akrilik, akrilik bening, akrilik custom, harga akrilik murah, acrylic custom, custom acrylic, akrilik custom, custom akrilik, akrilik, acrylic, akrilik bogor, akrilik terdekat, plakat akrilik, jual akrilik, toko akrilik, toko acrylic, cutting acrylic, cutting akrilik, akrilik cutting, gantungan kunci, gantungan kunci acrylic, gantungan kunci akrilik"
+        />
+        <meta
+          property="og:title"
+          content="Cahaya Acrylic Bogor| Akrilik Custom, Cutting Acrylic"
+        />
+        <meta
+          property="og:description"
+          content="Tempat jual akrilik terpercaya: bening, warna, dan custom dengan harga terbaik. Hanya di Cahaya Acrylic."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cahaya-acrylic.com/" />
+      </Helmet>
         <Navbar />
       <header className={styles.blogHeader}>
         <h1 className={styles.blogTitle}>Blog - Cahaya Acrylic</h1>

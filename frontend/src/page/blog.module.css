@@ -1,0 +1,445 @@
+/* ==== GLOBAL ==== */
+body {
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.7;
+  background-color: #fafafa;
+  color: #222;
+}
+
+.blogContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  background: #fff;
+}
+
+.blogHeader {
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.blogTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #3056B3;
+  margin-bottom: 8px;
+}
+
+.blogSubtitle {
+  font-size: 1.1rem;
+  color: #22364a;
+}
+
+.blogList {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.blogCard {
+  background: #f7f9fc;
+  border: 2px solid #3056B3;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(48,86,179,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+
+.blogCard:hover {
+  box-shadow: 0 8px 32px rgba(48,86,179,0.18);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.blogCardImage {
+  width: 100%;
+  height: 180px;
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid #e0e7ff;
+}
+
+.blogCardThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 0.3s;
+}
+
+.blogCard:hover .blogCardThumb {
+  transform: scale(1.05);
+}
+
+.blogCardContent {
+  padding: 18px 20px 16px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.blogCardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3056B3;
+  text-decoration: none;
+  margin-bottom: 6px;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.blogCardTitle:hover {
+  color: #22364a;
+}
+
+.blogCardMeta {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.blogCardExcerpt {
+  font-size: 1.08rem;
+  color: #22364a;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.blogCardFooter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.98rem;
+  margin-top: 8px;
+}
+
+.readMore {
+  color: #3056B3;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.readMore:hover {
+  color: #22364a;
+}
+
+.dot {
+  color: #3056B3;
+  font-size: 1.2em;
+}
+
+.keyword {
+  background: #e0e7ff;
+  color: #3056B3;
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 0.95em;
+  margin-right: 2px;
+}
+
+@media (max-width: 900px) {
+  .blogList {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .blogCard {
+    width: 98%;
+    min-width: 0;
+  }
+}
+/* Container */
+.blog-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ==== BLOG LIST ==== */
+.blog-list-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.blog-list-header p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Artikel di list */
+.blog-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.75rem;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.blog-card img {
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.blog-card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.blog-card h2 a {
+  text-decoration: none;
+  color: #111;
+}
+
+.blog-card h2 a:hover {
+  color: #4f46e5; /* indigo */
+}
+
+.blog-card .meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.blog-card .excerpt {
+  color: #444;
+  margin-bottom: 0.75rem;
+}
+
+.blog-card .keywords span {
+  background: #f3f4f6;
+  color: #444;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.4rem;
+}
+
+/* ==== BLOG DETAIL ==== */
+.blog-detail nav {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.blog-detail nav a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.blog-detail nav a:hover {
+  text-decoration: underline;
+}
+
+.blog-detail h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.blog-detail .meta {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.blogList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* maksimal 3 kolom */
+  gap: 30px; /* jarak antar card */
+  justify-content: center;
+}
+
+.blogCardContent {
+    background-color:#d2dfff;
+}
+.blog-detail figure {
+  margin: 1.5rem 0;
+}
+
+.blog-detail figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.blog-detail figure figcaption {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+/* Prose content (konten artikel) */
+.prose {
+  margin-top: 1.5rem;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  margin: 1.25rem 0 0.5rem;
+  font-weight: 700;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.prose ul, .prose ol {
+  margin: 1rem 0 1rem 1.5rem;
+  color: #333;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.blog-detail footer {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.blog-detail footer a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.blog-detail footer a:hover {
+  text-decoration: underline;
+}
+
+/* Not found */
+.blog-not-found {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.blog-not-found h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.blog-not-found p a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.aboutSection {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: #fafafa;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Heading Utama */
+.judul {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2b3a67;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.judul::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #3056B3;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+/* Sub Judul */
+.judul2,
+.judul3,
+.lokasi {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3056B3;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraf */
+.aboutSection p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* List produk */
+.aboutSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.aboutSection ul li {
+  background: #f0f4ff;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #222;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.aboutSection ul li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(48,86,179,0.1);
+}
+
+/* Lokasi */
+.lokasi + p {
+  background: #eef2ff;
+  border-left: 4px solid #3056B3;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #222;
+  white-space: pre-line; /* biar line break ✔ */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 2rem 1.2rem;
+  }
+
+  .judul {
+    font-size: 1.7rem;
+  }
+
+  .judul2,
+  .judul3,
+  .lokasi {
+    font-size: 1.3rem;
+  }
+
+  .aboutSection p,
+  .aboutSection ul li {
+    font-size: 0.95rem;
+  }
+}

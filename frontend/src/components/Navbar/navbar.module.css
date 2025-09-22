@@ -105,24 +105,6 @@
   flex-shrink: 0;
 }
 
-.navbar__cart_btn {
-  background: #4a63b7;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  border-radius: 24px;
-  padding: 6px 16px;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-.navbar__cart_btn:hover {
-  background: #2c387e;
-}
 
 /* Chrome scrollbar */
 .navbar__list_container::-webkit-scrollbar,

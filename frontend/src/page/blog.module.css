@@ -1,4 +1,6 @@
-/* ==== GLOBAL ==== */
+/* =========================
+   GLOBAL
+========================= */
 body {
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.7;
@@ -6,6 +8,9 @@ body {
   color: #222;
 }
 
+/* =========================
+   BLOG CONTAINER & HEADER
+========================= */
 .blogContainer {
   max-width: 1200px;
   margin: 0 auto;
@@ -30,11 +35,14 @@ body {
   color: #22364a;
 }
 
+/* =========================
+   BLOG LIST
+========================= */
 .blogList {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .blogCard {
@@ -44,7 +52,6 @@ body {
   box-shadow: 0 4px 16px rgba(48,86,179,0.08);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   transition: box-shadow 0.2s, transform 0.2s;
   overflow: hidden;
 }
@@ -57,7 +64,6 @@ body {
 .blogCardImage {
   width: 100%;
   height: 180px;
-  display: block;
   overflow: hidden;
   border-bottom: 1px solid #e0e7ff;
 }
@@ -66,7 +72,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
   transition: transform 0.3s;
 }
 
@@ -75,11 +80,10 @@ body {
 }
 
 .blogCardContent {
-  padding: 18px 20px 16px 20px;
-  width: 100%;
+  background-color: #d2dfff;
+  padding: 18px 20px 16px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .blogCardTitle {
@@ -88,7 +92,6 @@ body {
   color: #3056B3;
   text-decoration: none;
   margin-bottom: 6px;
-  text-align: left;
   transition: color 0.2s;
 }
 
@@ -107,7 +110,6 @@ body {
   font-size: 1.08rem;
   color: #22364a;
   margin-bottom: 16px;
-  text-align: left;
 }
 
 .blogCardFooter {
@@ -115,24 +117,7 @@ body {
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  font-size: 0.98rem;
-  margin-top: 8px;
-}
-
-.readMore {
-  color: #3056B3;
-  text-decoration: underline;
-  font-weight: 600;
-  transition: color 0.2s;
-}
-
-.readMore:hover {
-  color: #22364a;
-}
-
-.dot {
-  color: #3056B3;
-  font-size: 1.2em;
+  font-size: 0.95rem;
 }
 
 .keyword {
@@ -140,174 +125,77 @@ body {
   color: #3056B3;
   border-radius: 8px;
   padding: 2px 10px;
-  font-size: 0.95em;
-  margin-right: 2px;
+  font-size: 0.9em;
 }
 
-@media (max-width: 900px) {
-  .blogList {
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
-  }
-  .blogCard {
-    width: 98%;
-    min-width: 0;
-  }
-}
-/* Container */
-.blog-container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1.5rem;
+.dot {
+  color: #3056B3;
+  font-size: 1.2em;
 }
 
-/* ==== BLOG LIST ==== */
-.blog-list-header h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 0.25rem;
-}
-
-.blog-list-header p {
-  color: #555;
-  font-size: 1rem;
-}
-
-/* Artikel di list */
-.blog-card {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid #e5e5e5;
-  border-radius: 0.75rem;
-  background: #fff;
-  transition: box-shadow 0.2s ease;
-}
-
-.blog-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-.blog-card img {
-  border-radius: 0.5rem;
-  object-fit: cover;
-}
-
-.blog-card h2 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-
-.blog-card h2 a {
-  text-decoration: none;
-  color: #111;
-}
-
-.blog-card h2 a:hover {
-  color: #4f46e5; /* indigo */
-}
-
-.blog-card .meta {
-  font-size: 0.85rem;
-  color: #777;
-  margin-bottom: 0.5rem;
-}
-
-.blog-card .excerpt {
-  color: #444;
-  margin-bottom: 0.75rem;
-}
-
-.blog-card .keywords span {
-  background: #f3f4f6;
-  color: #444;
-  font-size: 0.75rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.4rem;
-}
-
-/* ==== BLOG DETAIL ==== */
-.blog-detail nav {
+/* =========================
+   BLOG DETAIL
+========================= */
+.blogDetail nav {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 1rem;
 }
 
-.blog-detail nav a {
+.blogDetail nav a {
   color: #4f46e5;
   text-decoration: none;
 }
 
-.blog-detail nav a:hover {
+.blogDetail nav a:hover {
   text-decoration: underline;
 }
 
-.blog-detail h1 {
+.detailHeader {
+  margin-bottom: 1rem;
+}
+
+.detailTitle {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0.25rem;
+  color: #2b3a67;
 }
 
-.blog-detail .meta {
+.detailMeta {
   font-size: 0.9rem;
   color: #777;
 }
 
-.blogList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* maksimal 3 kolom */
-  gap: 30px; /* jarak antar card */
-  justify-content: center;
-}
-
-.blogCardContent {
-    background-color:#d2dfff;
-}
-.blog-detail figure {
+.detailFigure {
   margin: 1.5rem 0;
 }
 
-.blog-detail figure img {
+.detailImage {
   width: 100%;
   height: auto;
   border-radius: 0.75rem;
 }
 
-.blog-detail figure figcaption {
+.detailCaption {
   font-size: 0.8rem;
   color: #999;
   margin-top: 0.25rem;
 }
 
-/* Prose content (konten artikel) */
-.prose {
-  margin-top: 1.5rem;
-}
-
-.prose h2 {
+.detailContent h2 {
   font-size: 1.5rem;
   margin: 1.25rem 0 0.5rem;
   font-weight: 700;
 }
 
-.prose p {
+.detailContent p,
+.detailContent li {
+  color: #333;
   margin-bottom: 1rem;
-  color: #333;
 }
 
-.prose ul, .prose ol {
-  margin: 1rem 0 1rem 1.5rem;
-  color: #333;
-}
-
-.prose li {
-  margin-bottom: 0.5rem;
-}
-
-/* Footer */
-.blog-detail footer {
+.detailFooter {
   border-top: 1px solid #e5e5e5;
   padding-top: 1rem;
   margin-top: 2rem;
@@ -315,35 +203,21 @@ body {
   color: #555;
 }
 
-.blog-detail footer a {
+.contactLink {
   color: #4f46e5;
   text-decoration: none;
 }
 
-.blog-detail footer a:hover {
+.contactLink:hover {
   text-decoration: underline;
 }
 
-/* Not found */
-.blog-not-found {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.blog-not-found h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.blog-not-found p a {
-  color: #4f46e5;
-  text-decoration: none;
-}
-
+/* =========================
+   ABOUT SECTION
+========================= */
 .aboutSection {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 3rem auto 0;
   padding: 3rem 2rem;
   background: #fafafa;
   border-radius: 16px;
@@ -352,7 +226,6 @@ body {
   color: #333;
 }
 
-/* Heading Utama */
 .judul {
   font-size: 2rem;
   font-weight: 800;
@@ -371,7 +244,6 @@ body {
   border-radius: 2px;
 }
 
-/* Sub Judul */
 .judul2,
 .judul3,
 .lokasi {
@@ -382,14 +254,12 @@ body {
   margin-bottom: 0.75rem;
 }
 
-/* Paragraf */
 .aboutSection p {
   font-size: 1rem;
   color: #444;
   margin-bottom: 1rem;
 }
 
-/* List produk */
 .aboutSection ul {
   list-style: none;
   padding: 0;
@@ -411,7 +281,6 @@ body {
   box-shadow: 0 4px 12px rgba(48,86,179,0.1);
 }
 
-/* Lokasi */
 .lokasi + p {
   background: #eef2ff;
   border-left: 4px solid #3056B3;
@@ -419,11 +288,23 @@ body {
   border-radius: 8px;
   font-size: 1rem;
   color: #222;
-  white-space: pre-line; /* biar line break ✔ */
+  white-space: pre-line;
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .blogList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .blogList {
+    grid-template-columns: 1fr;
+  }
+
   .aboutSection {
     padding: 2rem 1.2rem;
   }
@@ -441,5 +322,24 @@ body {
   .aboutSection p,
   .aboutSection ul li {
     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blogCard {
+    border-radius: 12px;
+  }
+
+  .blogCardTitle {
+    font-size: 1.1rem;
+  }
+
+  .blogCardExcerpt {
+    font-size: 0.95rem;
+  }
+
+  .keyword {
+    font-size: 0.8rem;
+    padding: 2px 8px;
   }
 }

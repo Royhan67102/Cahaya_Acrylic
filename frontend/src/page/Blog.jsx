@@ -17,9 +17,9 @@ const postsData = [
     author: "Cahaya Acrylic",
     cover: "/FRM_2_01.jpg",
     coverAlt: "Plakat custom akrilik warna transparan dengan logo perusahaan",
-    keywords: ["custom akrilik", "plakat akrilik", "branding", "akrilik custom", "custom acrylic", "acrylic custom"],
+    keywords: ["custom akrilik", "plakat akrilik", "akrilik branding", "akrilik custom", "custom acrylic", "acrylic custom"],
     excerpt:
-      "Pelajari bagaimana custom akrilik membantu memperkuat identitas brand — mulai dari plakat penghargaan hingga signed toko.",
+      "Branding bukan sekadar logo, tapi bagaimana orang melihat bisnis Anda. Dengan custom akrilik, brand Anda tampil lebih meyakinkan, profesional, dan berkesan.",
     content:
       "<p>Akrilik custom adalah solusi fleksibel untuk barang promosi dan kebutuhan branding. Dalam artikel ini kami bahas material, finishing, ukuran, serta tips pemesanan agar hasil maksimal.</p><h2>Jenis Produk Akrilik</h2><p>Plakat, signage, gantungan kunci, dan display produk — semuanya bisa di-custom dengan akrilik berkualitas.</p>",
   },
@@ -31,9 +31,9 @@ const postsData = [
     author: "Cahaya Acrylic",
     cover: "/SGN_B.jpg",
     coverAlt: "Lampu dekoratif akrilik custom di ruang tamu",
-    keywords: ["akrilik dekorasi", "custom acrylic", "dekor rumah"],
+    keywords: ["akrilik dekorasi", "custom acrylic", "dekor rumah", "gantungan kunci", "dekorasi custom"],
     excerpt:
-      "Inspirasi desain dekorasi rumah menggunakan material akrilik yang ringan, modern, dan mudah dibentuk.",
+      "Dekorasi bukan hanya soal estetika, tapi bagaimana rumah mencerminkan kepribadian Anda. Dengan custom akrilik, hadirkan sentuhan modern dan elegan melalui signage dekorati.",
     content:
       "<p>Akrilik memungkinkan pembuatan dekor modern: lampu, rak minimalis, hingga panel hias. Simak 5 ide yang mudah diwujudkan.</p>",
   },
@@ -45,9 +45,9 @@ const postsData = [
     author: "Cahaya Acrylic",
     cover: "/PLKT_5.jpg",
     coverAlt: "Plakat Akrilik custom",
-    keywords: ["akrilik plakat", "custom acrylic", "plakat", "plakat akrilik"],
+    keywords: ["akrilik plakat", "custom acrylic", "plakat", "plakat akrilik", "plakat custom"],
     excerpt:
-      "Plakat akrilik adalah pilihan modern untuk penghargaan dan kenang-kenangan. Pelajari keunggulan, desain, dan tips memilih plakat akrilik yang tepat.",
+      "Hadiah terbaik adalah yang meninggalkan kesan mendalam. Dengan plakat akrilik custom, Anda bisa memberikan kenang-kenangan yang elegan, personal, dan penuh makna.",
     content:
       "<p>Plakat Akrilik </p>",
   },

@@ -5,11 +5,11 @@
     { "id": 4, "title": "Huruf Timbul", "price": "5K", "img" : "/HRF_T_01.jpg", "kategori":"Huruf Timbul", "desc" : "Mulai dari 5K/cm" },
     { "id": 5, "title": "Lembaran Akrilik", "price": "400K", "img" : "/LMB_L_01.jpg", "kategori":"Lembaran", "desc" : "Tersedia dari ukuran 2mm, 3mm, 4mm, 5mm, 6mm, 8mm, 10mm, 12mm, 15mm, 20mm berbagai warna" },
     { "id": 6, "title": "Tent Holder", "price": "10K", "img" : "/TNT_3_01.jpg", "kategori":"Tent Holder", "desc" : "Mulai dari 10K, Ukuran A7 Custom"},
-    { "id": 7, "title": "Signed", "price": "100K", "img" : "/FRM_2_01.jpg", "kategori":"Signed", "desc" : "Mulai dari 100K, Ukuran A4, Ketebalan 3 mm Custom"},
+    { "id": 7, "title": "Signage", "price": "100K", "img" : "/FRM_2_01.jpg", "kategori":"Signage", "desc" : "Mulai dari 100K, Ukuran A4, Ketebalan 3 mm Custom"},
     
     { "id": 8, "title": "Tent Holder", "price": "10k", "img" : "/CA6.png", "kategori":"Tent Holder", "desc" : "Mulai dari 10K, Custom" },
     { "id": 9, "title": "Papan Bunga", "price": "300K", "img" : "/KRG_B.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 300K, Ketebalan 2 mm, Ukuran 10x30cm"},
-    { "id": 10, "title": "Signed (Papan Tanda) ", "price": "30K", "img" : "/SGN_B.jpg", "kategori":"Signed", "desc" : "Mulai dari 30k, Ketebalan 2 mm, Ukuran 10x30 cm" },
+    { "id": 10, "title": "Signage (Papan Tanda) ", "price": "30K", "img" : "/SGN_B.jpg", "kategori":"Signage", "desc" : "Mulai dari 30k, Ketebalan 2 mm, Ukuran 10x30 cm" },
     { "id": 11, "title": "Kotak Hantaran", "price": "80K", "img" : "/BOX_H_02.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 80K, Ukuran 15x20x20 cm" },
     { "id": 12, "title": "Key Chain", "price": "5k", "img" : "/KEY_C_03.png","kategori":"Gantungan Kunci", "desc" : "Mulai dari 5K, Ukuran 5x5 cm Custom" },
     { "id": 13, "title": "Custom Item", "price": "250K", "img" : "/CST_I_01.jpg", "kategori":"Custom Item", "desc" : "Mulai dari 250K/ pcs, Custom" },

@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import styles from "./blog.module.css";
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 import { Helmet } from "react-helmet-async";
 
-// ---------- Base URL untuk canonical SEO ----------
+// ---------- Base URL untuk SEO ----------
 const BASE_URL = "https://cahaya-acrylic.com";
 
-// ---------- Sample posts data (replace with real API/CMS) ----------
+// ---------- Sample posts data (bisa diganti API/CMS) ----------
 const postsData = [
   {
     id: 1,
@@ -16,9 +16,16 @@ const postsData = [
     slug: "custom-akrilik-branding-bisnis",
     date: "2025-09-18",
     author: "Cahaya Acrylic",
-    cover: "/FRM_2_01.jpg",
+    cover: "/Product/FRM_2_01.jpg",
     coverAlt: "Plakat custom akrilik warna transparan dengan logo perusahaan",
-    keywords: ["custom akrilik", "plakat akrilik", "akrilik branding", "akrilik custom", "custom acrylic", "acrylic custom"],
+    keywords: [
+      "custom akrilik",
+      "plakat akrilik",
+      "akrilik branding",
+      "akrilik custom",
+      "custom acrylic",
+      "acrylic custom",
+    ],
     excerpt:
       "Branding bukan sekadar logo, tapi bagaimana orang melihat bisnis Anda. Dengan custom akrilik, brand Anda tampil lebih meyakinkan, profesional, dan berkesan.",
     content:
@@ -30,27 +37,38 @@ const postsData = [
     slug: "ide-custom-akrilik-dekorasi-rumah",
     date: "2025-08-30",
     author: "Cahaya Acrylic",
-    cover: "/SGN_B.jpg",
+    cover: "/Product/SGN_B.jpg",
     coverAlt: "Lampu dekoratif akrilik custom di ruang tamu",
-    keywords: ["akrilik dekorasi", "custom acrylic", "dekor rumah", "gantungan kunci", "dekorasi custom"],
+    keywords: [
+      "akrilik dekorasi",
+      "custom acrylic",
+      "dekor rumah",
+      "gantungan kunci",
+      "dekorasi custom",
+    ],
     excerpt:
       "Dekorasi bukan hanya soal estetika, tapi bagaimana rumah mencerminkan kepribadian Anda. Dengan custom akrilik, hadirkan sentuhan modern dan elegan melalui signage dekorati.",
     content:
       "<p>Akrilik memungkinkan pembuatan dekor modern: lampu, rak minimalis, hingga panel hias. Simak 5 ide yang mudah diwujudkan.</p>",
   },
-   {
+  {
     id: 3,
     title: "Plakat Akrilik: Pilihan Modern untuk Penghargaan dan Kenang-kenangan",
     slug: "ide-custom-plakat-akrilik",
     date: "2025-08-30",
     author: "Cahaya Acrylic",
-    cover: "/PLKT_5.jpg",
+    cover: "/Product/PLKT_5.jpg",
     coverAlt: "Plakat Akrilik custom",
-    keywords: ["akrilik plakat", "custom acrylic", "plakat", "plakat akrilik", "plakat custom"],
+    keywords: [
+      "akrilik plakat",
+      "custom acrylic",
+      "plakat",
+      "plakat akrilik",
+      "plakat custom",
+    ],
     excerpt:
       "Hadiah terbaik adalah yang meninggalkan kesan mendalam. Dengan plakat akrilik custom, Anda bisa memberikan kenang-kenangan yang elegan, personal, dan penuh makna.",
-    content:
-      "<p>Plakat Akrilik </p>",
+    content: "<p>Plakat Akrilik </p>",
   },
 ];
 
@@ -76,7 +94,7 @@ function useSEO({ title, description, keywords = [], canonical }) {
   useEffect(() => {
     if (title) document.title = title;
 
-    // meta description
+    // Meta description
     let metaDesc = document.querySelector("meta[name=description]");
     if (!metaDesc) {
       metaDesc = document.createElement("meta");
@@ -85,7 +103,7 @@ function useSEO({ title, description, keywords = [], canonical }) {
     }
     if (description) metaDesc.setAttribute("content", description);
 
-    // meta keywords
+    // Meta keywords
     let metaKeywords = document.querySelector("meta[name=keywords]");
     if (!metaKeywords) {
       metaKeywords = document.createElement("meta");
@@ -94,7 +112,7 @@ function useSEO({ title, description, keywords = [], canonical }) {
     }
     if (keywords.length) metaKeywords.setAttribute("content", keywords.join(", "));
 
-    // canonical link
+    // Canonical link
     if (canonical) {
       let linkCanonical = document.querySelector("link[rel='canonical']");
       if (!linkCanonical) {
@@ -119,110 +137,87 @@ function BlogList() {
 
   return (
     <div className={styles.blogContainer}>
-       <Helmet>
-        <title>Custom Acrylic Bogor | Akrilik Custom, Cutting Acrylic</title>
-        <meta
-          name="description"
-          content="Cahaya Acrylic menjual berbagai jenis akrilik: akrilik bening, warna, dan custom dengan harga terbaik untuk kebutuhan rumah, kantor, dan dekorasi."
-        />
-        <meta
-          name="keywords"
-          content="cahaya acrylic, jual akrilik, akrilik bening, akrilik custom, harga akrilik murah, acrylic custom, custom acrylic, akrilik custom, custom akrilik, akrilik, acrylic, akrilik bogor, akrilik terdekat, plakat akrilik, jual akrilik, toko akrilik, toko acrylic, cutting acrylic, cutting akrilik, akrilik cutting, gantungan kunci, gantungan kunci acrylic, gantungan kunci akrilik"
-        />
-        <meta
-          property="og:title"
-          content="Cahaya Acrylic Bogor| Akrilik Custom, Cutting Acrylic"
-        />
+      <Helmet>
+        <meta property="og:title" content="Cahaya Acrylic Bogor | Akrilik Custom, Cutting Acrylic" />
         <meta
           property="og:description"
           content="Tempat jual akrilik terpercaya: bening, warna, dan custom dengan harga terbaik. Hanya di Cahaya Acrylic."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://cahaya-acrylic.com/" />
+        <meta property="og:url" content={`${BASE_URL}/blog`} />
       </Helmet>
-        <Navbar />
+
+      <Navbar />
+
       <header className={styles.blogHeader}>
         <h1 className={styles.blogTitle}>Blog - Cahaya Acrylic</h1>
-        <p className={styles.blogSubtitle}>
-          Tips, inspirasi, dan panduan seputar custom akrilik.
-        </p>
+        <p className={styles.blogSubtitle}>Tips, inspirasi, dan panduan seputar custom akrilik.</p>
       </header>
 
+      {/* MAIN: artikel (kiri) + sidebar (kanan) */}
       <main className={styles.blogList} aria-label="Daftar artikel blog">
-        {postsData.map((post) => (
-          <article key={post.id} className={styles.blogCard}>
-            <Link
-              to="/product"
-              className={styles.blogCardImage}
-              aria-label={`Baca artikel ${post.title}`}
-            >
-              <img
-                src={post.cover}
-                alt={post.coverAlt}
-                loading="lazy"
-                width="210"
-                height="140"
-                className={styles.blogCardThumb}
-              />
-            </Link>
+        <div className={styles.blogArticles}>
+          {postsData.map((post) => (
+            <article key={post.id} className={styles.blogCard}>
+              {post.cover && (
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className={styles.blogCardImage}
+                  aria-label={`Baca artikel ${post.title}`}
+                >
+                  <img
+                    src={post.cover}
+                    alt={post.coverAlt}
+                    loading="lazy"
+                    className={styles.blogCardThumb}
+                  />
+                </Link>
+              )}
 
-            <div className={styles.blogCardContent}>
-              <Link
-                to="/product"
-                className={styles.blogCardTitle}
-              >
-                {post.title}
-              </Link>
-              <div className={styles.blogCardMeta}>
-                {formatDate(post.date)} • {post.author}
+              <div className={styles.blogCardContent}>
+                <Link to={`/blog/${post.slug}`} className={styles.blogCardTitle}>
+                  {post.title}
+                </Link>
+
+                <div className={styles.blogCardMeta}>
+                  {formatDate(post.date)} • {post.author}
+                </div>
+
+                <p className={styles.blogCardExcerpt}>{post.excerpt}</p>
+
+                <div className={styles.blogCardFooter} aria-label="Keywords artikel">
+                  {post.keywords.slice(0, 3).map((k) => (
+                    <span key={k} className={styles.keyword}>
+                      {k}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <p className={styles.blogCardExcerpt}>{post.excerpt}</p>
-              <div className={styles.blogCardFooter} aria-label="Keywords artikel">
-               
-                <span className={styles.dot} aria-hidden="true">•</span>
-                {post.keywords.slice(0, 3).map((k) => (
-                  <span key={k} className={styles.keyword}>
-                    {k}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))}
+        </div>
+
+        {/* Sidebar: Tentang Kami */}
+        <aside className={styles.blogSidebar}>
+          <div className={styles.sidebarBox}>
+            <h3>Tentang Kami</h3>
+            <p>
+              Cahaya Acrylic adalah perusahaan yang bergerak di bidang akrilik.
+              Kami menjual berbagai lembaran akrilik berkualitas tinggi serta
+              melayani pesanan custom akrilik. Dengan dukungan mesin laser modern,
+              hasil potongan akrilik lebih presisi dan rapi.
+            </p>
+            <ul>
+              <li>✔ Mesin laser cutting presisi</li>
+              <li>✔ Pengiriman cepat</li>
+              <li>✔ Custom sesuai kebutuhan</li>
+              <li>✔ Melayani retail & partai besar</li>
+            </ul>
+          </div>
+        </aside>
       </main>
 
-      <div className={styles.aboutSection}>
-         <h2 className={styles.judul}>Tentang Kami</h2>
-        <p>
-          Cahaya Acrylic adalah perusahaan yang bergerak di bidang akrilik. 
-          Kami menjual berbagai lembaran akrilik berkualitas tinggi serta 
-          melayani pesanan custom akrilik. Dengan dukungan mesin laser modern, 
-          hasil potongan akrilik lebih presisi dan rapi.
-        </p>
-
-        <h2 className={styles.judul2}>Produk Custom Acrylic</h2>
-        <ul>
-          <li>Plakat Akrilik</li>
-          <li>Gantungan Kunci Akrilik</li>
-          <li>Signed & Display</li>
-          <li>Huruf Timbul</li>
-          <li>Tent Holder</li>
-        </ul>
-
-        <h2 className={styles.judul3}>Keunggulan Kami</h2>
-        <p>
-          ✔ Mesin laser cutting untuk hasil presisi  
-          ✔ Pengiriman cepat dan aman  
-          ✔ Bisa custom sesuai kebutuhan  
-          ✔ Melayani retail maupun partai besar  
-        </p>
-
-        <h2 className={styles.lokasi}>Lokasi</h2>
-        <p>
-          📍 <b>Kantor Utama:</b> Pancasan No.19, Kota Bogor, Jawa Barat  
-          📍 <b>Cabang Tangerang:</b> Jl. Ruko Modern Land, Kota Tangerang, Banten  
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 }
@@ -268,9 +263,7 @@ function BlogDetail({ post }) {
   return (
     <article className={styles.blogDetail}>
       <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-        <Link to="/blog" className={styles.breadcrumbLink}>
-          Blog
-        </Link>
+        <Link to="/blog" className={styles.breadcrumbLink}>Blog</Link>
         <span className={styles.breadcrumbSeparator} aria-hidden="true">/</span>
         <span aria-current="page">{post.title}</span>
       </nav>
@@ -289,9 +282,7 @@ function BlogDetail({ post }) {
           loading="lazy"
           className={styles.detailImage}
         />
-        <figcaption className={styles.detailCaption}>
-          {post.coverAlt}
-        </figcaption>
+        <figcaption className={styles.detailCaption}>{post.coverAlt}</figcaption>
       </figure>
 
       <section
@@ -308,6 +299,8 @@ function BlogDetail({ post }) {
           </Link>.
         </div>
       </footer>
+
+      <Footer />
     </article>
   );
 }
@@ -316,10 +309,9 @@ function BlogDetail({ post }) {
 function Blog() {
   const { slug } = useParams();
   const navigate = useNavigate();
-
   const post = slug ? findPostBySlug(slug) : null;
 
-  // Redirect ke /blog jika slug tidak valid
+  // Redirect jika slug tidak valid
   useEffect(() => {
     if (slug && !post) {
       const timeout = setTimeout(() => navigate("/blog"), 1200);

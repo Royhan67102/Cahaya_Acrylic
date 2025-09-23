@@ -1,0 +1,109 @@
+.klien_section {
+  max-width: 1200px;
+  margin: 120px auto 0 auto; /* tambah margin-top agar jarak antar konten lebih lega */
+  padding: 0 24px 64px 24px; /* tambah padding-bottom agar tidak mepet bawah */
+  text-align: left;
+}
+
+.wrap_title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 8px;
+  margin-bottom: 40px; /* sedikit lebih besar agar konsisten antar blok */
+}
+
+.klien_title {
+  margin: 0;
+  text-align: left;
+  font-size: 1.50rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  padding: 8px 18px;
+  border-radius: 0 32px;
+  background-color: #3056B3;
+  display: inline-block;
+}
+
+.klien_desc {
+  color: #444;
+  font-size: 1.08rem;
+  margin-bottom: 36px;
+  max-width: 900px;
+  margin-left: auto; 
+  margin-right: auto;
+  text-align: center;
+}
+
+.wordItem {
+  font-size: 15px;
+  color: #222;
+  margin-top: 4px;
+  display: block;
+}
+
+.klien_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 32px 32px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 36px; /* tambah margin-top agar grid tidak terlalu mepet dengan deskripsi */
+}
+
+.klien_logo img {
+  max-width: 140px;
+  max-height: 100px;
+  object-fit: contain;
+  filter: grayscale(0%);
+  transition: filter 0.2s;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.klien_logo img:hover {
+  filter: grayscale(40%) brightness(0.95);
+}
+
+@media (max-width: 900px) {
+  .klien_section {
+    margin: 40px auto 0 auto;
+    padding: 0 12px 40px 12px;
+  }
+  .wrap_title {
+    margin-bottom: 28px;
+  }
+  .klien_grid {
+    margin-top: 24px;
+  }
+  .klien_logo img {
+    max-width: 80px;
+    max-height: 36px;
+    padding: 6px 6px;
+  }
+  .klien_title {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .klien_section {
+    padding: 0 8px 24px 8px;
+    margin: 24px auto 0 auto;
+  }
+  .wrap_title {
+    margin-bottom: 18px;
+  }
+  .klien_grid {
+    margin-top: 14px;
+  }
+  .klien_logo img {
+    max-width: 60px;
+    max-height: 28px;
+    padding: 4px 2px;
+  }
+}

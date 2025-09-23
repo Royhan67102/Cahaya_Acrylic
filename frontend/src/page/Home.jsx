@@ -9,6 +9,7 @@ import WhatsApp from "../components/Home/WhatsApp/WhatsApp";
 import { Link } from "react-router-dom";
 import Service from "../components/Home/Service/Service";
 import Swipe from "../components/Home/Swipe/Swipe";
+import Klien from "../components/Home/Klien/Klien";
 
 function Home() {
   return (
@@ -62,6 +63,7 @@ function Home() {
       <Voucher />
       {/* <TopPack /> */}
       <WhatsApp />
+      <Klien />
       <Footer />
     </div>
   );

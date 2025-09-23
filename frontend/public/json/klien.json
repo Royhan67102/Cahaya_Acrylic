@@ -1,0 +1,18 @@
+[
+  { "name": "RSUD Ciawi", "img": "/Klienfoto/rsudCiawi.jpg" },
+  { "name": "RS Juliana", "img": "/Klienfoto/rsJuliana.png" },
+  { "name": "KAI", "img": "/Klienfoto/KAI.png" },
+  { "name": "Pondok Pesantren Nurul Falah", "img": "/Klienfoto/ponpes.png" },
+  { "name": "Pertamina", "img": "/Klienfoto/pertamina.png" },
+  { "name": "Indomaret", "img": "/Klienfoto/Indomaret.png" },
+  { "name": "PT Gajah Tunggal", "img": "/Klienfoto/GT.jpg" },
+  { "name": "ESB", "img": "/Klienfoto/Esb.png" },
+  { "name": "Cimory", "img": "/Klienfoto/cm.png" },
+  { "name": "Bukit Cimanggu City", "img": "/Klienfoto/BCC.png" },
+  { "name": "Bank BTN", "img": "/Klienfoto/btn.png" },
+  { "name": "Bank BRI", "img": "/Klienfoto/bri.png" },
+  { "name": "BCA", "img": "/Klienfoto/bca.png" },
+  { "name": "Aston International", "img": "/Klienfoto/AI.png" },
+  { "name": "Alfamart", "img": "/Klienfoto/ALFAMART.png" },
+  { "name": "Alam Sutera", "img": "/Klienfoto/AS.png" }
+]   

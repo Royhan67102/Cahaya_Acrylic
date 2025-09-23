@@ -17,7 +17,7 @@ function Voucher() {
         setDatas(parsed.slice(0, 3)); // ambil 3 data teratas
       } else {
         try {
-          const response = await axios.get("/voucher.json");
+          const response = await axios.get("/json/voucher.json");
           setDatas(response.data.slice(0, 3)); // ambil 3 data teratas
         } catch (error) {
           console.error("Error fetching data:", error);

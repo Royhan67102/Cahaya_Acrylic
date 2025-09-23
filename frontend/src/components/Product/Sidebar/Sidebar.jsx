@@ -12,7 +12,7 @@ function Sidebar({ onCategoryClick }) {
         setItems(JSON.parse(local));
       } else {
         try {
-          const response = await axios.get("/item.json");
+          const response = await axios.get("/json/item.json");
           setItems(response.data);
         } catch (error) {
           console.error("Error fetching data:", error);

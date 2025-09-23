@@ -15,7 +15,7 @@ function TopItem() {
         setDatas(JSON.parse(local));
       } else {
         try {
-          const response = await axios.get('/item.json');
+          const response = await axios.get('/json/item.json');
           setDatas(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);

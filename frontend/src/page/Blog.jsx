@@ -95,7 +95,7 @@ const postsData = [
     date: "2025-09-18",
     author: "Cahaya Acrylic",
     category: "Tips",
-    cover: "/blog/BC.jpg",
+    cover: "/blog/hntr.jpg",
     coverAlt: "Membuat box akrilik DIY",
     keywords: ["box akrilik custom", "DIY akrilik", "cara membuat box akrilik"],
     excerpt:
@@ -110,7 +110,7 @@ const postsData = [
     date: "2025-09-17",
     author: "Cahaya Acrylic",
     category: "Tips",
-    cover: "/Product/care_plaque.jpg",
+    cover: "/blog/PLKT_5.jpg",
     coverAlt: "Perawatan plakat akrilik",
     keywords: ["plakat akrilik", "cara merawat akrilik", "merawat plakat"],
     excerpt:
@@ -127,7 +127,7 @@ const postsData = [
     date: "2025-09-16",
     author: "Cahaya Acrylic",
     category: "Produk",
-    cover: "/Product/price_acrylic.jpg",
+    cover: "/blog/lmbr.jpg",
     coverAlt: "Harga akrilik per lembar",
     keywords: ["harga akrilik", "harga akrilik per lembar"],
     excerpt:
@@ -142,7 +142,7 @@ const postsData = [
     date: "2025-09-15",
     author: "Cahaya Acrylic",
     category: "Produk",
-    cover: "/Product/display_rack.jpg",
+    cover: "/blog/rak.jpg",
     coverAlt: "Rak display akrilik",
     keywords: ["rak display akrilik", "rak akrilik toko"],
     excerpt:
@@ -157,7 +157,7 @@ const postsData = [
     date: "2025-09-14",
     author: "Cahaya Acrylic",
     category: "Produk",
-    cover: "/Product/plaque_custom.jpg",
+    cover: "/blog/plkt.jpg",
     coverAlt: "Plakat akrilik custom",
     keywords: ["plakat akrilik", "souvenir akrilik", "plakat custom"],
     excerpt:
@@ -172,7 +172,7 @@ const postsData = [
     date: "2025-09-13",
     author: "Cahaya Acrylic",
     category: "Produk",
-    cover: "/Product/3d_letters.jpg",
+    cover: "/blog/tmbl.jpg",
     coverAlt: "Huruf timbul akrilik",
     keywords: ["huruf timbul akrilik", "neonbox akrilik", "huruf timbul"],
     excerpt:
@@ -184,12 +184,12 @@ const postsData = [
   // SERVICE / JASA
   {
     id: 12,
-    title: "Jasa Potong Akrilik Terpercaya di [Lokasi Kamu]",
+    title: "Jasa Potong Akrilik Terpercaya di seJABODETABEK",
     slug: "jasa-potong-akrilik-terpercaya-lokasi",
     date: "2025-09-12",
     author: "Cahaya Acrylic",
     category: "Jasa",
-    cover: "/Product/cutting_service.jpg",
+    cover: "/blog/proses.jpg",
     coverAlt: "Jasa potong akrilik",
     keywords: ["jasa potong akrilik", "cutting akrilik", "jasa cutting"],
     excerpt:
@@ -204,7 +204,7 @@ const postsData = [
     date: "2025-09-11",
     author: "Cahaya Acrylic",
     category: "Jasa",
-    cover: "/Product/custom_service.jpg",
+    cover: "/blog/cs.jpg",
     coverAlt: "Jasa custom akrilik",
     keywords: ["custom akrilik", "desain akrilik", "akrilik custom"],
     excerpt:

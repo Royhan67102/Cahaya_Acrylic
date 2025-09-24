@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./klien.module.css";
+import styles from "./Klien.module.css";
 
 const Klien = () => {
   const [clients, setClients] = useState([]);

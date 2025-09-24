@@ -1,10 +1,17 @@
 /* =========================
    GLOBAL
 ========================= */
+:root {
+  --primary: #3056b3;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --page-bg: #fafafa;
+}
+
 body {
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.7;
-  background-color: #fafafa;
+  background-color: var(--page-bg);
   color: #222;
   margin: 0;
 }
@@ -16,7 +23,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 16px;
-  background: transparent; /* biar sesuai layout luar */
+  background: transparent;
 }
 
 .blogHeader {
@@ -27,7 +34,7 @@ body {
 .blogTitle {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #3056B3;
+  color: var(--primary);
   margin-bottom: 6px;
 }
 
@@ -38,11 +45,10 @@ body {
 
 /* =========================
    MAIN LAYOUT: kiri artikel | kanan sidebar
-   (sesuai screenshot: artikel stacked, sidebar kotak)
 ========================= */
 .blogList {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* kiri lebih lebar, kanan sidebar */
+  grid-template-columns: 2fr 1fr;
   gap: 28px;
   align-items: start;
   margin-top: 16px;
@@ -66,19 +72,19 @@ body {
    ARTICLE CARD
 ========================= */
 .blogCard {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* opsional: jika ada gambar, tampilkan di atas */
+/* image banner */
 .blogCardImage {
   width: 100%;
   height: 0;
-  padding-top: 46%; /* aspect ratio ~ 2.15:1 */
+  padding-top: 46%;
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid #f1f5f9;
@@ -114,10 +120,23 @@ body {
 
 .blogCardMeta {
   font-size: 0.9rem;
-  color: #667085;
+  color: var(--muted);
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
+.catBadge {
+  background: #eef2ff;
+  color: var(--primary);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* excerpt */
 .blogCardExcerpt {
   font-size: 1rem;
   color: #374151;
@@ -125,6 +144,7 @@ body {
   line-height: 1.6;
 }
 
+/* footer keywords */
 .blogCardFooter {
   display: flex;
   gap: 8px;
@@ -144,7 +164,7 @@ body {
    SIDEBAR BOX
 ========================= */
 .sidebarBox {
-  background: #fff;
+  background: var(--card-bg);
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(16,24,40,0.06);
   padding: 18px;
@@ -157,20 +177,64 @@ body {
   color: #0f172a;
 }
 
-.sidebarBox ul {
+/* category list */
+.categoryList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.categoryBtn {
+  background: transparent;
+  border: 1px solid #e6edf3;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.categoryBtn:hover {
+  border-color: var(--primary);
+}
+
+.activeCategory {
+  background: linear-gradient(90deg, rgba(48,86,179,0.08), rgba(48,86,179,0.02));
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* popular list */
+.popularList {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sidebarBox ul li {
-  margin-bottom: 8px;
-  color: #374151;
-  font-size: 0.95rem;
+.popularLink {
+  text-decoration: none;
+  color: #0f172a;
+  display: block;
+  padding: 6px 0;
+}
+
+/* CTA */
+.ctaBtn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 12px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
 }
 
 /* =========================
-   ABOUT SECTION (di bawah layout)
+   ABOUT SECTION (opsional)
 ========================= */
 .aboutSection {
   max-width: 1000px;
@@ -183,53 +247,6 @@ body {
   color: #111827;
 }
 
-.judul {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 10px;
-}
-
-.judul::after {
-  content: "";
-  display: block;
-  width: 56px;
-  height: 4px;
-  background: #3056B3;
-  margin-top: 8px;
-  border-radius: 2px;
-}
-
-.judul2,
-.judul3,
-.lokasi {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #3056B3;
-  margin-top: 16px;
-  margin-bottom: 8px;
-}
-
-.aboutSection p {
-  font-size: 1rem;
-  color: #334155;
-  margin-bottom: 12px;
-}
-
-.aboutSection ul {
-  list-style: none;
-  padding: 0;
-  margin: 8px 0 0;
-}
-
-.aboutSection ul li {
-  background: #f8fafc;
-  padding: 8px 12px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  color: #0b1220;
-}
-
 /* =========================
    DETAIL ARTICLE (jika buka detail)
 ========================= */
@@ -237,12 +254,24 @@ body {
   max-width: 900px;
   margin: 24px auto;
   padding: 0 16px;
+  background: transparent;
 }
 
 .breadcrumb {
-  font-size: 0.9rem;
-  color: #6b7280;
+  font-size: 0.95rem;
+  color: var(--muted);
   margin-bottom: 8px;
+}
+
+.breadcrumbLink {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.breadcrumbSeparator {
+  margin: 0 8px;
+  color: var(--muted);
 }
 
 .detailHeader {
@@ -258,7 +287,7 @@ body {
 
 .detailMeta {
   font-size: 0.95rem;
-  color: #6b7280;
+  color: var(--muted);
   margin-bottom: 10px;
 }
 
@@ -295,6 +324,16 @@ body {
   padding-top: 12px;
   margin-top: 18px;
   color: #374151;
+}
+
+.cta {
+  margin-top: 10px;
+}
+
+.contactLink {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
 }
 
 /* =========================

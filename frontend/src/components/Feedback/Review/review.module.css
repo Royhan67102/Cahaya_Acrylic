@@ -1,10 +1,12 @@
 .container {
   width: 100%;
   padding: 40px 20px;
+  margin: 40px 0;
   box-sizing: border-box;
   background-color: #ffe066; /* kuning */
   color: #22364a;
   font-family: 'Poppins', sans-serif;
+  border-radius: 20px;
 }
 
 .Package {

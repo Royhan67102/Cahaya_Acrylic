@@ -14,6 +14,7 @@ function App() {
         <Route path="product" element={<Product />} />
         <Route path="feedback" element={<Feedback />} />
         <Route path="blog" element={<Blog />} />
+        <Route path="blog/:slug" element={<Blog />} />
       </Routes>
     </HelmetProvider>
   )

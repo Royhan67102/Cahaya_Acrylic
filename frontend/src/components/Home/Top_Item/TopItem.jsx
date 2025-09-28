@@ -112,8 +112,8 @@ function TopItem() {
         <span className={styles.wordItem}>Yours is custom too now!</span>
 
         <div className={styles.package__container} ref={sliderRef}>
-          {items.map((pack) => (
-            <div key={pack.id} className={styles.package__item}>
+          {items.map((pack, idx) => (
+            <div key={pack.id ? `${pack.id}-${idx}` : idx} className={styles.package__item}>
               <img src={pack.img} alt={pack.title} className={styles.pack_img_card} />
               <div className={styles.wrap_title}>
                 <h3 className={styles.item_title}>{pack.title}</h3>

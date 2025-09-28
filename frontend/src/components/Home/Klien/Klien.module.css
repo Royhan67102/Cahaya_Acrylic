@@ -99,11 +99,22 @@
     margin-bottom: 18px;
   }
   .klien_grid {
-    margin-top: 14px;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 16px;
+  justify-items: center;
+}
   .klien_logo img {
-    max-width: 60px;
+    max-width: 80px;
     max-height: 28px;
     padding: 4px 2px;
+  }
+  .klien_desc {
+    font-size: 0.80rem;
+    margin-bottom: 24px;
+  }
+  .klien_title {
+    font-size: 18px;
+    padding: 4px 8px;
   }
 }
